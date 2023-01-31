@@ -1,0 +1,86 @@
+$blue: #023DFF;
+$blue-50: #E6ECFF;
+$blue-100: #CCD8FF;
+$blue-200: #B3C5FF;
+$blue-300: #678BFF;
+$blue-400: #3564FF;
+$blue-600: #0231CC;
+$blue-700: #012599;
+$blue-800: #011866;
+$blue-900: #000C33;
+
+$orange: #FF7800;
+$orange-50: #FFF2E6;
+$orange-100: #FFE4CC;
+$orange-200: #FFD7B3;
+$orange-300: #FFAE66;
+$orange-400: #FF9333;
+$orange-600: #CC6000;
+$orange-700: #994800;
+$orange-800: #663000;
+$orange-900: #331800;
+
+$green: #68E348;
+$green-50: #F0FCED;
+$green-100: #E1F9DA;
+$green-200: #C3F4B6;
+$green-300: #A4EE91;
+$green-400: #86E96D;
+$green-600: #53B63A;
+$green-700: #3F892B;
+$green-800: #2A5D1D;
+$green-900: #16300E;
+
+$base-dark: #100024;
+$primary-purple: #9A4DFF;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1500px;
+
+
+$body-color: $blue-900;
+$link-color: $blue;
+$link-decoration: none;
+
+$container-max-widths: (
+        sm: 100%,
+        md: 100%,
+        lg: 960px,
+        xl: 1160px,
+        xxl: 1480px
+);
+
+$grid-breakpoints: (
+        xs: $xs,
+        sm: $sm,
+        md: $md,
+        lg: $lg,
+        xl: $xl,
+        xxl: $xxl
+);
+
+$grid-gutter-width: 24px;
+
+$display-font-sizes: (
+        1: 4rem,
+        2: 3rem,
+        3: 2.5rem,
+        4: 2rem,
+        5: 1.5rem,
+        6: 1.25rem
+);
+
+$h1-font-size: 4rem;
+$h2-font-size: 3rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 2rem;
+$h5-font-size: 1.5rem;
+$h6-font-size: 1.25rem;
+
+
+$display-font-weight: 400;
+$font-family-base: 'Bebas Neue';

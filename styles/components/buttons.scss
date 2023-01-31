@@ -1,0 +1,39 @@
+.error {
+  color: white;
+  background-color: red;
+}
+.primary {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    opacity: 0;
+  }
+  &:hover {
+    background: #68E348;
+  }
+  &:disabled {
+    background: #CCD8FF;
+    border: 1px solid #B3C5FF;
+  }
+}
+
+.content {
+  background: $orange;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 62px;
+  /* Primary/Blue/900 */
+  //border: 1px solid #000C33;
+  border: 1px solid $blue-900;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+

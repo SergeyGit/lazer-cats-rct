@@ -1,0 +1,53 @@
+{
+  "name": "nextjs-starter-prismic-multi-language",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
+  "scripts": {
+    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "next:dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@next/eslint-plugin-next": "^13.0.5",
+    "@prismicio/client": "^6.7.1",
+    "@prismicio/helpers": "^2.3.6",
+    "@prismicio/next": "^1.0.0",
+    "@prismicio/react": "^2.5.0",
+    "@prismicio/slice-simulator-react": "^0.2.3",
+    "bootstrap": "^5.2.2",
+    "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "eslint-config-next": "^13.0.5",
+    "flag-icons": "^6.6.6",
+    "gsap": "^3.11.3",
+    "keen-slider": "^6.8.3",
+    "next": "^13.0.3",
+    "next-compose-plugins": "^2.2.1",
+    "nodemailer": "^6.8.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^18.2.0",
+    "react-phone-input-2": "^2.15.1",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "@prismicio/types": "^0.2.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.5.0",
+    "eslint": "8.22.0",
+    "eslint-config-next": "^13.0.3",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "slice-machine-ui": "^0.6.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

@@ -1,0 +1,480 @@
+@font-face {
+    font-family: 'Bebas Neue Pro Middle';
+    src: url('BebasNeuePro-MiddleItalic.eot');
+    src: local('Bebas Neue Pro Middle Italic'), local('BebasNeuePro-MiddleItalic'),
+        url('BebasNeuePro-MiddleItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-MiddleItalic.woff2') format('woff2'),
+        url('BebasNeuePro-MiddleItalic.woff') format('woff'),
+        url('BebasNeuePro-MiddleItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-BoldItalic.eot');
+    src: local('Bebas Neue Pro Bold Italic'), local('BebasNeuePro-BoldItalic'),
+        url('BebasNeuePro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-BoldItalic.woff2') format('woff2'),
+        url('BebasNeuePro-BoldItalic.woff') format('woff'),
+        url('BebasNeuePro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedRegular.eot');
+    src: local('Bebas Neue Pro Expanded Regular'), local('BebasNeuePro-ExpandedRegular'),
+        url('BebasNeuePro-ExpandedRegular.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedRegular.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedRegular.woff') format('woff'),
+        url('BebasNeuePro-ExpandedRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedMediumIt.eot');
+    src: local('Bebas Neue Pro Expanded Medium Italic'), local('BebasNeuePro-ExpandedMediumIt'),
+        url('BebasNeuePro-ExpandedMediumIt.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedMediumIt.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedMediumIt.woff') format('woff'),
+        url('BebasNeuePro-ExpandedMediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedItalic.eot');
+    src: local('Bebas Neue Pro Expanded Italic'), local('BebasNeuePro-ExpandedItalic'),
+        url('BebasNeuePro-ExpandedItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedItalic.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedItalic.woff') format('woff'),
+        url('BebasNeuePro-ExpandedItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded Book';
+    src: url('BebasNeuePro-ExpandedBook.eot');
+    src: local('Bebas Neue Pro Expanded Book'), local('BebasNeuePro-ExpandedBook'),
+        url('BebasNeuePro-ExpandedBook.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedBook.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedBook.woff') format('woff'),
+        url('BebasNeuePro-ExpandedBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpThinItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded Thin Italic'), local('BebasNeuePro-SemiExpThinItalic'),
+        url('BebasNeuePro-SemiExpThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpThinItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpThinItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedThinItalic.eot');
+    src: local('Bebas Neue Pro Expanded Thin Italic'), local('BebasNeuePro-ExpandedThinItalic'),
+        url('BebasNeuePro-ExpandedThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedThinItalic.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedThinItalic.woff') format('woff'),
+        url('BebasNeuePro-ExpandedThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded Book';
+    src: url('BebasNeuePro-ExpandedBookItalic.eot');
+    src: local('Bebas Neue Pro Expanded Book Italic'), local('BebasNeuePro-ExpandedBookItalic'),
+        url('BebasNeuePro-ExpandedBookItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedBookItalic.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedBookItalic.woff') format('woff'),
+        url('BebasNeuePro-ExpandedBookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpandedThin.eot');
+    src: local('Bebas Neue Pro SemiExpanded Thin'), local('BebasNeuePro-SemiExpandedThin'),
+        url('BebasNeuePro-SemiExpandedThin.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpandedThin.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpandedThin.woff') format('woff'),
+        url('BebasNeuePro-SemiExpandedThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedMedium.eot');
+    src: local('Bebas Neue Pro Expanded Medium'), local('BebasNeuePro-ExpandedMedium'),
+        url('BebasNeuePro-ExpandedMedium.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedMedium.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedMedium.woff') format('woff'),
+        url('BebasNeuePro-ExpandedMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp Book';
+    src: url('BebasNeuePro-SemiExpBook.eot');
+    src: local('Bebas Neue Pro SemiExpanded Book'), local('BebasNeuePro-SemiExpBook'),
+        url('BebasNeuePro-SemiExpBook.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpBook.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpBook.woff') format('woff'),
+        url('BebasNeuePro-SemiExpBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpLightItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded Light Italic'), local('BebasNeuePro-SemiExpLightItalic'),
+        url('BebasNeuePro-SemiExpLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpLightItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpLightItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpLightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpRegular.eot');
+    src: local('Bebas Neue Pro SemiExpanded Regular'), local('BebasNeuePro-SemiExpRegular'),
+        url('BebasNeuePro-SemiExpRegular.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpRegular.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpRegular.woff') format('woff'),
+        url('BebasNeuePro-SemiExpRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-Light.eot');
+    src: local('Bebas Neue Pro Light'), local('BebasNeuePro-Light'),
+        url('BebasNeuePro-Light.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Light.woff2') format('woff2'),
+        url('BebasNeuePro-Light.woff') format('woff'),
+        url('BebasNeuePro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedBoldItalic.eot');
+    src: local('Bebas Neue Pro Expanded Bold Italic'), local('BebasNeuePro-ExpandedBoldItalic'),
+        url('BebasNeuePro-ExpandedBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedBoldItalic.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedBoldItalic.woff') format('woff'),
+        url('BebasNeuePro-ExpandedBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-LightItalic.eot');
+    src: local('Bebas Neue Pro Light Italic'), local('BebasNeuePro-LightItalic'),
+        url('BebasNeuePro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-LightItalic.woff2') format('woff2'),
+        url('BebasNeuePro-LightItalic.woff') format('woff'),
+        url('BebasNeuePro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-Thin.eot');
+    src: local('Bebas Neue Pro Thin'), local('BebasNeuePro-Thin'),
+        url('BebasNeuePro-Thin.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Thin.woff2') format('woff2'),
+        url('BebasNeuePro-Thin.woff') format('woff'),
+        url('BebasNeuePro-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded XBold';
+    src: url('BebasNeueProExpandedExtraBoldIt.eot');
+    src: local('Bebas Neue Pro Expanded ExtraBold Italic'), local('BebasNeueProExpandedExtraBoldIt'),
+        url('BebasNeueProExpandedExtraBoldIt.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeueProExpandedExtraBoldIt.woff2') format('woff2'),
+        url('BebasNeueProExpandedExtraBoldIt.woff') format('woff'),
+        url('BebasNeueProExpandedExtraBoldIt.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedBold.eot');
+    src: local('Bebas Neue Pro Expanded Bold'), local('BebasNeuePro-ExpandedBold'),
+        url('BebasNeuePro-ExpandedBold.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedBold.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedBold.woff') format('woff'),
+        url('BebasNeuePro-ExpandedBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp Book';
+    src: url('BebasNeuePro-SemiExpBookItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded Book Italic'), local('BebasNeuePro-SemiExpBookItalic'),
+        url('BebasNeuePro-SemiExpBookItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpBookItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpBookItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpBookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-ThinItalic.eot');
+    src: local('Bebas Neue Pro Thin Italic'), local('BebasNeuePro-ThinItalic'),
+        url('BebasNeuePro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ThinItalic.woff2') format('woff2'),
+        url('BebasNeuePro-ThinItalic.woff') format('woff'),
+        url('BebasNeuePro-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Book';
+    src: url('BebasNeuePro-Book.eot');
+    src: local('Bebas Neue Pro Book'), local('BebasNeuePro-Book'),
+        url('BebasNeuePro-Book.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Book.woff2') format('woff2'),
+        url('BebasNeuePro-Book.woff') format('woff'),
+        url('BebasNeuePro-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Book';
+    src: url('BebasNeuePro-BookItalic.eot');
+    src: local('Bebas Neue Pro Book Italic'), local('BebasNeuePro-BookItalic'),
+        url('BebasNeuePro-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-BookItalic.woff2') format('woff2'),
+        url('BebasNeuePro-BookItalic.woff') format('woff'),
+        url('BebasNeuePro-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded Italic'), local('BebasNeuePro-SemiExpItalic'),
+        url('BebasNeuePro-SemiExpItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedLight.eot');
+    src: local('Bebas Neue Pro Expanded Light'), local('BebasNeuePro-ExpandedLight'),
+        url('BebasNeuePro-ExpandedLight.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedLight.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedLight.woff') format('woff'),
+        url('BebasNeuePro-ExpandedLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedThin.eot');
+    src: local('Bebas Neue Pro Expanded Thin'), local('BebasNeuePro-ExpandedThin'),
+        url('BebasNeuePro-ExpandedThin.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedThin.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedThin.woff') format('woff'),
+        url('BebasNeuePro-ExpandedThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp XBold';
+    src: url('BebasNeuePro-SemiExpXBold.eot');
+    src: local('Bebas Neue Pro SemiExpanded ExtraBold'), local('BebasNeuePro-SemiExpXBold'),
+        url('BebasNeuePro-SemiExpXBold.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpXBold.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpXBold.woff') format('woff'),
+        url('BebasNeuePro-SemiExpXBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Middle';
+    src: url('BebasNeuePro-Middle.eot');
+    src: local('Bebas Neue Pro Middle'), local('BebasNeuePro-Middle'),
+        url('BebasNeuePro-Middle.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Middle.woff2') format('woff2'),
+        url('BebasNeuePro-Middle.woff') format('woff'),
+        url('BebasNeuePro-Middle.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-Bold.eot');
+    src: local('Bebas Neue Pro Bold'), local('BebasNeuePro-Bold'),
+        url('BebasNeuePro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Bold.woff2') format('woff2'),
+        url('BebasNeuePro-Bold.woff') format('woff'),
+        url('BebasNeuePro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpBold.eot');
+    src: local('Bebas Neue Pro SemiExpanded Bold'), local('BebasNeuePro-SemiExpBold'),
+        url('BebasNeuePro-SemiExpBold.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpBold.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpBold.woff') format('woff'),
+        url('BebasNeuePro-SemiExpBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-Italic.eot');
+    src: local('Bebas Neue Pro Italic'), local('BebasNeuePro-Italic'),
+        url('BebasNeuePro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Italic.woff2') format('woff2'),
+        url('BebasNeuePro-Italic.woff') format('woff'),
+        url('BebasNeuePro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded XBold';
+    src: url('BebasNeuePro-ExpandedExtraBold.eot');
+    src: local('Bebas Neue Pro Expanded ExtraBold'), local('BebasNeuePro-ExpandedExtraBold'),
+        url('BebasNeuePro-ExpandedExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedExtraBold.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedExtraBold.woff') format('woff'),
+        url('BebasNeuePro-ExpandedExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpLight.eot');
+    src: local('Bebas Neue Pro SemiExpanded Light'), local('BebasNeuePro-SemiExpLight'),
+        url('BebasNeuePro-SemiExpLight.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpLight.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpLight.woff') format('woff'),
+        url('BebasNeuePro-SemiExpLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('BebasNeuePro-Regular.eot');
+    src: local('Bebas Neue Pro Regular'), local('BebasNeuePro-Regular'),
+        url('BebasNeuePro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-Regular.woff2') format('woff2'),
+        url('BebasNeuePro-Regular.woff') format('woff'),
+        url('BebasNeuePro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp Middle';
+    src: url('BebasNeuePro-SemiExpMiddle.eot');
+    src: local('Bebas Neue Pro SemiExpanded Middle'), local('BebasNeuePro-SemiExpMiddle'),
+        url('BebasNeuePro-SemiExpMiddle.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpMiddle.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpMiddle.woff') format('woff'),
+        url('BebasNeuePro-SemiExpMiddle.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp XBold';
+    src: url('BebasNeuePro-SemiExpXBoldItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded ExtraBold Italic'), local('BebasNeuePro-SemiExpXBoldItalic'),
+        url('BebasNeuePro-SemiExpXBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpXBoldItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpXBoldItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpXBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Expanded';
+    src: url('BebasNeuePro-ExpandedLightIt.eot');
+    src: local('Bebas Neue Pro Expanded Light Italic'), local('BebasNeuePro-ExpandedLightIt'),
+        url('BebasNeuePro-ExpandedLightIt.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-ExpandedLightIt.woff2') format('woff2'),
+        url('BebasNeuePro-ExpandedLightIt.woff') format('woff'),
+        url('BebasNeuePro-ExpandedLightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp Middle';
+    src: url('BebasNeuePro-SemiExpMiddleIt.eot');
+    src: local('Bebas Neue Pro SemiExpanded Middle Italic'), local('BebasNeuePro-SemiExpMiddleIt'),
+        url('BebasNeuePro-SemiExpMiddleIt.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpMiddleIt.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpMiddleIt.woff') format('woff'),
+        url('BebasNeuePro-SemiExpMiddleIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('BebasNeuePro-SemiExpBoldItalic.eot');
+    src: local('Bebas Neue Pro SemiExpanded Bold Italic'), local('BebasNeuePro-SemiExpBoldItalic'),
+        url('BebasNeuePro-SemiExpBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BebasNeuePro-SemiExpBoldItalic.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpBoldItalic.woff') format('woff'),
+        url('BebasNeuePro-SemiExpBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+

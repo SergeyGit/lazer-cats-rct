@@ -1,0 +1,27 @@
+@import "../variables";
+.partners {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  @media (max-width: $xl) {
+    padding: 0;
+  }
+}
+.partnersAnim {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+.partnersItem {
+  flex-shrink: 0;
+  margin-right: 40px;
+  margin-left: 40px;
+  @media (min-width: $lg) {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+}

@@ -1,0 +1,73 @@
+.partners-anim {
+  animation-name: partners;
+}
+.spin-anim{
+  animation-name: spin;
+}
+.payments-anim{
+  animation-name: payments-right;
+  @media (min-width: $xl) {
+    animation-name: payments-down;
+  }
+}
+.payments-anim-up{
+  animation-name: partners;
+  @media (min-width: $xl) {
+    animation-name: payments-up;
+  }
+}
+
+.opacity-anim{
+  animation-name: opacityAnim;
+}
+
+@keyframes partners {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+};
+
+@keyframes payments-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes payments-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes payments-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes opacityAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

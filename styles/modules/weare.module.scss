@@ -1,0 +1,66 @@
+@import "../variables";
+
+.section {
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.caption {
+  text-align: center;
+  @media (max-width: $xl) {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1170px;
+  padding: 300px 0 140px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  @media (max-width: $xl) {
+    padding-top: 170px;
+    padding-bottom: 120px;
+    .h6 {
+      line-height: 1.4;
+    }
+  }
+  @media (max-width: $md) {
+    padding-top: 120px;
+  }
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  img {
+    object-fit: contain;
+  }
+
+  @media (max-width: $lg) {
+    width: 140%;
+    transform: translateX(-10%);
+    right: auto;
+    img {
+      object-fit: unset;
+      height: auto !important;
+    }
+  }
+  @media (max-width: $sm) {
+    width: 180%;
+    transform: translateX(-20%);
+  }
+  @media (max-width: 455px) {
+    width: 950px;
+    transform: translateX(-30%);
+  }
+}

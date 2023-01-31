@@ -1,0 +1,138 @@
+@import "~bootstrap/scss/functions";
+
+@import 'typography';
+@import "variables";
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/bootstrap-grid";
+//@import "~bootstrap/scss/containers";
+@import "animations";
+
+html, body {
+  overflow-x: hidden;
+  background-color: $base-dark;
+}
+
+button {
+  border: none;
+  padding: 0;
+}
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.z-1 {
+  z-index: 1;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg_image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  img {
+    object-fit: cover;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.multicolor-title {
+  font-weight: bold;
+  color: $primary-purple;
+  text-transform: uppercase;
+  strong {
+    background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #dfbb5f 52.7%, #D29E18 92.62%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    display: inline-block;
+  }
+  p {
+    margin: 0;
+    line-height: 1.1;
+  }
+}
+
+p {
+  line-height: 1.4;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+}
+
+.fz-160{
+  font-size: 160px;
+  @media (max-width: $xl) {
+    font-size: 120px;
+  }
+  @media (max-width: $lg) {
+    font-size: 88px;
+  }
+  @media (max-width: $sm) {
+    font-size: 64px;
+  }
+}
+.fz-24 {
+  font-size: 24px;
+}
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin: 0;
+}
+
+@media (min-width: $xxl) {
+  h1, .h1 {
+    font-size: 128px;
+  }
+  h2, .h2 {
+    font-size: 60px;
+  }
+  h3, .h3 {
+    font-size: 50px;
+  }
+  h4, .h4 {
+    font-size: 40px;
+  }
+  h5, .h5 {
+    font-size: 32px;
+  }
+  h6, .h6 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: $lg) {
+  h6, .h6 {
+    font-size: 1rem;
+  }
+}
+
+

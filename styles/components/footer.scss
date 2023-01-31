@@ -1,0 +1,97 @@
+.footer {
+  margin-top: auto;
+  background-color: $blue-900;
+  min-height: 300px;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  color: white;
+  &_top {
+    &_text {
+      margin-top: 24px;
+      margin-bottom: 40px;
+      @media (min-width: $xl) {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  &_body {
+    border-top: 1px solid #3A3E74;
+    margin-top: 64px;
+    padding-top: 24px;
+    @media (min-width: $xl) {
+      padding-top: 64px;
+    }
+  }
+  &_social {
+    &_caption {
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #B2B6C2;
+      margin-bottom: 24px;
+    }
+    &_item {
+      margin-right: 16px;
+      font-size: 0;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+  &_icons {
+    border-top: 1px solid #3A3E74;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow-x: auto;
+    margin-top: 40px;
+    @media (min-width: $xl) {
+      margin-top: 64px;
+    }
+    &_item {
+      margin-left: 20px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+  }
+  &_bottom {
+    border-top: 1px solid #3A3E74;
+    padding-top: 40px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    &_link {
+      margin-top: 16px;
+      a {
+        font-size: 14px;
+        color: white;
+      }
+    }
+  }
+  &_nested-links {
+    margin-bottom: 32px;
+    @media (min-width: $xl) {
+      padding-top: 0;
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &_item {
+      text-transform: uppercase;
+      color: white;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.02em;
+      display: block;
+      margin-bottom: 16px;
+      &:hover {
+        color: white;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
