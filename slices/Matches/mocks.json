@@ -1,0 +1,183 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Id dolor eiusmod incididunt do exercitation sint et occaecat sunt adipisicing amet."
+            }
+          }
+        ]
+      },
+      "title_second": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Esse proident ex voluptate fugiat occaecat cillum nisi aliquip tempor veniam. Culpa exercitation sunt fugiat nostrud sit est Lorem fugiat Lorem et Lorem. Exercitation id pariatur exercitation excepteur consectetur veniam adipisicing sint."
+            }
+          }
+        ]
+      },
+      "background": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+          "width": 4272,
+          "height": 2848
+        },
+        "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+        "width": 4272,
+        "height": 2848,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Timestamp",
+              "value": "2021-07-29T18:54:44Z"
+            }
+          ],
+          [
+            "tournamet_logo",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+                "width": 4000,
+                "height": 6000
+              },
+              "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+              "width": 4000,
+              "height": 6000,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "name_tournament",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "idea",
+              "type": "Text"
+            }
+          ],
+          [
+            "team_name",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "sitting",
+              "type": "Text"
+            }
+          ],
+          [
+            "team_logo",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                "width": 3456,
+                "height": 4320
+              },
+              "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+              "width": 3456,
+              "height": 4320,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "team_name_2",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "magnet",
+              "type": "Text"
+            }
+          ],
+          [
+            "team_logo_2",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+                "width": 5616,
+                "height": 3744
+              },
+              "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+              "width": 5616,
+              "height": 3744,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "is_past",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": false
+            }
+          ],
+          [
+            "score",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "available",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

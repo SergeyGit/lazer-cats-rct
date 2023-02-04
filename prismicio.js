@@ -1,8 +1,8 @@
-import * as prismic from "@prismicio/client";
-import * as prismicH from "@prismicio/helpers";
-import * as prismicNext from "@prismicio/next";
+import * as prismic from '@prismicio/client';
+import * as prismicH from '@prismicio/helpers';
+import * as prismicNext from '@prismicio/next';
 
-import sm from "./sm.json";
+import sm from './sm.json';
 
 /**
  * The project's Prismic repository name.
@@ -19,15 +19,19 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
-  if (doc.type === "page") {
-    if (doc.uid === "home") {
-      return "/";
+  console.log(doc.lang);
+  if (doc.type === 'page') {
+    if (doc.uid === 'home') {
+      if (doc.lang === 'ua-ua') {
+        return '/';
+      }
+      return '/en-us';
     } else {
       return `/${doc.uid}`;
     }
   }
 
-  return "/";
+  return '/';
 };
 
 /**

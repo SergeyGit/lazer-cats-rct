@@ -1,39 +1,3 @@
-$blue: #023DFF;
-$blue-50: #E6ECFF;
-$blue-100: #CCD8FF;
-$blue-200: #B3C5FF;
-$blue-300: #678BFF;
-$blue-400: #3564FF;
-$blue-600: #0231CC;
-$blue-700: #012599;
-$blue-800: #011866;
-$blue-900: #000C33;
-
-$orange: #FF7800;
-$orange-50: #FFF2E6;
-$orange-100: #FFE4CC;
-$orange-200: #FFD7B3;
-$orange-300: #FFAE66;
-$orange-400: #FF9333;
-$orange-600: #CC6000;
-$orange-700: #994800;
-$orange-800: #663000;
-$orange-900: #331800;
-
-$green: #68E348;
-$green-50: #F0FCED;
-$green-100: #E1F9DA;
-$green-200: #C3F4B6;
-$green-300: #A4EE91;
-$green-400: #86E96D;
-$green-600: #53B63A;
-$green-700: #3F892B;
-$green-800: #2A5D1D;
-$green-900: #16300E;
-
-$base-dark: #100024;
-$primary-purple: #9A4DFF;
-
 $xs: 0;
 $sm: 576px;
 $md: 768px;
@@ -41,10 +5,11 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1500px;
 
-
-$body-color: $blue-900;
-$link-color: $blue;
 $link-decoration: none;
+$base-dark: #100024;
+$primary-purple: #9A4DFF;
+$purple-600: #4F1E95;
+$purple-400: #6124B2;
 
 $container-max-widths: (
         sm: 100%,

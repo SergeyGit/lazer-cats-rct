@@ -165,6 +165,29 @@
         "primary": {}
       }
     },
-    "SocialFooter": {}
+    "SocialFooter": {},
+    "Matches": {
+      "default": {
+        "primary": {
+          "title_second": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "is_past": {
+            "content": false
+          }
+        }
+      }
+    }
   }
 }

@@ -85,7 +85,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | ImageSlice | TextWithFeaturesSlice | TextWithImageSlice | PartnersSlice | WeAreSlice | OurTeamSlice | TournamentsSlice | SocialFooterSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | PartnersSlice | WeAreSlice | OurTeamSlice | TournamentsSlice | SocialFooterSlice | MatchesSlice;
 /**
  * Page document from Prismic
  *
@@ -344,6 +344,162 @@ type ImageSliceVariation = ImageSliceWhite | ImageSliceLightSlate;
  *
  */
 export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
+ * Primary content in Matches → Primary
+ *
+ */
+interface MatchesSliceDefaultPrimary {
+    /**
+     * Title field in *Matches → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: matches.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Title second field in *Matches → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: matches.primary.title_second
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title_second: prismicT.RichTextField;
+    /**
+     * Background field in *Matches → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.primary.background
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background: prismicT.ImageField<never>;
+}
+/**
+ * Item in Matches → Items
+ *
+ */
+export interface MatchesSliceDefaultItem {
+    /**
+     * Date field in *Matches → Items*
+     *
+     * - **Field Type**: Timestamp
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
+     *
+     */
+    date: prismicT.TimestampField;
+    /**
+     * Tournamet logo field in *Matches → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].tournamet_logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    tournamet_logo: prismicT.ImageField<never>;
+    /**
+     * name tournament field in *Matches → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].name_tournament
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name_tournament: prismicT.KeyTextField;
+    /**
+     * Team name field in *Matches → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].team_name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    team_name: prismicT.KeyTextField;
+    /**
+     * Team logo field in *Matches → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].team_logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    team_logo: prismicT.ImageField<never>;
+    /**
+     * Team name 2 field in *Matches → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].team_name_2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    team_name_2: prismicT.KeyTextField;
+    /**
+     * Team logo 2 field in *Matches → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].team_logo_2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    team_logo_2: prismicT.ImageField<never>;
+    /**
+     * is Past field in *Matches → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: matches.items[].is_past
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    is_past: prismicT.BooleanField;
+    /**
+     * score field in *Matches → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.items[].score
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    score: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Matches Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Matches`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MatchesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<MatchesSliceDefaultPrimary>, Simplify<MatchesSliceDefaultItem>>;
+/**
+ * Slice variation for *Matches*
+ *
+ */
+type MatchesSliceVariation = MatchesSliceDefault;
+/**
+ * Matches Shared Slice
+ *
+ * - **API ID**: `matches`
+ * - **Description**: `Matches`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MatchesSlice = prismicT.SharedSlice<"matches", MatchesSliceVariation>;
 /**
  * Primary content in OurTeam → Primary
  *
@@ -814,6 +970,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialFooterSliceDefaultPrimary, SocialFooterSliceDefault, SocialFooterSliceVariation, SocialFooterSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, TournamentsSliceDefaultPrimary, TournamentsSliceDefault, TournamentsSliceVariation, TournamentsSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialFooterSliceDefaultPrimary, SocialFooterSliceDefault, SocialFooterSliceVariation, SocialFooterSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, TournamentsSliceDefaultPrimary, TournamentsSliceDefault, TournamentsSliceVariation, TournamentsSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

@@ -1,0 +1,114 @@
+{
+  "id": "matches",
+  "type": "SharedSlice",
+  "name": "Matches",
+  "description": "Matches",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Matches",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "title_second": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title second",
+            "placeholder": "A nice description of your feature",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "background": {
+          "type": "Image",
+          "config": {
+            "label": "Background",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "date": {
+          "type": "Timestamp",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "tournamet_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Tournamet logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name_tournament": {
+          "type": "Text",
+          "config": {
+            "label": "name tournament",
+            "placeholder": ""
+          }
+        },
+        "team_name": {
+          "type": "Text",
+          "config": {
+            "label": "Team name",
+            "placeholder": ""
+          }
+        },
+        "team_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Team logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "team_name_2": {
+          "type": "Text",
+          "config": {
+            "label": "Team name 2",
+            "placeholder": ""
+          }
+        },
+        "team_logo_2": {
+          "type": "Image",
+          "config": {
+            "label": "Team logo 2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "is_past": {
+          "type": "Boolean",
+          "config": {
+            "label": "is Past",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "score": {
+          "type": "Text",
+          "config": {
+            "label": "score",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

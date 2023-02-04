@@ -1,0 +1,83 @@
+@import "../variables";
+.section {
+  position: relative;
+  color: white;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $primary-purple;
+  @media (min-width: $lg) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+.caption {
+
+}
+
+.slideButton {
+  border: 1px solid #FFFFFF;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  background: url(../../assets/images/icons/arrows/arrow-left.svg) no-repeat center;
+
+  &:nth-child(2) {
+    transform: rotate(180deg);
+  }
+}
+
+.matches {
+  margin-top: 40px;
+  @media (min-width: $lg) {
+    margin-top: 50px;
+  }
+}
+
+
+.matchesLineHead {
+  background-color: $purple-400;
+  padding: 8px;
+}
+
+.matchesLineHeadPoint {
+  width: 100%;
+  &:first-child {
+    text-align: right;
+  }
+}
+.matchesLineHeadPoint {
+  width: 100%;
+  &:first-child {
+    text-align: right;
+  }
+}
+
+.matchesImg {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  @media (min-width: $md) {
+    width: 100%;
+    min-width: 1100px;
+    right: auto;
+    img {
+      height: auto !important;
+    }
+  }
+}

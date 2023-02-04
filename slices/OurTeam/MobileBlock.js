@@ -22,7 +22,7 @@ const MobileBlock = ({ slice }) => {
   return (
     <div>
       <div className={cn('keen-slider')} ref={sliderRef}>
-        {slice?.items?.map(({ nick, name, position, link, image, image_hover }) => (
+        {slice?.items?.map(({ nick, name, position, link, image }) => (
           <div className="keen-slider__slide" key={nick}>
             {/*<PrismicLink field={link}>*/}
             <div className="d-flex align-items-center flex-column">

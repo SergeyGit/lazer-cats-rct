@@ -29,15 +29,6 @@
             "hero": {
               "type": "SharedSlice"
             },
-            "image": {
-              "type": "SharedSlice"
-            },
-            "text_with_features": {
-              "type": "SharedSlice"
-            },
-            "text_with_image": {
-              "type": "SharedSlice"
-            },
             "partners": {
               "type": "SharedSlice"
             },
@@ -51,6 +42,9 @@
               "type": "SharedSlice"
             },
             "social_footer": {
+              "type": "SharedSlice"
+            },
+            "matches": {
               "type": "SharedSlice"
             }
           }

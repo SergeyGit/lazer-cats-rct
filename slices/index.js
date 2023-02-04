@@ -2,6 +2,7 @@
 
 import Hero from './Hero';
 import Image from './Image';
+import Matches from './Matches';
 import OurTeam from './OurTeam';
 import Partners from './Partners';
 import SocialFooter from './SocialFooter';
@@ -13,6 +14,7 @@ import WeAre from './WeAre';
 export {
 	Hero,
 	Image,
+	Matches,
 	OurTeam,
 	Partners,
 	SocialFooter,
@@ -25,6 +27,7 @@ export {
 export const components = {
 	hero: Hero,
 	image: Image,
+	matches: Matches,
 	our_team: OurTeam,
 	partners: Partners,
 	social_footer: SocialFooter,
