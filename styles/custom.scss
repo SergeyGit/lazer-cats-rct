@@ -87,9 +87,117 @@ p {
   }
 }
 
+.link {
+  position: relative;
+  padding-bottom: 2px;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 16px;
+    right: 0;
+    width: 16px;
+    background: $primary-purple;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -2px;
+    left: 8px;
+    right: 16px;
+    background: $primary-purple;
+  }
+  a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 48px;
+    display: block;
+    width: 145px;
+    text-align: center;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 16px;
+      background: $primary-purple;
+      z-index: -1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: -4px;
+      width: 22px;
+      z-index: -1;
+      border-top: 20px solid $primary-purple;
+      border-left: 0 solid;
+      border-right: 16px solid transparent;
+      height: 0;
+    }
+  }
+  &.dark {
+    &:before, &:after {
+      background-color: $base-dark;
+    }
+    a {
+      &:before, {
+        background-color: $base-dark;
+      }
+      &:after {
+        border-top-color: $base-dark;
+      }
+    }
+  }
+  &:hover {
+    &:before, &:after {
+      background:  #EDB524;
+    }
+    a {
+      color: $base-dark;
+      &:before {
+        background: #EDB524;
+      }
+      &:after {
+        border-top-color: #EDB524;
+      }
+    }
+  }
+  &:active {
+    &:before, &:after {
+      background:  $gold-300;
+    }
+    a {
+      color: $base-dark;
+      &:before {
+        background: $gold-300;
+      }
+      &:after {
+        border-top-color: $gold-300;
+      }
+    }
+  }
+}
+
 .container {
   z-index: 1;
   position: relative;
+}
+
+.image-content {
+  text-align: center;
+  img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
 
 .fz-160{
@@ -104,9 +212,15 @@ p {
     font-size: 64px;
   }
 }
+
 .fz-24 {
   font-size: 24px;
 }
+
+.f-w-b {
+  font-weight: bold;
+}
+
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin: 0;
 }

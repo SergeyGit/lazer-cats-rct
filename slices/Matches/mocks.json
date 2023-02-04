@@ -26,7 +26,6 @@
         ]
       },
       "background": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
@@ -44,7 +43,34 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
+      },
+      "link_upcoming": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      "link_past": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "text_link_upcoming": {
+        "__TYPE__": "FieldContent",
+        "value": "divide",
+        "type": "Text"
+      },
+      "text_link_past": {
+        "__TYPE__": "FieldContent",
+        "value": "factory",
+        "type": "Text"
       }
     },
     "items": [
@@ -159,13 +185,6 @@
               "alt": null,
               "__TYPE__": "ImageContent",
               "thumbnails": {}
-            }
-          ],
-          [
-            "is_past",
-            {
-              "__TYPE__": "BooleanContent",
-              "value": false
             }
           ],
           [

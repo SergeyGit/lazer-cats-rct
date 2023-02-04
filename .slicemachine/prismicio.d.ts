@@ -379,6 +379,46 @@ interface MatchesSliceDefaultPrimary {
      *
      */
     background: prismicT.ImageField<never>;
+    /**
+     * link upcoming field in *Matches → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.primary.link_upcoming
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link_upcoming: prismicT.LinkField;
+    /**
+     * link past field in *Matches → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.primary.link_past
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link_past: prismicT.LinkField;
+    /**
+     * text link_upcoming field in *Matches → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.primary.text_link_upcoming
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text_link_upcoming: prismicT.KeyTextField;
+    /**
+     * text link_past field in *Matches → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: matches.primary.text_link_past
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text_link_past: prismicT.KeyTextField;
 }
 /**
  * Item in Matches → Items
@@ -455,17 +495,6 @@ export interface MatchesSliceDefaultItem {
      *
      */
     team_logo_2: prismicT.ImageField<never>;
-    /**
-     * is Past field in *Matches → Items*
-     *
-     * - **Field Type**: Boolean
-     * - **Placeholder**: *None*
-     * - **Default Value**: false
-     * - **API ID Path**: matches.items[].is_past
-     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
-     *
-     */
-    is_past: prismicT.BooleanField;
     /**
      * score field in *Matches → Items*
      *

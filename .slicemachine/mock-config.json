@@ -182,11 +182,7 @@
             }
           }
         },
-        "items": {
-          "is_past": {
-            "content": false
-          }
-        }
+        "items": {}
       }
     }
   }

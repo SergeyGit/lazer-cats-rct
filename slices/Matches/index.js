@@ -1,4 +1,4 @@
-import { PrismicRichText } from '@prismicio/react';
+import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import style from '../../styles/modules/matches.module.scss';
 import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
@@ -12,9 +12,6 @@ import moment from 'moment';
  */
 const Matches = ({ slice }) => {
   const now = moment().utc();
-  console.log(
-    moment('2023-03-02T13:36:00+0000', 'YYYY-MM-DDhh:mm:ssZ, hh:mm').format('DD MMMM YYYY, hh:mm')
-  );
 
   const specialData = slice?.items?.reduce(
     (prev, current) => {
@@ -64,16 +61,83 @@ const Matches = ({ slice }) => {
       <Container>
         {specialData?.upcoming && (
           <>
-            <div className="d-flex align-items-end flex-column flex-lg-row justify-content-between">
+            <div className="d-flex align-items-start align-items-lg-end flex-column flex-lg-row justify-content-between">
               <div className={cn(style.caption, 'multicolor-title h1 dark')}>
                 <PrismicRichText field={slice.primary.title} />
               </div>
-              <div>link</div>
+              <div className={cn(style.seeAll, 'link dark')}>
+                <PrismicLink field={slice.primary.link_upcoming}>
+                  {slice.primary.text_link_upcoming}
+                </PrismicLink>
+              </div>
+            </div>
+            <div className={cn(style.matches, style.first)}>
+              <div className="d-flex align-items-center justify-content-center" />
+              {specialData.upcoming
+                .sort(compareDate)
+                .map(
+                  ({
+                    date,
+                    tournamet_logo,
+                    name_tournament,
+                    team_name,
+                    team_logo,
+                    team_name_2,
+                    team_logo_2,
+                  }) => (
+                    <div key={date}>
+                      <div
+                        className={cn(
+                          style.matchesLineHead,
+                          'd-flex align-items-center justify-content-center'
+                        )}
+                      >
+                        <div className={style.matchesLineHeadPoint}>{date}</div>
+                        <div className={cn(style.matchesImg, 'image-content flex-shrink-0')}>
+                          <PrismicNextImage field={tournamet_logo} loading="lazy" alt="tournamet" />
+                        </div>
+                        <div className={style.matchesLineHeadPoint}>{name_tournament}</div>
+                      </div>
+                      <div className={cn(style.matchesLineBody, 'd-flex align-items-center')}>
+                        <div className={style.matchesLineHeadPoint}>
+                          <div className="d-inline-flex align-items-center">
+                            <div className={cn(style.teamName, ' f-w-b')}>{team_name}</div>
+                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                              <PrismicNextImage field={team_logo} loading="lazy" alt="team" />
+                            </div>
+                          </div>
+                        </div>
+                        <div className={cn(style.score, 'f-w-b flex-shrink-0 text-center')}>VS</div>
+                        <div className={style.matchesLineHeadPoint}>
+                          <div className="d-inline-flex align-items-center">
+                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                              <PrismicNextImage field={team_logo_2} loading="lazy" alt="team 2" />
+                            </div>
+                            <div className={cn(style.teamName, ' f-w-b')}>{team_name_2}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                )}
+            </div>
+          </>
+        )}
+        {specialData?.past && (
+          <>
+            <div className="d-flex align-items-start align-items-lg-end flex-column flex-lg-row justify-content-between">
+              <div className={cn(style.caption, 'multicolor-title h1 dark')}>
+                <PrismicRichText field={slice.primary.title_second} />
+              </div>
+              <div className={cn(style.seeAll, 'link dark')}>
+                <PrismicLink field={slice.primary.link_past}>
+                  {slice.primary.text_link_past}
+                </PrismicLink>
+              </div>
             </div>
             <div className={style.matches}>
               <div className="d-flex align-items-center justify-content-center" />
-              {console.log(specialData?.upcoming)}
-              {specialData?.upcoming
+              {specialData.past
                 .sort(compareDate)
                 .map(
                   ({
@@ -86,7 +150,7 @@ const Matches = ({ slice }) => {
                     team_logo_2,
                     score,
                   }) => (
-                    <>
+                    <div key={date}>
                       <div
                         className={cn(
                           style.matchesLineHead,
@@ -94,27 +158,38 @@ const Matches = ({ slice }) => {
                         )}
                       >
                         <div className={style.matchesLineHeadPoint}>{date}</div>
-                        <div className={cn(style.matchesImg, 'flex-shrink-0')}>
+                        <div className={cn(style.matchesImg, 'image-content flex-shrink-0')}>
                           <PrismicNextImage field={tournamet_logo} loading="lazy" alt="tournamet" />
                         </div>
                         <div className={style.matchesLineHeadPoint}>{name_tournament}</div>
                       </div>
-                      <div>
-
+                      <div className={cn(style.matchesLineBody, 'd-flex align-items-center')}>
+                        <div className={style.matchesLineHeadPoint}>
+                          <div className="d-inline-flex align-items-center">
+                            <div className={cn(style.teamName, ' f-w-b')}>{team_name}</div>
+                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                              <PrismicNextImage field={team_logo} loading="lazy" alt="team" />
+                            </div>
+                          </div>
+                        </div>
+                        <div className={cn(style.score, 'f-w-b flex-shrink-0 text-center')}>
+                          {score?.length ? score : 'VS'}
+                        </div>
+                        <div className={style.matchesLineHeadPoint}>
+                          <div className="d-inline-flex align-items-center">
+                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                              <PrismicNextImage field={team_logo_2} loading="lazy" alt="team 2" />
+                            </div>
+                            <div className={cn(style.teamName, ' f-w-b')}>{team_name_2}</div>
+                          </div>
+                        </div>
                       </div>
-                    </>
+                    </div>
                   )
                 )}
             </div>
           </>
         )}
-
-        <div className="d-flex align-items-end flex-column flex-lg-row justify-content-between">
-          <div className={cn(style.caption, 'multicolor-title h1 dark')}>
-            <PrismicRichText field={slice.primary.title_second} />
-          </div>
-          <div>link</div>
-        </div>
       </Container>
       <div className={style.bg}>
         <PrismicNextImage field={slice.primary.background} fill loading="lazy" alt="bg matches" />

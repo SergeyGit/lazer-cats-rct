@@ -36,6 +36,36 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "link_upcoming": {
+          "type": "Link",
+          "config": {
+            "label": "link upcoming",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link_past": {
+          "type": "Link",
+          "config": {
+            "label": "link past",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "text_link_upcoming": {
+          "type": "Text",
+          "config": {
+            "label": "text link_upcoming",
+            "placeholder": ""
+          }
+        },
+        "text_link_past": {
+          "type": "Text",
+          "config": {
+            "label": "text link_past",
+            "placeholder": ""
+          }
         }
       },
       "items": {
@@ -89,15 +119,6 @@
             "label": "Team logo 2",
             "constraint": {},
             "thumbnails": []
-          }
-        },
-        "is_past": {
-          "type": "Boolean",
-          "config": {
-            "label": "is Past",
-            "placeholder_false": "false",
-            "placeholder_true": "true",
-            "default_value": false
           }
         },
         "score": {
