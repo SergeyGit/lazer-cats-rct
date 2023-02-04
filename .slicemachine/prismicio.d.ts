@@ -85,7 +85,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | PartnersSlice | WeAreSlice | OurTeamSlice | TournamentsSlice | SocialFooterSlice | MatchesSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | PartnersSlice | WeAreSlice | OurTeamSlice | TournamentsSlice | SocialFooterSlice | MatchesSlice | OngoingTournamentsSlice;
 /**
  * Page document from Prismic
  *
@@ -529,6 +529,141 @@ type MatchesSliceVariation = MatchesSliceDefault;
  *
  */
 export type MatchesSlice = prismicT.SharedSlice<"matches", MatchesSliceVariation>;
+/**
+ * Primary content in OngoingTournaments → Primary
+ *
+ */
+interface OngoingTournamentsSliceDefaultPrimary {
+    /**
+     * Title field in *OngoingTournaments → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: ongoing_tournaments.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * link field in *OngoingTournaments → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.primary.link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * text link field in *OngoingTournaments → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.primary.text_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text_link: prismicT.KeyTextField;
+    /**
+     * Background image field in *OngoingTournaments → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.primary.background_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background_image: prismicT.ImageField<never>;
+}
+/**
+ * Item in OngoingTournaments → Items
+ *
+ */
+export interface OngoingTournamentsSliceDefaultItem {
+    /**
+     * bage field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].bage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    bage: prismicT.KeyTextField;
+    /**
+     * image field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * caption field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    caption: prismicT.KeyTextField;
+    /**
+     * from date field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].from_date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    from_date: prismicT.DateField;
+    /**
+     * to date field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].to_date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    to_date: prismicT.DateField;
+    /**
+     * prise field in *OngoingTournaments → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ongoing_tournaments.items[].prise
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    prise: prismicT.KeyTextField;
+}
+/**
+ * Default variation for OngoingTournaments Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `OngoingTournaments`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OngoingTournamentsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<OngoingTournamentsSliceDefaultPrimary>, Simplify<OngoingTournamentsSliceDefaultItem>>;
+/**
+ * Slice variation for *OngoingTournaments*
+ *
+ */
+type OngoingTournamentsSliceVariation = OngoingTournamentsSliceDefault;
+/**
+ * OngoingTournaments Shared Slice
+ *
+ * - **API ID**: `ongoing_tournaments`
+ * - **Description**: `OngoingTournaments`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OngoingTournamentsSlice = prismicT.SharedSlice<"ongoing_tournaments", OngoingTournamentsSliceVariation>;
 /**
  * Primary content in OurTeam → Primary
  *
@@ -999,6 +1134,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialFooterSliceDefaultPrimary, SocialFooterSliceDefault, SocialFooterSliceVariation, SocialFooterSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, TournamentsSliceDefaultPrimary, TournamentsSliceDefault, TournamentsSliceVariation, TournamentsSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialFooterSliceDefaultPrimary, SocialFooterSliceDefault, SocialFooterSliceVariation, SocialFooterSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, TournamentsSliceDefaultPrimary, TournamentsSliceDefault, TournamentsSliceVariation, TournamentsSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

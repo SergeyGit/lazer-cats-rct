@@ -1,0 +1,125 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Lorem laboris pariatur exercitation quis minim et adipisicing est magna. Officia cillum do sit velit est incididunt officia do reprehenderit."
+            }
+          }
+        ]
+      },
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "text_link": {
+        "__TYPE__": "FieldContent",
+        "value": "operation",
+        "type": "Text"
+      },
+      "background_image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+          "width": 4480,
+          "height": 4480
+        },
+        "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+        "width": 4480,
+        "height": 4480,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "bage",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "dollar",
+              "type": "Text"
+            }
+          ],
+          [
+            "image",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+                "width": 6000,
+                "height": 4000
+              },
+              "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+              "width": 6000,
+              "height": 4000,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "caption",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "chance",
+              "type": "Text"
+            }
+          ],
+          [
+            "from_date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2020-04-22"
+            }
+          ],
+          [
+            "to_date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2022-06-22"
+            }
+          ],
+          [
+            "prise",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "pie",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

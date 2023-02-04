@@ -1,0 +1,95 @@
+{
+  "id": "ongoing_tournaments",
+  "type": "SharedSlice",
+  "name": "OngoingTournaments",
+  "description": "OngoingTournaments",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "OngoingTournaments",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "text_link": {
+          "type": "Text",
+          "config": {
+            "label": "text link",
+            "placeholder": ""
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "bage": {
+          "type": "Text",
+          "config": {
+            "label": "bage",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "caption": {
+          "type": "Text",
+          "config": {
+            "label": "caption",
+            "placeholder": ""
+          }
+        },
+        "from_date": {
+          "type": "Date",
+          "config": {
+            "label": "from date",
+            "placeholder": ""
+          }
+        },
+        "to_date": {
+          "type": "Date",
+          "config": {
+            "label": "to date",
+            "placeholder": ""
+          }
+        },
+        "prise": {
+          "type": "Text",
+          "config": {
+            "label": "prise",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -38,8 +38,8 @@ const MobileBlock = ({ slice }) => {
         ))}
       </div>
       <div className="d-flex justify-content-center">
-        <button className={style.slideButton} onClick={handleButtonClick} data-value="decrement" />
-        <button className={style.slideButton} onClick={handleButtonClick} data-value="increment" />
+        <button className="slideButton" onClick={handleButtonClick} data-value="decrement" />
+        <button className="slideButton" onClick={handleButtonClick} data-value="increment" />
       </div>
     </div>
   );

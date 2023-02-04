@@ -37,19 +37,6 @@
   margin-bottom: 36px;
 }
 
-.slideButton {
-  border: 1px solid #FFFFFF;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 64px;
-  height: 64px;
-  background: url(../../assets/images/icons/arrows/arrow-left.svg) no-repeat center;
-
-  &:nth-child(2) {
-    transform: rotate(180deg);
-  }
-}
-
 .bg {
   position: absolute;
   left: 0;

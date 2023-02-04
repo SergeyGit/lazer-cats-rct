@@ -46,6 +46,9 @@
             },
             "matches": {
               "type": "SharedSlice"
+            },
+            "ongoing_tournaments": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -3,6 +3,7 @@
 import Hero from './Hero';
 import Image from './Image';
 import Matches from './Matches';
+import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
 import Partners from './Partners';
 import SocialFooter from './SocialFooter';
@@ -15,6 +16,7 @@ export {
 	Hero,
 	Image,
 	Matches,
+	OngoingTournaments,
 	OurTeam,
 	Partners,
 	SocialFooter,
@@ -28,6 +30,7 @@ export const components = {
 	hero: Hero,
 	image: Image,
 	matches: Matches,
+	ongoing_tournaments: OngoingTournaments,
 	our_team: OurTeam,
 	partners: Partners,
 	social_footer: SocialFooter,

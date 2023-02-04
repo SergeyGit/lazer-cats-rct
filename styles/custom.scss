@@ -185,6 +185,29 @@ p {
   }
 }
 
+.slideButton {
+  border: 1px solid #FFFFFF;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  background: url(../assets/images/icons/arrows/arrow-left.svg) no-repeat center;
+
+  &:nth-child(2) {
+    transform: rotate(180deg);
+  }
+}
+
+.badge {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: $secondary-pink;
+  color: white;
+}
+
 .container {
   z-index: 1;
   position: relative;

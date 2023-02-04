@@ -62,7 +62,7 @@ const Matches = ({ slice }) => {
         {specialData?.upcoming && (
           <>
             <div className="d-flex align-items-start align-items-lg-end flex-column flex-lg-row justify-content-between">
-              <div className={cn(style.caption, 'multicolor-title h1 dark')}>
+              <div className={'multicolor-title h1 dark'}>
                 <PrismicRichText field={slice.primary.title} />
               </div>
               <div className={cn(style.seeAll, 'link dark')}>
@@ -126,7 +126,7 @@ const Matches = ({ slice }) => {
         {specialData?.past && (
           <>
             <div className="d-flex align-items-start align-items-lg-end flex-column flex-lg-row justify-content-between">
-              <div className={cn(style.caption, 'multicolor-title h1 dark')}>
+              <div className={'multicolor-title h1 dark'}>
                 <PrismicRichText field={slice.primary.title_second} />
               </div>
               <div className={cn(style.seeAll, 'link dark')}>

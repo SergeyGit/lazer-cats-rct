@@ -1,14 +1,70 @@
 @import "../variables";
 .section {
   position: relative;
-  color: white;
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: $primary-purple;
   @media (min-width: $lg) {
     padding-top: 140px;
     padding-bottom: 140px;
   }
+}
+
+.image {
+  height: 350px;
+  position: relative;
+  img {
+    object-fit: cover;
+  }
+  @media (min-width: $xxl) {
+    height: 420px;
+  }
+}
+
+.slider {
+  margin-bottom: 50px;
+}
+
+.item {
+  @media (max-width: $lg) {
+    margin-bottom: 24px;
+  }
+}
+
+.itemMob {
+  min-width: 315px;
+}
+
+.list {
+  margin-top: 50px;
+}
+
+.badge {
+  position: absolute;
+  bottom: -14px;
+  left: 16px;
+  z-index: 1;
+}
+
+.caption {
+  color: $primary-purple;
+  margin-top: 24px;
+  line-height: 1;
+  height: 64px;
+  overflow: hidden;
+  @media (min-width: $xxl) {
+    height: 80px;
+  }
+}
+
+.info {
+  margin-top: 16px;
+  color: white;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
 }
 
 .matches {
