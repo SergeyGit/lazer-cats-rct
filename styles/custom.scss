@@ -208,6 +208,22 @@ p {
   color: white;
 }
 
+.langs {
+  display: flex;
+  align-items: center;
+  a {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+  }
+  img {
+    height: 16px;
+    width: auto;
+    margin-left: 8px;
+  }
+}
+
 .container {
   z-index: 1;
   position: relative;

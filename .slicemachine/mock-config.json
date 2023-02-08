@@ -45,7 +45,8 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "footer": {}
   },
   "slices": {
     "Text": {
@@ -160,12 +161,6 @@
         }
       }
     },
-    "Tournaments": {
-      "default": {
-        "primary": {}
-      }
-    },
-    "SocialFooter": {},
     "Matches": {
       "default": {
         "primary": {

@@ -1,0 +1,118 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "tag": {
+        "type": "Text",
+        "config": {
+          "label": "TAG",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "background_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "social links",
+          "fields": {
+            "main": {
+              "type": "Image",
+              "config": {
+                "label": "main",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "hover": {
+              "type": "Image",
+              "config": {
+                "label": "hover",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "terms_text": {
+        "type": "Text",
+        "config": {
+          "label": "Terms text",
+          "placeholder": ""
+        }
+      },
+      "terms_links": {
+        "type": "Group",
+        "config": {
+          "label": "terms links",
+          "fields": {
+            "title_link": {
+              "type": "Text",
+              "config": {
+                "label": "title link",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "pages": {
+        "type": "Group",
+        "config": {
+          "label": "pages",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "title_link": {
+              "type": "Text",
+              "config": {
+                "label": "title link",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

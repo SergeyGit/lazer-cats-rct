@@ -19,7 +19,9 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
-  console.log(doc.lang);
+  // console.log(doc.lang);
+  // console.log(doc);
+  // console.log(doc.lang === 'ua-ua');
   if (doc.type === 'page') {
     if (doc.uid === 'home') {
       if (doc.lang === 'ua-ua') {
@@ -41,6 +43,7 @@ export const linkResolver = (doc) => {
  * @param config {prismicNext.CreateClientConfig} - A configuration object to
  */
 export const createClient = ({ previewData, req, ...config } = {}) => {
+  console.log(config);
   const client = prismic.createClient(sm.apiEndpoint, config);
 
   prismicNext.enableAutoPreviews({ client, previewData, req });

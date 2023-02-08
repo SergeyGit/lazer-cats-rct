@@ -6,36 +6,30 @@ import Matches from './Matches';
 import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
 import Partners from './Partners';
-import SocialFooter from './SocialFooter';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
-import Tournaments from './Tournaments';
 import WeAre from './WeAre';
 
 export {
-	Hero,
-	Image,
-	Matches,
-	OngoingTournaments,
-	OurTeam,
-	Partners,
-	SocialFooter,
-	TextWithFeatures,
-	TextWithImage,
-	Tournaments,
-	WeAre,
+  Hero,
+  Image,
+  Matches,
+  OngoingTournaments,
+  OurTeam,
+  Partners,
+  TextWithFeatures,
+  TextWithImage,
+  WeAre,
 };
 
 export const components = {
-	hero: Hero,
-	image: Image,
-	matches: Matches,
-	ongoing_tournaments: OngoingTournaments,
-	our_team: OurTeam,
-	partners: Partners,
-	social_footer: SocialFooter,
-	text_with_features: TextWithFeatures,
-	text_with_image: TextWithImage,
-	tournaments: Tournaments,
-	we_are: WeAre,
+  hero: Hero,
+  image: Image,
+  matches: Matches,
+  ongoing_tournaments: OngoingTournaments,
+  our_team: OurTeam,
+  partners: Partners,
+  text_with_features: TextWithFeatures,
+  text_with_image: TextWithImage,
+  we_are: WeAre,
 };

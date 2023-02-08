@@ -5,7 +5,8 @@ const nextConfig = async () => {
     i18n: {
       // These are all the locales you want to support in
       // your application
-      locales: ['ua-ua', 'en-us'],
+      locales: ['en-us', 'ua-ua'],
+
       // This is the default locale you want to be used when visiting
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: 'ua-ua',

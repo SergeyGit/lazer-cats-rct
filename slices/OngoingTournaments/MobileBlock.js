@@ -5,9 +5,9 @@ import style from '@/styles/modules/oTournaments.module.scss';
 import 'keen-slider/keen-slider.min.css';
 import { BADGES_COLORS } from '../../constants/constant';
 import Image from 'next/image';
-import Calendar from '../../assets/images/icons/utilities/Calendar.svg';
 import { getDate } from './index';
 import Star from '../../assets/images/icons/utilities/Star.svg';
+import Calendar from '../../assets/images/icons/utilities/Calendar.svg';
 
 const MobileBlock = ({ slice }) => {
   const [sliderRef, instanceRef] = useKeenSlider({

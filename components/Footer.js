@@ -1,81 +1,77 @@
-import { PrismicLink, PrismicRichText, PrismicText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicLink } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
+import { Container } from 'react-bootstrap';
+import { useMediaListener } from '@/hooks/MediaListener';
+import { linkResolver } from '../prismicio';
+import Image from 'next/image';
+import { LANGS } from '../constants/constant';
 
-import { Bounded } from "./Bounded";
-import { Heading } from "./Heading";
+const Footer = ({ footer: { data }, alternateLanguages }) => {
+  const isDesctop = useMediaListener('(min-width: 991px)');
 
-const SignUpForm = ({ settings }) => {
   return (
-    <div className="px-4">
-      <form
-        action="/api/sign-up"
-        method="post"
-        className="grid w-full max-w-xl grid-cols-1 gap-6"
-      >
-        {prismicH.isFilled.richText(settings.data.newsletterDisclaimer) && (
-          <div className="text-center tracking-tight text-slate-300">
-            <PrismicRichText
-              field={settings.data.newsletterDescription}
-              components={{
-                heading1: ({ children }) => (
-                  <Heading
-                    as="h2"
-                    size="6xl"
-                    className="mb-4 text-white last:mb-0"
-                  >
-                    {children}
-                  </Heading>
-                ),
-                paragraph: ({ children }) => (
-                  <p className="mb-4 last:mb-0">{children}</p>
-                ),
-              }}
-            />
-          </div>
-        )}
-        <div className="grid grid-cols-1 gap-2">
-          <div className="relative">
-            <label>
-              <span className="sr-only">Email address</span>
-              <input
-                name="email"
-                type="email"
-                placeholder="jane.doe@example.com"
-                required={true}
-                className="w-full rounded border border-slate-500 bg-slate-600 py-3 pl-3 pr-10 text-white placeholder-slate-400"
-              />
-            </label>
-            <button
-              type="submit"
-              className="absolute top-0 right-0 bottom-0 flex items-center justify-center px-3 text-2xl text-slate-400"
-            >
-              <span className="sr-only">Submit</span>
-              <span aria-hidden={true}>&rarr;</span>
-            </button>
-          </div>
-          {prismicH.isFilled.richText(settings.data.newsletterDisclaimer) && (
-            <p className="text-center text-xs text-slate-400">
-              <PrismicText field={settings.data.newsletterDisclaimer} />
-            </p>
-          )}
+    <footer className="footer">
+      <div className="footer_social">
+        <div className="image-content footer_logo">
+          <PrismicNextImage field={data.logo} fill loading="lazy" alt="logo" />
         </div>
-      </form>
-    </div>
-  );
-};
-
-export const Footer = ({ settings }) => {
-  return (
-    <Bounded as="footer" className="bg-gray-800 pb-12 text-slate-300 md:pb-12">
-      <div className="grid grid-cols-1 justify-items-center gap-20 md:gap-24">
-        <SignUpForm settings={settings} />
-        <div className="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight">
-          Proudly published using{" "}
-          <PrismicLink href="https://prismic.io" className="text-white">
-            Prismic
-          </PrismicLink>
+        <div className="footer_tag">{data.tag}</div>
+        <div className="footer_social_list d-flex justify-content-center">
+          {data.social_links.map(({ main, hover, link }) => (
+            <a
+              href={link.url}
+              className="footer_social_list_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              key={link.url}
+            >
+              <PrismicNextImage field={main} fill={false} loading="lazy" alt="social" />
+              <PrismicNextImage field={hover} fill={false} loading="lazy" alt="social" />
+            </a>
+          ))}
+        </div>
+        <div className="footer_bg">
+          <PrismicNextImage field={data.background_image} fill loading="lazy" alt="bg social" />
         </div>
       </div>
-    </Bounded>
+      <div className="footer_insta">inst photos</div>
+      {isDesctop && (
+        <Container className="footer_pages d-flex align-items-center justify-content-between">
+          <div className="image-content footer_pages_logo">
+            <PrismicLink href="/">
+              <PrismicNextImage field={data.logo} fill={false} loading="lazy" alt="logo" />
+            </PrismicLink>
+          </div>
+          <div className="footer_pages_list">
+            {data.pages.map(({ title_link, link }) => (
+              <PrismicLink href={link} key={title_link}>
+                {title_link}
+              </PrismicLink>
+            ))}
+          </div>
+        </Container>
+      )}
+      <div className="footer_terms">
+        <Container className="d-flex flex-column flex-md-row align-items-center justify-content-between">
+          <div className="footer_terms_text">{data.terms_text}</div>
+          <div className="footer_terms_list d-flex">
+            {data.terms_links.map(({ title_link, link }) => (
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {title_link}
+              </a>
+            ))}
+            {alternateLanguages.map((lang) => (
+              <div className="d-flex langs" key={lang.lang}>
+                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                  <span>{LANGS[lang.lang].text}</span>
+                  <Image src={LANGS[lang.lang].icon} alt="calendar" loading="lazy" />
+                </PrismicLink>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+    </footer>
   );
 };
+export default Footer;

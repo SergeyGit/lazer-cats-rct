@@ -6,6 +6,184 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Footer documents */
+interface FooterDocumentData {
+    /**
+     * TAG field in *Footer*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.tag
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    tag: prismicT.KeyTextField;
+    /**
+     * Logo field in *Footer*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.logo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
+    /**
+     * Background image field in *Footer*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.background_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background_image: prismicT.ImageField<never>;
+    /**
+     * social links field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.social_links[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    social_links: prismicT.GroupField<Simplify<FooterDocumentDataSocialLinksItem>>;
+    /**
+     * Terms text field in *Footer*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.terms_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    terms_text: prismicT.KeyTextField;
+    /**
+     * terms links field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.terms_links[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    terms_links: prismicT.GroupField<Simplify<FooterDocumentDataTermsLinksItem>>;
+    /**
+     * pages field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.pages[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    pages: prismicT.GroupField<Simplify<FooterDocumentDataPagesItem>>;
+}
+/**
+ * Item in Footer → social links
+ *
+ */
+export interface FooterDocumentDataSocialLinksItem {
+    /**
+     * main field in *Footer → social links*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.social_links[].main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    main: prismicT.ImageField<never>;
+    /**
+     * hover field in *Footer → social links*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.social_links[].hover
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    hover: prismicT.ImageField<never>;
+    /**
+     * link field in *Footer → social links*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.social_links[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+}
+/**
+ * Item in Footer → terms links
+ *
+ */
+export interface FooterDocumentDataTermsLinksItem {
+    /**
+     * title link field in *Footer → terms links*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.terms_links[].title_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title_link: prismicT.KeyTextField;
+    /**
+     * link field in *Footer → terms links*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.terms_links[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+}
+/**
+ * Item in Footer → pages
+ *
+ */
+export interface FooterDocumentDataPagesItem {
+    /**
+     * link field in *Footer → pages*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.pages[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * title link field in *Footer → pages*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.pages[].title_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title_link: prismicT.KeyTextField;
+}
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<FooterDocumentData>, "footer", Lang>;
 /** Content for Navigation documents */
 interface NavigationDocumentData {
     /**
@@ -153,7 +331,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = FooterDocument | NavigationDocument | PageDocument | SettingsDocument;
 /**
  * Primary content in Hero → Primary
  *
@@ -839,65 +1017,6 @@ type PartnersSliceVariation = PartnersSliceDefault;
  */
 export type PartnersSlice = prismicT.SharedSlice<"partners", PartnersSliceVariation>;
 /**
- * Primary content in SocialFooter → Primary
- *
- */
-interface SocialFooterSliceDefaultPrimary {
-    /**
-     * Title field in *SocialFooter → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: social_footer.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *SocialFooter → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: social_footer.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * image field in *SocialFooter → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: social_footer.primary.image
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
-}
-/**
- * Default variation for SocialFooter Slice
- *
- * - **API ID**: `default`
- * - **Description**: `SocialFooter`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialFooterSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SocialFooterSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *SocialFooter*
- *
- */
-type SocialFooterSliceVariation = SocialFooterSliceDefault;
-/**
- * SocialFooter Shared Slice
- *
- * - **API ID**: `social_footer`
- * - **Description**: `SocialFooter`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialFooterSlice = prismicT.SharedSlice<"social_footer", SocialFooterSliceVariation>;
-/**
  * Primary content in TextWithFeatures → Primary
  *
  */
@@ -1012,65 +1131,6 @@ type TextWithImageSliceVariation = TextWithImageSliceDefault;
  */
 export type TextWithImageSlice = prismicT.SharedSlice<"text_with_image", TextWithImageSliceVariation>;
 /**
- * Primary content in Tournaments → Primary
- *
- */
-interface TournamentsSliceDefaultPrimary {
-    /**
-     * Title field in *Tournaments → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: tournaments.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Tournaments → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: tournaments.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * image field in *Tournaments → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: tournaments.primary.image
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
-}
-/**
- * Default variation for Tournaments Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Tournaments`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TournamentsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TournamentsSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *Tournaments*
- *
- */
-type TournamentsSliceVariation = TournamentsSliceDefault;
-/**
- * Tournaments Shared Slice
- *
- * - **API ID**: `tournaments`
- * - **Description**: `Tournaments`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TournamentsSlice = prismicT.SharedSlice<"tournaments", TournamentsSliceVariation>;
-/**
  * Primary content in WeAre → Primary
  *
  */
@@ -1134,6 +1194,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialFooterSliceDefaultPrimary, SocialFooterSliceDefault, SocialFooterSliceVariation, SocialFooterSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, TournamentsSliceDefaultPrimary, TournamentsSliceDefault, TournamentsSliceVariation, TournamentsSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }
