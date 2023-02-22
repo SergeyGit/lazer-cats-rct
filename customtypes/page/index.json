@@ -26,28 +26,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero": {
-              "type": "SharedSlice"
-            },
-            "partners": {
-              "type": "SharedSlice"
-            },
-            "we_are": {
+            "head_tournaments": {
               "type": "SharedSlice"
             },
             "our_team": {
               "type": "SharedSlice"
             },
-            "tournaments": {
-              "type": "SharedSlice"
-            },
-            "social_footer": {
+            "ongoing_tournaments": {
               "type": "SharedSlice"
             },
             "matches": {
               "type": "SharedSlice"
             },
-            "ongoing_tournaments": {
+            "we_are": {
               "type": "SharedSlice"
             }
           }

@@ -39,6 +39,21 @@
           "allowTargetBlank": true,
           "multi": "paragraph,em,strong,hyperlink"
         }
+      },
+      "shop_link": {
+        "type": "Link",
+        "config": {
+          "label": "Shop link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "shop_title": {
+        "type": "Text",
+        "config": {
+          "label": "shop title",
+          "placeholder": ""
+        }
       }
     }
   }

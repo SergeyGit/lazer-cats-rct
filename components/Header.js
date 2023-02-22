@@ -1,48 +1,115 @@
-import * as prismicH from '@prismicio/helpers';
-import { PrismicLink, PrismicText } from '@prismicio/react';
+import { useEffect, useState } from 'react';
+import { PrismicLink } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
-
 import { linkResolver } from '../prismicio';
-import { Bounded } from './Bounded';
+import { Container } from 'react-bootstrap';
+import { LANGS } from '../constants/constant';
+import Image from 'next/image';
+import { useMediaListener } from '@/hooks/MediaListener';
+import cn from 'classnames';
 
-const FlagIcon = ({ lang }) => {
-  const code = lang.substring(3).toLowerCase();
+const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
+  const [scrollY, setScrollY] = useState(0);
+  const [toggle, setToggle] = useState(false);
 
-  return <span className={`fi fi-${code}`} />;
-};
+  const isDesctop = useMediaListener('(min-width: 768px)');
 
-export const Header = ({ alternateLanguages = [], navigation, settings }) => {
+  // useEffect(() => {
+  //   setScrollY(window.pageYOffset);
+  //
+  //   function logit() {
+  //     setScrollY(window.pageYOffset);
+  //   }
+  //
+  //   window.addEventListener('scroll', logit);
+  //
+  //   return () => {
+  //     window.removeEventListener('scroll', logit);
+  //   };
+  // }, []);
+
   return (
-    <Bounded as="header" yPadding="sm">
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
-        <PrismicLink href="/">
-          {prismicH.isFilled.image(settings.data.logo) && (
-            <PrismicNextImage field={settings.data.logo} />
-          )}
-        </PrismicLink>
-        <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.map((item) => (
-              <li
-                key={prismicH.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
-              >
-                <PrismicLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicLink>
-              </li>
-            ))}
-            {alternateLanguages.map((lang) => (
-              <li key={lang.lang}>
-                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                  <span className="sr-only">{lang.lang}</span>
-                  <FlagIcon lang={lang.lang} />
-                </PrismicLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    // <header className={`header ${scrollY > 80 || toggle ? 'dark' : ''}`}>
+    <header className={`header ${'dark'}`}>
+      <div className="header_top header_line d-flex">
+        <Container className="d-flex align-items-center">
+          <div>twich online</div>
+          <div className="d-flex align-items-center header_top_right">
+            <div className="header_tag f-w-b">{data.tag}</div>
+            <div className="header_social_list d-flex justify-content-center">
+              {data.social_links.map(({ main_white, hover, link }) => (
+                <a
+                  href={link.url}
+                  className="header_social_list_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={link.url}
+                >
+                  <PrismicNextImage field={main_white} fill={false} loading="lazy" alt="social" />
+                  <PrismicNextImage field={hover} fill={false} loading="lazy" alt="social" />
+                </a>
+              ))}
+            </div>
+            {isDesctop &&
+              alternateLanguages.map((lang) => (
+                <div className="d-flex langs align-items-center" key={lang.lang}>
+                  <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                    <span>{LANGS[lang.lang].text}</span>
+                    <Image src={LANGS[lang.lang].icon} alt="calendar" loading="lazy" />
+                  </PrismicLink>
+                </div>
+              ))}
+          </div>
+        </Container>
       </div>
-    </Bounded>
+      <div className="header_line d-flex">
+        <Container className="d-flex align-items-center">
+          <PrismicLink href="/">
+            <div className="header_logo">
+              <PrismicNextImage field={data.logo} loading="lazy" alt="logo" />
+            </div>
+          </PrismicLink>
+          {!isDesctop && (
+            <div
+              className={cn('header_burger', {
+                active: toggle,
+              })}
+              onClick={() => setToggle(!toggle)}
+            />
+          )}
+          {(toggle || isDesctop) && (
+            <div className="d-flex flex-column flex-md-row align-items-center header_burger_menu">
+              <div className="header_pages_list page-links">
+                {data.pages.map(({ title_link, link }) => (
+                  <PrismicLink field={link} key={title_link}>
+                    {title_link}
+                  </PrismicLink>
+                ))}
+              </div>
+              {!isDesctop &&
+                alternateLanguages.map((lang) => (
+                  <div className="d-flex langs align-items-center" key={lang.lang}>
+                    <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                      <span>{LANGS[lang.lang].text}</span>
+                      <Image src={LANGS[lang.lang].icon} alt="calendar" loading="lazy" />
+                    </PrismicLink>
+                  </div>
+                ))}
+              <div
+                className={cn('link', {
+                  dark: !isDesctop,
+                })}
+              >
+                <PrismicLink href={settings.data.shop_link.url}>
+                  {settings.data.shop_title}
+                </PrismicLink>
+              </div>
+            </div>
+          )}
+        </Container>
+      </div>
+    </header>
   );
 };
+
+export default Header;

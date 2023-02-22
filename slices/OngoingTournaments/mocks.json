@@ -27,7 +27,6 @@
         "type": "Text"
       },
       "background_image": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
@@ -45,7 +44,14 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
+      },
+      "is_vertical": {
+        "__TYPE__": "BooleanContent",
+        "value": true
       }
     },
     "items": [
@@ -115,6 +121,64 @@
             {
               "__TYPE__": "FieldContent",
               "value": "pie",
+              "type": "Text"
+            }
+          ],
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ],
+          [
+            "text_link",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "triangle",
+              "type": "Text"
+            }
+          ],
+          [
+            "country_logo",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+                "width": 4480,
+                "height": 4480
+              },
+              "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+              "width": 4480,
+              "height": 4480,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "country_name",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "cat",
+              "type": "Text"
+            }
+          ],
+          [
+            "info",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "cutting",
               "type": "Text"
             }
           ]

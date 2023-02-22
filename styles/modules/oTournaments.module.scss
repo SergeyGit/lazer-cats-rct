@@ -5,15 +5,121 @@
   padding-bottom: 70px;
   @media (min-width: $lg) {
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 110px;
+  }
+  &.vertical {
+    padding-top: 0;
+  }
+}
+
+.card {
+  position: relative;
+  padding-bottom: 16px;
+  transition: .4s;
+  color: white;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(rgba(255, 240, 164, 1) ,rgba(223, 187, 95, 1) ,rgba(237, 181, 36, 1) ,rgba(210, 158, 24, 1));
+    opacity: 0;
+    transition: .4s;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+    .image {
+      background: linear-gradient(179.91deg, #FFF0A4 0.08%, #DFBB5F 43.39%, #EDB524 71.36%, #D29E18 105.35%);
+      box-shadow: 0 0 100px rgba(255, 233, 118, 0.24);
+      img {
+        transform: scale(1.05);
+      }
+    }
+    .caption {
+      background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .link {
+      opacity: 1;
+    }
+  }
+  &.verticalCard {
+    padding-bottom: 0;
+    margin-bottom: 50px;
+    &:after {
+      left: auto;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      @media (max-width: $md) {
+        content: none;
+      }
+    }
+    &:hover {
+      @media (min-width: $md) {
+        background-color: $purple-800;
+      }
+    }
+    .image {
+      height: 324px;
+      width: 324px;
+      margin-right: 40px;
+    }
+    .badge {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .caption {
+      margin-top: 16px;
+      height: auto;
+    }
+    .info {
+      margin-right: 40px;
+    }
+    .link {
+      opacity: 1;
+    }
+    @media (max-width: $md) {
+      text-align: center;
+      .image {
+        margin-right: 0;
+        margin-bottom: 16px;
+        width: 100%;
+        height: 340px;
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+.text {
+  line-height: 1.5;
+  max-width: 600px;
+  margin-top: 16px;
+  height: 72px;
+  overflow: hidden;
+  @media (max-width: $md) {
+    height: 48px;
   }
 }
 
 .image {
   height: 350px;
   position: relative;
+  background-color: $primary-purple;
+  transition: .4s;
+  overflow: hidden;
   img {
     object-fit: cover;
+    transition: .4s;
   }
   @media (min-width: $xxl) {
     height: 420px;
@@ -40,9 +146,12 @@
 
 .badge {
   position: absolute;
-  bottom: -14px;
+  top: 336px;
   left: 16px;
   z-index: 1;
+  @media (min-width: $xxl) {
+    top: 406px;
+  }
 }
 
 .caption {
@@ -51,6 +160,7 @@
   line-height: 1;
   height: 64px;
   overflow: hidden;
+  transition: .4s;
   @media (min-width: $xxl) {
     height: 80px;
   }
@@ -65,6 +175,12 @@
   width: 24px;
   height: 24px;
   margin-right: 16px;
+  font-size: 0;
+}
+
+.country {
+  margin-left: 16px;
+  margin-right: 8px;
 }
 
 .matches {
@@ -164,6 +280,17 @@
 .seeAll {
   @media (max-width: $lg) {
     margin-top: 10px;
+  }
+}
+
+.link {
+  display: block;
+  margin-top: 16px;
+  color: $primary-purple;
+  font-weight: bold;
+  text-transform: uppercase;
+  @media (min-width: $lg) {
+    opacity: 0;
   }
 }
 

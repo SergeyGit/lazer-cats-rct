@@ -28,32 +28,37 @@ const MobileBlock = ({ slice }) => {
   return (
     <div className={style.list}>
       <div className={cn('keen-slider', style.slider)} ref={sliderRef}>
-        {slice?.items?.map(({ bage, image, caption, from_date, to_date, prise }) => (
-          <div className={cn(style.itemMob, 'keen-slider__slide')} key={caption}>
-            <div className={style.image}>
-              <PrismicNextImage field={image} fill loading="lazy" alt="caption" />
-              <div
-                className={cn(style.badge, 'badge')}
-                style={{ backgroundColor: BADGES_COLORS[bage.toLowerCase()] || '#FF007A' }}
-              >
-                {bage}
+        {slice?.items?.map(
+          ({ bage, image, caption, from_date, to_date, prise, link, text_link }) => (
+            <div className={cn(style.itemMob, 'keen-slider__slide')} key={caption}>
+              <div className={style.image}>
+                <PrismicNextImage field={image} fill loading="lazy" alt="caption" />
+                <div
+                  className={cn(style.badge, 'badge')}
+                  style={{ backgroundColor: BADGES_COLORS[bage.toLowerCase()] || '#FF007A' }}
+                >
+                  {bage}
+                </div>
               </div>
-            </div>
-            <div className={cn(style.caption, 'h4 f-w-b')}>{caption}</div>
-            <div className={cn(style.info, 'd-flex align-items-center')}>
-              <div className={cn(style.icon, 'image-content flex-shrink-0')}>
-                <Image src={Calendar} alt="calendar" loading="lazy" />
+              <div className={cn(style.caption, 'h4 f-w-b')}>{caption}</div>
+              <div className={cn(style.info, 'd-flex align-items-center')}>
+                <div className={cn(style.icon, 'image-content flex-shrink-0')}>
+                  <Image src={Calendar} alt="calendar" loading="lazy" />
+                </div>
+                <div>{getDate(from_date, to_date)}</div>
               </div>
-              <div>{getDate(from_date, to_date)}</div>
-            </div>
-            <div className={cn(style.info, 'd-flex align-items-center')}>
-              <div className={cn(style.icon, 'image-content flex-shrink-0')}>
-                <Image src={Star} alt="star" loading="lazy" />
+              <div className={cn(style.info, 'd-flex align-items-center')}>
+                <div className={cn(style.icon, 'image-content flex-shrink-0')}>
+                  <Image src={Star} alt="star" loading="lazy" />
+                </div>
+                <div>{prise}</div>
               </div>
-              <div>{prise}</div>
+              <a href={link?.url} className={style.link} target="_blank" rel="noopener noreferrer">
+                {text_link}
+              </a>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
       <div className="d-flex justify-content-center">
         <button className="slideButton" onClick={handleButtonClick} data-value="decrement" />

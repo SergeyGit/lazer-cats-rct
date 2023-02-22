@@ -42,6 +42,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "is_vertical": {
+          "type": "Boolean",
+          "config": {
+            "label": "is vertical",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {
@@ -85,6 +94,43 @@
           "type": "Text",
           "config": {
             "label": "prise",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "text_link": {
+          "type": "Text",
+          "config": {
+            "label": "text link",
+            "placeholder": ""
+          }
+        },
+        "country_logo": {
+          "type": "Image",
+          "config": {
+            "label": "country logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "country_name": {
+          "type": "Text",
+          "config": {
+            "label": "country name",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "info",
             "placeholder": ""
           }
         }

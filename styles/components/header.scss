@@ -1,430 +1,243 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  @media (min-width: $xl) {
-    top: 40px;
-  }
-
-  &_logo {
-    width: 175px;
-    margin-top: 20px;
-    @media (min-width: $lg) {
-      width: 155px;
-      margin-top: 0;
-    }
-    @media (min-width: $xl) {
-      width: 175px;
-    }
-    @media (min-width: $xxl) {
-      width: 234px;
+  color: white;
+  transition: .4s;
+  &.dark {
+    .header_line {
+      background-color: $base-dark;
     }
   }
 
-  &_wrap {
-    background-color: white;
-    border: 1px solid $blue-900;
-    box-shadow: 0 8px 0 $blue-900;
-    padding-left: 16px;
-    padding-right: 0;
-    min-height: 64px;
-    @media (min-width: $lg) {
-      padding: 15px 0 15px 5px;
-      border-width: 2px;
-    }
-    @media (min-width: $xl) {
-      padding-left: 20px;
-    }
-    @media (min-width: $xxl) {
-      padding-left: 40px;
-    }
-  }
-
-  &_back {
-    &_btn {
-      height: 64px;
-      width: 64px;
-      position: relative;
-      margin-left: -16px;
-      background: url(../../assets/images/icons/arrows/back-arrow.svg) no-repeat center, white;
-    }
-    &_title {
-      text-transform: uppercase;
-      line-height: 64px;
-      font-size: 0.875rem;
-      margin-left: auto;
-    }
-  }
-
-  &_menu {
-    width: 100%;
-    display: none;
-    background-color: #fff;
-    &.toggle {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 66px;
+  &_line {
+    position: relative;
+    height: 72px;
+    transition: .4s;
+    &:after {
+      content: '';
+      position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      overflow-y: auto;
-      border-left: 1px solid $blue-900;
-      border-right: 1px solid $blue-900;
-      padding: 0 16px 16px;
-    }
-
-    @media (min-width: $lg) {
-      display: flex;
+      height: 1px;
+      background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
     }
   }
 
-  &_nav {
-    flex-direction: column;
-
-    &_item {
-      position: relative;
-
-      &_text {
-        color: $blue-900;
-        font-size: 0.875rem;
+  &_top {
+    @media (max-width: $md) {
+      z-index: 12;
+    }
+    &_list {
+      a {
+        color: white;
+        margin-left: 40px;
+        font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 0.02em;
-        cursor: pointer;
-        font-weight: 500;
+      }
+    }
+    &_right {
+      margin-left: auto;
+    }
+    .langs {
+      margin-left: 20px;
+    }
+  }
+  &_tag {
+    text-transform: uppercase;
+    margin-right: 20px;
+    line-height: 1;
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+  &_social {
+    &_list {
+      &_link {
+        width: 20px;
+        height: 20px;
+        font-size: 0;
         position: relative;
-        padding-right: 24px;
-        &:after {
+        z-index: 2;
+        margin-left: 20px;
+        margin-right: 20px;
+        img {
+          width: 100%;
+          height: 100%;
+          transition: .3s;
+
+          &:nth-child(2) {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+        &:hover {
+          img {
+            opacity: 0;
+
+            &:nth-child(2) {
+              opacity: 1;
+            }
+          }
+        }
+        @media (max-width: $md) {
+          display: none;
+          &:last-child {
+            display: block;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &_pages {
+    &_list {
+      a {
+        margin-right: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      @media (max-width: $md) {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        a {
+          margin-right: 0;
+          display: block;
+          width: 100%;
+          line-height: 56px;
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
+          }
+        }
+      }
+    }
+  }
+  .link {
+    @media (max-width: $md) {
+      width: 100%;
+      a {
+        width: auto;
+      }
+    }
+    @media (min-width: $md) {
+      margin-left: auto;
+    }
+  }
+
+  &_logo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 11;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: $md) {
+      width: 144px;
+      height: 144px;
+      position: absolute;
+      left: 50%;
+      top: -36px;
+      transform: translateX(-50%);
+    }
+    //@media (min-width: $xl) {
+    //  width: 175px;
+    //}
+    //@media (min-width: $xxl) {
+    //  width: 234px;
+    //}
+  }
+  &_burger {
+    margin-left: auto;
+    position: relative;
+    z-index: 11;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    &:before, &:after {
+      content: '';
+      height: 2px;
+      width: 16px;
+      background-color: #fff;
+      position: absolute;
+      transition: .4s;
+    }
+    &:before {
+      top: 11px;
+      left: 4px;
+    }
+    &:after {
+      top: 19px;
+      left: 12px;
+    }
+    &.active {
+      &:before {
+        top: 18px;
+        left: 8px;
+        transform: rotate(-45deg);
+      }
+      &:after {
+        top: 18px;
+        left: 8px;
+        transform: rotate(45deg);
+      }
+    }
+    &_menu {
+      width: 100%;
+      @media (max-width: $md) {
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: $primary-purple;
+        padding: 140px 12px 12px;
+        z-index: 10;
+        &:before {
           content: '';
           position: absolute;
+          left: 0;
           right: 0;
-          top: 0;
-          width: 20px;
-          height: 20px;
-          background-image: url(../../assets/images/icons/arrows/arrow-right-b.svg);
-          background-repeat: no-repeat;
-          background-position: center;
+          top: 140px;
+          height: 1px;
+          background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
         }
       }
-    }
-
-    & > a {
-      color: $blue-900;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    &_item, & > a {
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-
-    @media (min-width: $lg) {
-      flex-direction: row;
-      margin-left: auto;
-      margin-right: auto;
-      &_item, & > a {
-        margin-right: 4px;
-        margin-left: 4px;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-      &_item_text {
-        padding-right: 0;
-        &:after {
-          content: none;
-        }
-      }
-    }
-    @media (min-width: $xl) {
-      &_item, & > a {
-        margin-right: 7px;
-        margin-left: 7px;
-      }
-    }
-    @media (min-width: $xxl) {
-      &_item, & > a {
-        margin-right: 20px;
-        margin-left: 20px;
-      }
-    }
-  }
-
-  &_merch {
-    flex-direction: column;
-
-    a {
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      font-weight: 500;
-      line-height: 62px;
-      display: block;
-    }
-
-    @media (min-width: $lg) {
-      margin-top: -15px;
-      margin-bottom: -15px;
-      flex-direction: row;
-
-      a {
-        padding-left: 6px;
-        padding-right: 6px;
-        line-height: 70px;
-      }
-    }
-    @media (min-width: $xl) {
-      a {
-        padding-left: 22px;
-        padding-right: 22px;
-      }
-    }
-    @media (min-width: $xxl) {
-      a {
-        padding-left: 32px;
-        padding-right: 32px;
-      }
-    }
-  }
-
-  &_sign-in {
-    text-align: center;
-    border: 1px solid $blue-900;
-    @media (min-width: $lg) {
-      border-top: none;
-      border-bottom: none;
-    }
-
-    a {
-      color: $blue-900;
-    }
-  }
-
-  &_sign-up {
-    background-color: $blue;
-    border: 1px solid $blue-900;
-    text-align: center;
-    margin-top: 16px;
-    @media (min-width: $lg) {
-      border: none;
-      margin-top: 0;
-    }
-
-    a {
-      color: white;
-    }
-  }
-
-  &_dropdown {
-    position: fixed;
-    z-index: 10;
-    top: 66px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    flex-direction: column;
-    border-left: 1px solid #000C33;
-    border-right: 1px solid #000C33;
-    overflow-y: auto;
-    padding-top: 24px;
-    @media (min-width: $lg) {
-      padding-top: 0;
-      position: absolute;
-      right: auto;
-      bottom: auto;
-      border: 1px solid #000C33;
-      filter: drop-shadow(8px 8px 0px #000C33);
-      transform: translateX(-18%);
-    }
-    @media (min-width: $xl) {
-      transform: translateX(-24%);
-    }
-    @media (min-width: $xxl) {
-      transform: translateX(-28%);
-    }
-
-    &_item {
-      width: 100%;
-      padding-left: 16px;
-      padding-right: 16px;
-      &.blue-section {
-        padding-left: 18px;
-        padding-right: 18px;
-        margin-top: auto;
-        border-top: 1px solid $blue-900;
-        @media (max-width: $lg) {
-          padding-top: 24px;
-        }
-
-      }
-      &_list {
-        margin-bottom: 24px;
-        @media (min-width: $lg) {
-          margin-bottom: 32px;
-        }
-      }
-      @media (min-width: $lg) {
-        width: 222px;
-        margin-right: 4px;
-        margin-left: 4px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        &:first-child {
-          margin-left: 15px;
-        }
-        &:last-child {
-          margin-right: 15px;
-        }
-        &.blue-section {
-          margin-left: 8px;
-          margin-right: 0;
-          margin-top: 0;
-          padding-left: 10px;
-          padding-right: 10px;
-          width: 244px;
-          border-top: none;
-          border-left: 1px solid $blue-900;
-        }
-      }
-      @media (min-width: $xl) {
-        width: 258px;
-        margin-right: 8px;
-        margin-left: 8px;
-        padding-top: 22px;
-        padding-bottom: 22px;
-        &:first-child {
-          margin-left: 22px;
-        }
-        &:last-child {
-          margin-right: 22px;
-        }
-        &.blue-section {
-          margin-left: 16px;
-          margin-right: 0;
-          padding-left: 18px;
-          padding-right: 18px;
-          width: 286px;
-        }
-      }
-      @media (min-width: $xxl) {
-        width: 280px;
-        margin-right: 12px;
-        margin-left: 12px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        &:first-child {
-          margin-left: 40px;
-        }
-        &:last-child {
-          margin-right: 40px;
-        }
-        &.blue-section {
-          width: 328px;
-          padding-left: 24px;
-          padding-right: 24px;
-          margin-left: 28px;
-          margin-right: 0;
-        }
-      }
-    }
-
-    &_caption {
-      color: $blue;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      font-size: 0.875rem;
-      line-height: 20px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      @media (min-width: $lg) {
-        margin-bottom: 16px;
-      }
-    }
-
-    &_link {
-      margin-bottom: 16px;
-      color: $blue-900;
-      font-size: 0.875rem;
-      font-weight: 500;
-      line-height: 20px;
-      letter-spacing: 0.02em;
-      display: block;
-      a {
-        color: $blue-900;
-        font-size: 0.875rem;
-        font-weight: 500;
-        line-height: 20px;
-        letter-spacing: 0.02em;
-      }
-
-      &:hover {
-        color: $blue-900;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      @media (min-width: $lg) {
-        margin-top: 20px;
-      }
-    }
-  }
-
-  &_toggle {
-    &_btn {
-      height: 64px;
-      width: 64px;
-      border-left: 1px solid $blue-900;
-      background: $blue;
-      margin-left: auto;
-      position: relative;
-
-      &:before, &:after {
-        content: '';
-      }
-
-      span, &:before, &:after {
-        display: block;
-        position: absolute;
-        width: 32px;
-        height: 1px;
-        background-color: #fff;
-        left: 16px;
-        transition: .3s;
-      }
-
-      &:before {
-        top: 19px;
-
-      }
-
-      &:after {
-        top: 42px;
-      }
-
-      span {
-        top: 31px;
-      }
-
-      &.toggle {
-        &:after {
-          opacity: 0;
-        }
-
-        span {
-          top: 30px;
-          transform: rotate(-45deg);
-        }
-
-        &:before {
-          top: 30px;
-          transform: rotate(45deg);
+      .langs {
+        @media (max-width: $md) {
+          width: 100%;
+          margin-left: 0;
+          margin-top: auto;
+          margin-bottom: 20px;
+          a {
+            line-height: 56px;
+            width: 100%;
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 1px;
+              background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
+            }
+          }
         }
       }
     }

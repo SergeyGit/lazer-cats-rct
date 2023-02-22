@@ -10,9 +10,7 @@
 
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
-//@import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/bootstrap-grid";
-//@import "~bootstrap/scss/containers";
 @import "animations";
 
 html, body {
@@ -185,6 +183,18 @@ p {
   }
 }
 
+.section {
+  &-head {
+    padding-top: 170px;
+    padding-bottom: 70px;
+    position: relative;
+    @media (min-width: $lg) {
+      padding-top: 260px;
+      padding-bottom: 140px;
+    }
+  }
+}
+
 .slideButton {
   border: 1px solid #FFFFFF;
   margin-left: 20px;
@@ -209,8 +219,6 @@ p {
 }
 
 .langs {
-  display: flex;
-  align-items: center;
   a {
     font-size: 14px;
     text-transform: uppercase;
@@ -221,6 +229,50 @@ p {
     height: 16px;
     width: auto;
     margin-left: 8px;
+  }
+}
+
+.page-links {
+  a {
+    color: white;
+    position: relative;
+    display: inline-block;
+    transition: .4s;
+    &:after {
+      content: '';
+      height: 1px;
+      background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+      box-shadow: 0 0 8px rgba(162, 255, 17, 0.6);
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: .3s;
+    }
+    &:hover {
+      background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+a {
+  &.prime {
+    &:hover {
+      background: linear-gradient(179.91deg, #FFF0A4 0.08%, #DFBB5F 43.39%, #EDB524 71.36%, #D29E18 105.35%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
   }
 }
 

@@ -49,6 +49,14 @@
                 "thumbnails": []
               }
             },
+            "main_white": {
+              "type": "Image",
+              "config": {
+                "label": "main white",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
             "link": {
               "type": "Link",
               "config": {

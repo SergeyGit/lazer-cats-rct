@@ -12,9 +12,11 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
   return (
     <footer className="footer">
       <div className="footer_social">
-        <div className="image-content footer_logo">
-          <PrismicNextImage field={data.logo} fill loading="lazy" alt="logo" />
-        </div>
+        <PrismicLink href="/">
+          <div className="image-content footer_logo">
+            <PrismicNextImage field={data.logo} fill loading="lazy" alt="logo" />
+          </div>
+        </PrismicLink>
         <div className="footer_tag">{data.tag}</div>
         <div className="footer_social_list d-flex justify-content-center">
           {data.social_links.map(({ main, hover, link }) => (
@@ -42,9 +44,9 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
               <PrismicNextImage field={data.logo} fill={false} loading="lazy" alt="logo" />
             </PrismicLink>
           </div>
-          <div className="footer_pages_list">
+          <div className="footer_pages_list page-links">
             {data.pages.map(({ title_link, link }) => (
-              <PrismicLink href={link} key={title_link}>
+              <PrismicLink field={link} key={title_link}>
                 {title_link}
               </PrismicLink>
             ))}
