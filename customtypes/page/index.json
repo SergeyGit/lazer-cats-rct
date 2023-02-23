@@ -40,6 +40,9 @@
             },
             "we_are": {
               "type": "SharedSlice"
+            },
+            "partners_list": {
+              "type": "SharedSlice"
             }
           }
         }

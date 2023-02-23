@@ -99,6 +99,25 @@
     z-index: 1;
     transform: translateX(-72px);
   }
+  &_partners {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @media (max-width: $md) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    &_item {
+      text-align: center;
+      padding-left: 5px;
+      padding-right: 5px;
+      img {
+        max-width: 100%;
+      }
+      @media (max-width: $md) {
+        width: 50%;
+      }
+    }
+  }
   &_terms {
     position: relative;
     padding-top: 40px;
@@ -113,7 +132,7 @@
         left: 0;
         right: 0;
         height: 1px;
-        background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.4) 50.04%, rgba(255, 255, 255, 0.08) 100%);
       }
     }
     &_text {

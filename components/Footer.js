@@ -37,6 +37,13 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
         </div>
       </div>
       <div className="footer_insta">inst photos</div>
+      <Container className="footer_partners d-flex align-items-center justify-content-around flex-wrap">
+        {data.partners.map(({ logo }) => (
+          <div key={logo.url} className="footer_partners_item">
+            <PrismicNextImage field={logo} fill={false} loading="lazy" alt="partner" />
+          </div>
+        ))}
+      </Container>
       {isDesctop && (
         <Container className="footer_pages d-flex align-items-center justify-content-between">
           <div className="image-content footer_pages_logo">

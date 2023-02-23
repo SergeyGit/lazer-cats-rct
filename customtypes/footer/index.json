@@ -120,6 +120,22 @@
             }
           }
         }
+      },
+      "partners": {
+        "type": "Group",
+        "config": {
+          "label": "partners",
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
       }
     }
   }

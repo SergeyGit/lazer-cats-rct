@@ -1,20 +1,20 @@
 {
   "tag": {
     "__TYPE__": "FieldContent",
-    "value": "position",
+    "value": "wash",
     "type": "Text"
   },
   "logo": {
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-      "width": 4000,
-      "height": 4000
+      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+      "width": 3500,
+      "height": 2338
     },
-    "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-    "width": 4000,
-    "height": 4000,
+    "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+    "width": 3500,
+    "height": 2338,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -29,13 +29,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-      "width": 3560,
-      "height": 5340
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+      "width": 3212,
+      "height": 3880
     },
-    "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-    "width": 3560,
-    "height": 5340,
+    "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+    "width": 3212,
+    "height": 3880,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -58,13 +58,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-                "width": 12288,
-                "height": 16384
+                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+                "width": 3882,
+                "height": 2584
               },
-              "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-              "width": 12288,
-              "height": 16384,
+              "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+              "width": 3882,
+              "height": 2584,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -82,13 +82,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
-                "width": 5848,
-                "height": 3899
+                "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+                "width": 3199,
+                "height": 3199
               },
-              "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
-              "width": 5848,
-              "height": 3899,
+              "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+              "width": 3199,
+              "height": 3199,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -106,13 +106,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-                "width": 4380,
-                "height": 2895
+                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+                "width": 3456,
+                "height": 3456
               },
-              "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-              "width": 4380,
-              "height": 2895,
+              "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+              "width": 3456,
+              "height": 3456,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -130,7 +130,7 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://twitter.com"
+                "url": "https://slicemachine.dev"
               }
             }
           ]
@@ -140,7 +140,7 @@
   },
   "terms_text": {
     "__TYPE__": "FieldContent",
-    "value": "us",
+    "value": "chance",
     "type": "Text"
   },
   "terms_links": {
@@ -153,7 +153,7 @@
             "title_link",
             {
               "__TYPE__": "FieldContent",
-              "value": "potatoes",
+              "value": "anyway",
               "type": "Text"
             }
           ],
@@ -191,8 +191,42 @@
             "title_link",
             {
               "__TYPE__": "FieldContent",
-              "value": "metal",
+              "value": "plant",
               "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "partners": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "logo",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+                "width": 5616,
+                "height": 3744
+              },
+              "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+              "width": 5616,
+              "height": 3744,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
             }
           ]
         ]

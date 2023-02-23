@@ -1,0 +1,119 @@
+@import "../variables";
+.section {
+  position: relative;
+  width: 100%;
+  color: white;
+  //padding-top: 70px;
+  padding-bottom: 70px;
+  @media (min-width: $lg) {
+    //padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+.card {
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 50px;
+  transition: .4s;
+  color: white;
+  background-color: $purple-800;
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+    .cardBg {
+      opacity: .3;
+    }
+  }
+  @media (max-width: $md) {
+    text-align: center;
+  }
+  @media (min-width: $md) {
+    height: 400px;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(rgba(255, 240, 164, 1) ,rgba(223, 187, 95, 1) ,rgba(237, 181, 36, 1) ,rgba(210, 158, 24, 1));
+      opacity: 0;
+      transition: .4s;
+    }
+  }
+}
+
+.cardBg {
+  position: absolute;
+  @media (min-width: $md) {
+    top: 0;
+    bottom: 0;
+    left: 400px;
+    right: 0;
+    opacity: 0;
+    transition: .4s;
+  }
+}
+
+.right {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  @media (max-width: $md) {
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.image {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  img {
+    object-fit: cover;
+  }
+  @media (min-width: $md) {
+    width: 400px;
+    margin-right: 40px;
+  }
+}
+
+.text {
+  line-height: 1.5;
+  max-width: 800px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  overflow: auto;
+  br {
+    display: none;
+  }
+}
+.link {
+  margin-top: auto;
+  display: inline-block;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  width: 1100px;
+  img {
+    @media (max-width: $md) {
+      width: auto !important;
+    }
+  }
+  @media (min-width: $md) {
+    width: 100%;
+    min-width: 1100px;
+    right: auto;
+    img {
+      height: auto !important;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Matches from './Matches';
 import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
 import Partners from './Partners';
+import PartnersList from './PartnersList';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
 import WeAre from './WeAre';
@@ -19,6 +20,7 @@ export {
 	OngoingTournaments,
 	OurTeam,
 	Partners,
+	PartnersList,
 	TextWithFeatures,
 	TextWithImage,
 	WeAre,
@@ -32,6 +34,7 @@ export const components = {
 	ongoing_tournaments: OngoingTournaments,
 	our_team: OurTeam,
 	partners: Partners,
+	partners_list: PartnersList,
 	text_with_features: TextWithFeatures,
 	text_with_image: TextWithImage,
 	we_are: WeAre,
