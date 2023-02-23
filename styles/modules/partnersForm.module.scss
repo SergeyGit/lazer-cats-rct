@@ -1,0 +1,123 @@
+@import "../variables";
+.section {
+  position: relative;
+  width: 100%;
+  color: white;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  min-height: 800px;
+  overflow: hidden;
+  form {
+    width: 100%;
+    max-width: 648px;
+    margin-left: auto;
+  }
+  @media (min-width: $lg) {
+    padding-top: 140px;
+    padding-bottom: 180px;
+  }
+}
+.partnerBG {
+  position: absolute;
+  top: 270px;
+  bottom: 130px;
+  left: -100px;
+  right: -200px;
+  transform: matrix(1, -0.08, 0.09, 1, 0, 0);
+  overflow: hidden;
+  z-index: 2;
+}
+.partnerBGItem {
+  width: 204px;
+  height: 80px;
+  border: 1px solid $primary-purple;
+  position: relative;
+  margin: 5px;
+  transition: .5s;
+  opacity: .2;
+  &:nth-child(4n) {
+    order: -1;
+  }
+  img {
+    transition: .5s;
+  }
+  &:hover {
+    border-color: $secondary-pink;
+    box-shadow: 0 4px 8px rgba(255, 0, 122, 0.6), 0 4px 10px rgba(255, 0, 122, 0.4), 0 0 10px rgba(255, 0, 122, 0.8), inset 0 0 10px rgba(255, 0, 122, 0.5), inset 0 0 10px #FF007A;
+    opacity: 1;
+    .partnerBGItemHover {
+      opacity: 1;
+      img {
+        opacity: 1;
+      }
+    }
+    img {
+      opacity: 0;
+    }
+  }
+}
+.partnerBGItemHover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: .3s;
+}
+.content {
+  margin-top: 90px;
+}
+
+.description {
+  position: relative;
+  h2 {
+    font-weight: 700;
+    line-height: 1;
+    color: $primary-purple;
+    margin-bottom: 40px;
+    position: relative;
+    //z-index: 4;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+.formItem {
+  position: relative;
+  z-index: 4;
+  margin-bottom: 32px;
+  label {
+    margin-bottom: 8px;
+  }
+}
+.formButton {
+  position: relative;
+  z-index: 4;
+  button {
+    width: 100%;
+    background: none;
+  }
+}
+.light {
+  position: absolute;
+  top: -60px;
+  right:-90px;
+}
+.container {
+  z-index: unset;
+}
+.bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  z-index: 3;
+  height: 178px;
+  opacity: .45;
+  img {
+    object-fit: cover;
+    object-position: bottom;
+  }
+}

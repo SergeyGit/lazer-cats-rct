@@ -6,6 +6,7 @@ import Image from './Image';
 import Matches from './Matches';
 import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
+import PartnerForm from './PartnerForm';
 import Partners from './Partners';
 import PartnersList from './PartnersList';
 import TextWithFeatures from './TextWithFeatures';
@@ -19,6 +20,7 @@ export {
 	Matches,
 	OngoingTournaments,
 	OurTeam,
+	PartnerForm,
 	Partners,
 	PartnersList,
 	TextWithFeatures,
@@ -33,6 +35,7 @@ export const components = {
 	matches: Matches,
 	ongoing_tournaments: OngoingTournaments,
 	our_team: OurTeam,
+	partner_form: PartnerForm,
 	partners: Partners,
 	partners_list: PartnersList,
 	text_with_features: TextWithFeatures,

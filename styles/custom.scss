@@ -107,7 +107,7 @@ p {
     right: 16px;
     background: $primary-purple;
   }
-  a {
+  a, button {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -144,7 +144,7 @@ p {
     &:before, &:after {
       background-color: $base-dark;
     }
-    a {
+    a, button {
       &:before, {
         background-color: $base-dark;
       }
@@ -157,7 +157,7 @@ p {
     &:before, &:after {
       background:  #EDB524;
     }
-    a {
+    a, button {
       color: $base-dark;
       &:before {
         background: #EDB524;

@@ -1,0 +1,45 @@
+.form {
+  &_input {
+    position: relative;
+    font-size: 0;
+    //&:after {
+    //  content: '';
+    //  position: absolute;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //  height: 2px;
+    //  background: $primary-purple;
+    //  transition: .4s;
+    //}
+    //&:focus, &:hover, &:active {
+    //  &:after {
+    //    background: linear-gradient(rgb(237, 181, 36), rgb(255, 240, 164), rgb(223, 187, 95), rgb(210, 158, 24));
+    //  }
+    //}
+    input, textarea {
+      width: 100%;
+    }
+  }
+}
+
+input, textarea {
+  background: $purple-800;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 56px;
+  border-bottom: 2px solid $primary-purple;
+  transition: .4s;
+  &:focus, &:hover {
+    outline: none;
+  }
+  &:focus {
+    border-color: rgb(237, 181, 36);
+  }
+}
+textarea {
+  resize: none;
+}

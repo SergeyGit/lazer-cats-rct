@@ -1,0 +1,99 @@
+{
+  "id": "partner_form",
+  "type": "SharedSlice",
+  "name": "PartnerForm",
+  "description": "PartnerForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PartnerForm",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "A nice description of your feature",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2"
+          }
+        },
+        "fields_names": {
+          "type": "Text",
+          "config": {
+            "label": "fields names",
+            "placeholder": ""
+          }
+        },
+        "topics": {
+          "type": "Text",
+          "config": {
+            "label": "topics",
+            "placeholder": ""
+          }
+        },
+        "submit_text": {
+          "type": "Text",
+          "config": {
+            "label": "submit text",
+            "placeholder": ""
+          }
+        },
+        "thnq_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Thnq text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2"
+          }
+        },
+        "back_text": {
+          "type": "Text",
+          "config": {
+            "label": "back text",
+            "placeholder": ""
+          }
+        },
+        "background": {
+          "type": "Image",
+          "config": {
+            "label": "Background",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "icon_partner": {
+          "type": "Image",
+          "config": {
+            "label": "icon partner",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "icon_partner_hover": {
+          "type": "Image",
+          "config": {
+            "label": "icon partner hover",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

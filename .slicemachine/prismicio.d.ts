@@ -300,7 +300,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice;
+type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice;
 /**
  * Page document from Prismic
  *
@@ -1147,6 +1147,141 @@ type OurTeamSliceVariation = OurTeamSliceDefault;
  */
 export type OurTeamSlice = prismicT.SharedSlice<"our_team", OurTeamSliceVariation>;
 /**
+ * Primary content in PartnerForm → Primary
+ *
+ */
+interface PartnerFormSliceDefaultPrimary {
+    /**
+     * Title field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: partner_form.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: partner_form.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * fields names field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.fields_names
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    fields_names: prismicT.KeyTextField;
+    /**
+     * topics field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.topics
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    topics: prismicT.KeyTextField;
+    /**
+     * submit text field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.submit_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    submit_text: prismicT.KeyTextField;
+    /**
+     * Thnq text field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.thnq_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    thnq_text: prismicT.RichTextField;
+    /**
+     * back text field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.back_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    back_text: prismicT.KeyTextField;
+    /**
+     * Background field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.background
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background: prismicT.ImageField<never>;
+}
+/**
+ * Item in PartnerForm → Items
+ *
+ */
+export interface PartnerFormSliceDefaultItem {
+    /**
+     * icon partner field in *PartnerForm → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.items[].icon_partner
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icon_partner: prismicT.ImageField<never>;
+    /**
+     * icon partner hover field in *PartnerForm → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.items[].icon_partner_hover
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icon_partner_hover: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for PartnerForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `PartnerForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PartnerFormSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PartnerFormSliceDefaultPrimary>, Simplify<PartnerFormSliceDefaultItem>>;
+/**
+ * Slice variation for *PartnerForm*
+ *
+ */
+type PartnerFormSliceVariation = PartnerFormSliceDefault;
+/**
+ * PartnerForm Shared Slice
+ *
+ * - **API ID**: `partner_form`
+ * - **Description**: `PartnerForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PartnerFormSlice = prismicT.SharedSlice<"partner_form", PartnerFormSliceVariation>;
+/**
  * Item in Partners → Items
  *
  */
@@ -1468,6 +1603,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

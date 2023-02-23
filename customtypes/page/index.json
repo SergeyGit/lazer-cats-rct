@@ -43,6 +43,9 @@
             },
             "partners_list": {
               "type": "SharedSlice"
+            },
+            "partner_form": {
+              "type": "SharedSlice"
             }
           }
         }
