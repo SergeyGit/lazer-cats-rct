@@ -20,15 +20,15 @@ const WeAre = ({ slice }) => (
           <PrismicRichText field={slice.primary.description} />
         </div>
       </div>
-      <div className={cn(style.bg, 'd-flex align-items-center')}>
-        <PrismicNextImage
-          field={slice.primary.background_image}
-          fill={true}
-          loading="lazy"
-          alt="bg"
-        />
-      </div>
     </Container>
+    <div className={cn(style.bg, 'd-flex align-items-center')}>
+      <PrismicNextImage
+        field={slice.primary.background_image}
+        fill={true}
+        loading="lazy"
+        alt="bg"
+      />
+    </div>
   </section>
 );
 

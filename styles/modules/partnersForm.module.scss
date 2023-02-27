@@ -19,7 +19,7 @@
 }
 .partnerBG {
   position: absolute;
-  top: 270px;
+  top: 200px;
   bottom: 130px;
   left: -100px;
   right: -200px;
@@ -35,7 +35,7 @@
   margin: 5px;
   transition: .5s;
   opacity: .2;
-  &:nth-child(4n) {
+  &:nth-child(5n) {
     order: -1;
   }
   img {

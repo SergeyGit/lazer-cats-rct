@@ -1,6 +1,7 @@
 import { PrismicRichText } from '@prismicio/react';
 import { Container } from 'react-bootstrap';
 import { PrismicNextImage } from '@prismicio/next';
+import { isFilled } from '@prismicio/helpers';
 
 /**
  * @typedef {import("@prismicio/client").Content.HeadTournamentsSlice} HeadTournamentsSlice
@@ -8,12 +9,18 @@ import { PrismicNextImage } from '@prismicio/next';
  * @param { HeadTournamentsProps }
  */
 const HeadTournaments = ({ slice }) => (
-  <section className="section-head text-center">
-    <Container>
-      <div className="multicolor-title h1">
-        <PrismicRichText field={slice.primary.title} />
-      </div>
-    </Container>
+  <section
+    className={`section-head text-center ${
+      !isFilled.richText(slice.primary.title) && 'fullHeight'
+    }`}
+  >
+    {isFilled.richText(slice.primary.title) && (
+      <Container>
+        <div className="multicolor-title h1">
+          <PrismicRichText field={slice.primary.title} />
+        </div>
+      </Container>
+    )}
     <div className="bg_image">
       <PrismicNextImage
         field={slice.primary.background_image}

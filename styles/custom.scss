@@ -192,6 +192,16 @@ p {
       padding-top: 260px;
       padding-bottom: 140px;
     }
+    &.fullHeight {
+      min-height: 500px;
+      height: 100vh;
+      @media (max-width: $lg) {
+        height: 700px;
+      }
+      @media (max-width: $md) {
+        height: 500px;
+      }
+    }
   }
 }
 
