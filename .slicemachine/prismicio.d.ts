@@ -1526,26 +1526,6 @@ interface PlaterMainSliceDefaultPrimary {
      */
     photo: prismicT.ImageField<never>;
     /**
-     * Title field in *PlaterMain → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: plater_main.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *PlaterMain → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: plater_main.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
      * name field in *PlaterMain → Primary*
      *
      * - **Field Type**: Text
@@ -1681,6 +1661,16 @@ export interface PlaterMainSliceDefaultItem {
      *
      */
     social_link: prismicT.LinkField;
+    /**
+     * social_icon_hover field in *PlaterMain → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.items[].social_icon_hover
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_icon_hover: prismicT.ImageField<never>;
 }
 /**
  * Default variation for PlaterMain Slice

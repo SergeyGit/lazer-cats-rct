@@ -35,22 +35,6 @@
             "thumbnails": []
           }
         },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your feature"
-          }
-        },
         "name": {
           "type": "Text",
           "config": {
@@ -147,6 +131,14 @@
             "label": "social link",
             "placeholder": "",
             "select": null
+          }
+        },
+        "social_icon_hover": {
+          "type": "Image",
+          "config": {
+            "label": "social_icon_hover",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

@@ -1,0 +1,161 @@
+@import "../variables";
+
+.section {
+  position: relative;
+  width: 100%;
+  color: white;
+  //padding-top: 70px;
+  padding-bottom: 0;
+  letter-spacing: 0.02em;
+  @media (min-width: $lg) {
+    //padding-top: 140px;
+    //padding-bottom: 140px;
+  }
+
+  h5 {
+    font-weight: 700;
+    background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+}
+
+.photo {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.photoBG {
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  z-index: 0;
+}
+
+.role {
+  background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.text {
+  width: 100%;
+  max-width: 602px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info {
+  margin-top: 16px;
+}
+
+.countryName {
+  margin-left: 8px;
+  margin-right: 24px;
+}
+
+.bio {
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+}
+
+.ingame {
+
+  margin-bottom: 8px;
+}
+
+.ingameLabel {
+  opacity: .6;
+  width: 50%;
+}
+
+.social {
+  margin-bottom: 16px;
+}
+
+.socialList {
+  margin-bottom: 16px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.stats {
+  background: url(../../assets/images/player/Net.svg) center, #1E043F;
+  border: 1px solid $primary-purple;
+  padding: 24px;
+  margin-top: 48px;
+}
+
+.statsDerived {
+  background: url(../../assets/images/player/Divider.png) center no-repeat;
+  background-size: cover;
+  width: 48px;
+  height: 80px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.statsItem {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.statsItemHead {
+  background: linear-gradient(109.91deg, #EDB524 6.68%, #FFF0A4 30.46%, #DFBB5F 52.7%, #D29E18 92.62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  @media (min-width: $md) {
+    width: 100%;
+    min-width: 1100px;
+    right: auto;
+    img {
+      height: auto !important;
+    }
+  }
+}
+
+.playerbg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  width: 50%;
+  text-align: right;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-position: bottom right;
+    object-fit: cover;
+  }
+}
