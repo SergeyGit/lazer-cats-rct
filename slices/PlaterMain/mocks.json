@@ -1,0 +1,215 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "College"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Commodo eiusmod reprehenderit qui reprehenderit non enim."
+            }
+          }
+        ]
+      },
+      "name": {
+        "__TYPE__": "FieldContent",
+        "value": "kitchen",
+        "type": "Text"
+      },
+      "role": {
+        "__TYPE__": "FieldContent",
+        "value": "six",
+        "type": "Text"
+      },
+      "fio": {
+        "__TYPE__": "FieldContent",
+        "value": "large",
+        "type": "Text"
+      },
+      "country": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+          "width": 3882,
+          "height": 2584
+        },
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        "width": 3882,
+        "height": 2584,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "country_name": {
+        "__TYPE__": "FieldContent",
+        "value": "author",
+        "type": "Text"
+      },
+      "years": {
+        "__TYPE__": "FieldContent",
+        "value": "mission",
+        "type": "Text"
+      },
+      "bio": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sunt incididunt laborum magna ea magna adipisicing. Do minim Lorem dolore cupidatat ipsum veniam labore amet minim nisi culpa consectetur aute aliqua."
+            }
+          }
+        ]
+      },
+      "ingame_title": {
+        "__TYPE__": "FieldContent",
+        "value": "muscle",
+        "type": "Text"
+      },
+      "ingame_settings": {
+        "__TYPE__": "FieldContent",
+        "value": "business",
+        "type": "Text"
+      },
+      "stats": {
+        "__TYPE__": "FieldContent",
+        "value": "ten",
+        "type": "Text"
+      },
+      "social_title": {
+        "__TYPE__": "FieldContent",
+        "value": "direct",
+        "type": "Text"
+      },
+      "background_image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+          "width": 3882,
+          "height": 2584
+        },
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        "width": 3882,
+        "height": 2584,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      },
+      "background_player": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+          "width": 4172,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+        "width": 4172,
+        "height": 4000,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      },
+      "photo": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+          "width": 4752,
+          "height": 3168
+        },
+        "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+        "width": 4752,
+        "height": 3168,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "social_icon",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+                "width": 3424,
+                "height": 3424
+              },
+              "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+              "width": 3424,
+              "height": 3424,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "social_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

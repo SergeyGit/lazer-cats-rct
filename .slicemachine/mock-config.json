@@ -241,6 +241,23 @@
           }
         }
       }
+    },
+    "MainSlider": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "PlaterMain": {
+      "default": {
+        "primary": {
+          "bio": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }

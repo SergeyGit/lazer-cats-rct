@@ -46,6 +46,15 @@
             },
             "partner_form": {
               "type": "SharedSlice"
+            },
+            "main_slider": {
+              "type": "SharedSlice"
+            },
+            "partners": {
+              "type": "SharedSlice"
+            },
+            "plater_main": {
+              "type": "SharedSlice"
             }
           }
         }

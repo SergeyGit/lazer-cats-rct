@@ -300,7 +300,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice;
+type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice | MainSliderSlice | PartnersSlice | PlaterMainSlice;
 /**
  * Page document from Prismic
  *
@@ -630,6 +630,71 @@ type ImageSliceVariation = ImageSliceWhite | ImageSliceLightSlate;
  *
  */
 export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
+ * Primary content in MainSlider → Primary
+ *
+ */
+interface MainSliderSliceDefaultPrimary {
+    /**
+     * prev text field in *MainSlider → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.primary.prev_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    prev_text: prismicT.KeyTextField;
+    /**
+     * next text field in *MainSlider → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.primary.next_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    next_text: prismicT.KeyTextField;
+}
+/**
+ * Item in MainSlider → Items
+ *
+ */
+export interface MainSliderSliceDefaultItem {
+    /**
+     * image field in *MainSlider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for MainSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `MainSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MainSliderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<MainSliderSliceDefaultPrimary>, Simplify<MainSliderSliceDefaultItem>>;
+/**
+ * Slice variation for *MainSlider*
+ *
+ */
+type MainSliderSliceVariation = MainSliderSliceDefault;
+/**
+ * MainSlider Shared Slice
+ *
+ * - **API ID**: `main_slider`
+ * - **Description**: `MainSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MainSliderSlice = prismicT.SharedSlice<"main_slider", MainSliderSliceVariation>;
 /**
  * Primary content in Matches → Primary
  *
@@ -1426,6 +1491,221 @@ type PartnersListSliceVariation = PartnersListSliceDefault;
  */
 export type PartnersListSlice = prismicT.SharedSlice<"partners_list", PartnersListSliceVariation>;
 /**
+ * Primary content in PlaterMain → Primary
+ *
+ */
+interface PlaterMainSliceDefaultPrimary {
+    /**
+     * Background image field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.background_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background_image: prismicT.ImageField<never>;
+    /**
+     * Background player field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.background_player
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background_player: prismicT.ImageField<never>;
+    /**
+     * photo field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.photo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    photo: prismicT.ImageField<never>;
+    /**
+     * Title field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: plater_main.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: plater_main.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * name field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+    /**
+     * role field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.role
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    role: prismicT.KeyTextField;
+    /**
+     * FIO field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.fio
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    fio: prismicT.KeyTextField;
+    /**
+     * country field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.country
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    country: prismicT.ImageField<never>;
+    /**
+     * country name field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.country_name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    country_name: prismicT.KeyTextField;
+    /**
+     * years field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.years
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    years: prismicT.KeyTextField;
+    /**
+     * Bio field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.bio
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    bio: prismicT.RichTextField;
+    /**
+     * ingame title field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.ingame_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    ingame_title: prismicT.KeyTextField;
+    /**
+     * ingame settings field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.ingame_settings
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    ingame_settings: prismicT.KeyTextField;
+    /**
+     * stats field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.stats
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    stats: prismicT.KeyTextField;
+    /**
+     * social title field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.social_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    social_title: prismicT.KeyTextField;
+}
+/**
+ * Item in PlaterMain → Items
+ *
+ */
+export interface PlaterMainSliceDefaultItem {
+    /**
+     * social icon field in *PlaterMain → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.items[].social_icon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_icon: prismicT.ImageField<never>;
+    /**
+     * social link field in *PlaterMain → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.items[].social_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    social_link: prismicT.LinkField;
+}
+/**
+ * Default variation for PlaterMain Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `PlaterMain`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PlaterMainSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PlaterMainSliceDefaultPrimary>, Simplify<PlaterMainSliceDefaultItem>>;
+/**
+ * Slice variation for *PlaterMain*
+ *
+ */
+type PlaterMainSliceVariation = PlaterMainSliceDefault;
+/**
+ * PlaterMain Shared Slice
+ *
+ * - **API ID**: `plater_main`
+ * - **Description**: `PlaterMain`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PlaterMainSlice = prismicT.SharedSlice<"plater_main", PlaterMainSliceVariation>;
+/**
  * Primary content in TextWithFeatures → Primary
  *
  */
@@ -1603,6 +1883,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MainSliderSliceDefaultPrimary, MainSliderSliceDefaultItem, MainSliderSliceDefault, MainSliderSliceVariation, MainSliderSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, PlaterMainSliceDefaultPrimary, PlaterMainSliceDefaultItem, PlaterMainSliceDefault, PlaterMainSliceVariation, PlaterMainSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

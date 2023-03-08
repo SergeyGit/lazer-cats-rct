@@ -59,7 +59,7 @@ const Matches = ({ slice }) => {
   return (
     <section className={style.section}>
       <Container>
-        {specialData?.upcoming && (
+        {!!specialData?.upcoming.length && (
           <>
             <div className="d-flex align-items-start align-items-lg-end flex-column flex-lg-row justify-content-between">
               <div className={'multicolor-title h1 dark'}>

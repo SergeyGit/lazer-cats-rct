@@ -3,12 +3,14 @@
 import HeadTournaments from './HeadTournaments';
 import Hero from './Hero';
 import Image from './Image';
+import MainSlider from './MainSlider';
 import Matches from './Matches';
 import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
 import PartnerForm from './PartnerForm';
 import Partners from './Partners';
 import PartnersList from './PartnersList';
+import PlaterMain from './PlaterMain';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
 import WeAre from './WeAre';
@@ -17,12 +19,14 @@ export {
 	HeadTournaments,
 	Hero,
 	Image,
+	MainSlider,
 	Matches,
 	OngoingTournaments,
 	OurTeam,
 	PartnerForm,
 	Partners,
 	PartnersList,
+	PlaterMain,
 	TextWithFeatures,
 	TextWithImage,
 	WeAre,
@@ -32,12 +36,14 @@ export const components = {
 	head_tournaments: HeadTournaments,
 	hero: Hero,
 	image: Image,
+	main_slider: MainSlider,
 	matches: Matches,
 	ongoing_tournaments: OngoingTournaments,
 	our_team: OurTeam,
 	partner_form: PartnerForm,
 	partners: Partners,
 	partners_list: PartnersList,
+	plater_main: PlaterMain,
 	text_with_features: TextWithFeatures,
 	text_with_image: TextWithImage,
 	we_are: WeAre,

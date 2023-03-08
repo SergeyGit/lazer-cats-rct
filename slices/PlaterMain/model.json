@@ -1,0 +1,156 @@
+{
+  "id": "plater_main",
+  "type": "SharedSlice",
+  "name": "PlaterMain",
+  "description": "PlaterMain",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PlaterMain",
+      "primary": {
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "background_player": {
+          "type": "Image",
+          "config": {
+            "label": "Background player",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "photo": {
+          "type": "Image",
+          "config": {
+            "label": "photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "name",
+            "placeholder": ""
+          }
+        },
+        "role": {
+          "type": "Text",
+          "config": {
+            "label": "role",
+            "placeholder": ""
+          }
+        },
+        "fio": {
+          "type": "Text",
+          "config": {
+            "label": "FIO",
+            "placeholder": ""
+          }
+        },
+        "country": {
+          "type": "Image",
+          "config": {
+            "label": "country",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "country_name": {
+          "type": "Text",
+          "config": {
+            "label": "country name",
+            "placeholder": ""
+          }
+        },
+        "years": {
+          "type": "Text",
+          "config": {
+            "label": "years",
+            "placeholder": ""
+          }
+        },
+        "bio": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Bio",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading5,paragraph"
+          }
+        },
+        "ingame_title": {
+          "type": "Text",
+          "config": {
+            "label": "ingame title",
+            "placeholder": ""
+          }
+        },
+        "ingame_settings": {
+          "type": "Text",
+          "config": {
+            "label": "ingame settings",
+            "placeholder": ""
+          }
+        },
+        "stats": {
+          "type": "Text",
+          "config": {
+            "label": "stats",
+            "placeholder": ""
+          }
+        },
+        "social_title": {
+          "type": "Text",
+          "config": {
+            "label": "social title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "social_icon": {
+          "type": "Image",
+          "config": {
+            "label": "social icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "social_link": {
+          "type": "Link",
+          "config": {
+            "label": "social link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
