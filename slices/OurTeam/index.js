@@ -19,7 +19,11 @@ const OurTeam = ({ slice }) => {
   return (
     <section className={style.section}>
       <Container>
-        <div className={style.head}>
+        <div
+          className={cn(style.head, {
+            [style.left]: slice.primary.player_page,
+          })}
+        >
           <div className={cn(style.caption, 'multicolor-title h1')}>
             <PrismicRichText field={slice.primary.title} />
           </div>

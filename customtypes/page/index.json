@@ -55,6 +55,9 @@
             },
             "plater_main": {
               "type": "SharedSlice"
+            },
+            "player_gear": {
+              "type": "SharedSlice"
             }
           }
         }

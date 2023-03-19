@@ -300,7 +300,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice | MainSliderSlice | PartnersSlice | PlaterMainSlice;
+type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice | MainSliderSlice | PartnersSlice | PlaterMainSlice | PlayerGearSlice;
 /**
  * Page document from Prismic
  *
@@ -1121,6 +1121,17 @@ interface OurTeamSliceDefaultPrimary {
      *
      */
     background_mob: prismicT.ImageField<never>;
+    /**
+     * player_page field in *OurTeam → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: our_team.primary.player_page
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    player_page: prismicT.BooleanField;
 }
 /**
  * Item in OurTeam → Items
@@ -1696,6 +1707,101 @@ type PlaterMainSliceVariation = PlaterMainSliceDefault;
  */
 export type PlaterMainSlice = prismicT.SharedSlice<"plater_main", PlaterMainSliceVariation>;
 /**
+ * Primary content in PlayerGear → Primary
+ *
+ */
+interface PlayerGearSliceDefaultPrimary {
+    /**
+     * Title field in *PlayerGear → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: player_gear.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Background image field in *PlayerGear → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: player_gear.primary.background_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    background_image: prismicT.ImageField<never>;
+}
+/**
+ * Item in PlayerGear → Items
+ *
+ */
+export interface PlayerGearSliceDefaultItem {
+    /**
+     * photo field in *PlayerGear → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: player_gear.items[].photo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    photo: prismicT.ImageField<never>;
+    /**
+     * link field in *PlayerGear → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: player_gear.items[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * text link field in *PlayerGear → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: player_gear.items[].text_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text_link: prismicT.KeyTextField;
+    /**
+     * category field in *PlayerGear → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: player_gear.items[].category
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    category: prismicT.KeyTextField;
+}
+/**
+ * Default variation for PlayerGear Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `PlayerGear`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PlayerGearSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PlayerGearSliceDefaultPrimary>, Simplify<PlayerGearSliceDefaultItem>>;
+/**
+ * Slice variation for *PlayerGear*
+ *
+ */
+type PlayerGearSliceVariation = PlayerGearSliceDefault;
+/**
+ * PlayerGear Shared Slice
+ *
+ * - **API ID**: `player_gear`
+ * - **Description**: `PlayerGear`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PlayerGearSlice = prismicT.SharedSlice<"player_gear", PlayerGearSliceVariation>;
+/**
  * Primary content in TextWithFeatures → Primary
  *
  */
@@ -1873,6 +1979,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MainSliderSliceDefaultPrimary, MainSliderSliceDefaultItem, MainSliderSliceDefault, MainSliderSliceVariation, MainSliderSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, PlaterMainSliceDefaultPrimary, PlaterMainSliceDefaultItem, PlaterMainSliceDefault, PlaterMainSliceVariation, PlaterMainSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MainSliderSliceDefaultPrimary, MainSliderSliceDefaultItem, MainSliderSliceDefault, MainSliderSliceVariation, MainSliderSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, PlaterMainSliceDefaultPrimary, PlaterMainSliceDefaultItem, PlaterMainSliceDefault, PlaterMainSliceVariation, PlaterMainSlice, PlayerGearSliceDefaultPrimary, PlayerGearSliceDefaultItem, PlayerGearSliceDefault, PlayerGearSliceVariation, PlayerGearSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

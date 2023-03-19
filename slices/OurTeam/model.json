@@ -44,6 +44,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "player_page": {
+          "type": "Boolean",
+          "config": {
+            "label": "player_page",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

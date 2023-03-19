@@ -258,6 +258,18 @@
           }
         }
       }
+    },
+    "PlayerGear": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }

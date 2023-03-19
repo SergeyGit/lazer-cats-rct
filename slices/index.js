@@ -11,6 +11,7 @@ import PartnerForm from './PartnerForm';
 import Partners from './Partners';
 import PartnersList from './PartnersList';
 import PlaterMain from './PlaterMain';
+import PlayerGear from './PlayerGear';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
 import WeAre from './WeAre';
@@ -27,6 +28,7 @@ export {
 	Partners,
 	PartnersList,
 	PlaterMain,
+	PlayerGear,
 	TextWithFeatures,
 	TextWithImage,
 	WeAre,
@@ -44,6 +46,7 @@ export const components = {
 	partners: Partners,
 	partners_list: PartnersList,
 	plater_main: PlaterMain,
+	player_gear: PlayerGear,
 	text_with_features: TextWithFeatures,
 	text_with_image: TextWithImage,
 	we_are: WeAre,

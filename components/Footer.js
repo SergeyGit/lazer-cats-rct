@@ -65,7 +65,7 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
           <div className="footer_terms_text">{data.terms_text}</div>
           <div className="footer_terms_list d-flex">
             {data.terms_links.map(({ title_link, link }) => (
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a href={link.url} target="_blank" rel="noopener noreferrer" key={title_link}>
                 {title_link}
               </a>
             ))}
