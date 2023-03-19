@@ -16,7 +16,7 @@ const WeAre = ({ slice }) => (
         <div className={cn(style.caption, 'multicolor-title fz-160')}>
           <PrismicRichText field={slice.primary.title} />
         </div>
-        <div className="h6">
+        <div className={cn(style.h6, 'h6')}>
           <PrismicRichText field={slice.primary.description} />
         </div>
       </div>

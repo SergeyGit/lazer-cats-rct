@@ -1,10 +1,11 @@
 @import "../variables";
 .partners {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   @media (max-width: $xl) {
-    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 .partnersAnim {
@@ -20,6 +21,9 @@
   flex-shrink: 0;
   margin-right: 40px;
   margin-left: 40px;
+  img {
+    height: 80px;
+  }
   @media (min-width: $lg) {
     margin-right: 60px;
     margin-left: 60px;

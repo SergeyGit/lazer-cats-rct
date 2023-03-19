@@ -93,6 +93,19 @@
   }
 }
 
+.score {
+  width: 160px;
+  background-color: #fff;
+  color: $base-dark;
+  font-size: 50px;
+  word-spacing: 10px;
+  @media (max-width: $lg) {
+    width: 68px;
+    font-size: 16px;
+    word-spacing: 5px;
+  }
+}
+
 .bg {
   position: absolute;
   left: 0;

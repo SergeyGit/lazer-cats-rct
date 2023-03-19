@@ -9,28 +9,29 @@ import { useMediaListener } from '@/hooks/MediaListener';
 import cn from 'classnames';
 
 const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
-  const [scrollY, setScrollY] = useState(0);
+  const [dark, setDark] = useState(false);
   const [toggle, setToggle] = useState(false);
 
   const isDesctop = useMediaListener('(min-width: 768px)');
 
-  // useEffect(() => {
-  //   setScrollY(window.pageYOffset);
-  //
-  //   function logit() {
-  //     setScrollY(window.pageYOffset);
-  //   }
-  //
-  //   window.addEventListener('scroll', logit);
-  //
-  //   return () => {
-  //     window.removeEventListener('scroll', logit);
-  //   };
-  // }, []);
+  useEffect(() => {
+    function logit() {
+      if (window.pageYOffset > 80) {
+        setDark(true);
+      } else {
+        setDark(false);
+      }
+    }
+
+    window.addEventListener('scroll', logit);
+
+    return () => {
+      window.removeEventListener('scroll', logit);
+    };
+  }, []);
 
   return (
-    // <header className={`header ${scrollY > 80 || toggle ? 'dark' : ''}`}>
-    <header className={`header ${'dark'}`}>
+    <header className={`header ${dark || toggle ? 'dark' : ''}`}>
       <div className="header_top header_line d-flex">
         <Container className="d-flex align-items-center">
           <div>twich online</div>

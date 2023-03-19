@@ -1,4 +1,4 @@
-import { PrismicRichText, PrismicLink } from '@prismicio/react';
+import { PrismicRichText } from '@prismicio/react';
 import cn from 'classnames';
 import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';

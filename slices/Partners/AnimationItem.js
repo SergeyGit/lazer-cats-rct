@@ -9,11 +9,7 @@ const AnimationItem = ({ slice }) => {
     <div className={cn('partners-anim', style.partnersAnim)}>
       {slice?.items?.map(({ image }) => (
         <div className={style.partnersItem} key={image.url}>
-          <PrismicNextImage
-            field={image}
-            alt={image.url}
-            // priority={toggleHeader}
-          />
+          <PrismicNextImage field={image} alt={image.url} priority={toggleHeader} />
         </div>
       ))}
     </div>

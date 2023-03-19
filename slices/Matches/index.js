@@ -107,7 +107,14 @@ const Matches = ({ slice }) => {
                             </div>
                           </div>
                         </div>
-                        <div className={cn(style.score, 'f-w-b flex-shrink-0 text-center')}>VS</div>
+                        <div
+                          className={cn(
+                            style.score,
+                            'f-w-b align-self-stretch d-flex align-items-center justify-content-center flex-shrink-0 text-center'
+                          )}
+                        >
+                          VS
+                        </div>
                         <div className={style.matchesLineHeadPoint}>
                           <div className="d-inline-flex align-items-center">
                             <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
@@ -172,7 +179,12 @@ const Matches = ({ slice }) => {
                             </div>
                           </div>
                         </div>
-                        <div className={cn(style.score, 'f-w-b flex-shrink-0 text-center')}>
+                        <div
+                          className={cn(
+                            style.score,
+                            'f-w-b align-self-stretch d-flex align-items-center justify-content-center flex-shrink-0 text-center'
+                          )}
+                        >
                           {score?.length ? score : 'VS'}
                         </div>
                         <div className={style.matchesLineHeadPoint}>
