@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { PrismicNextImage } from '@prismicio/next';
+import { PrismicLink } from '@prismicio/react';
 import { useKeenSlider } from 'keen-slider/react';
 import style from '@/styles/modules/ourTeam.module.scss';
 import 'keen-slider/keen-slider.min.css';
@@ -24,16 +25,16 @@ const MobileBlock = ({ slice }) => {
       <div className={cn('keen-slider')} ref={sliderRef}>
         {slice?.items?.map(({ nick, name, position, link, image }) => (
           <div className="keen-slider__slide" key={nick}>
-            {/*<PrismicLink field={link}>*/}
-            <div className="d-flex align-items-center flex-column">
-              <div className={style.image}>
-                <PrismicNextImage field={image} loading="lazy" height={480} alt={nick} />
+            <PrismicLink field={link}>
+              <div className="d-flex align-items-center flex-column">
+                <div className={style.image}>
+                  <PrismicNextImage field={image} loading="lazy" height={480} alt={nick} />
+                </div>
+                <div className={cn(style.nick, 'h3')}>{nick}</div>
+                <div className="h6">{name}</div>
+                <div className={style.position}>{position}</div>
               </div>
-              <div className={cn(style.nick, 'h3')}>{nick}</div>
-              <div className="h6">{name}</div>
-              <div className={style.position}>{position}</div>
-            </div>
-            {/*</PrismicLink>*/}
+            </PrismicLink>
           </div>
         ))}
       </div>

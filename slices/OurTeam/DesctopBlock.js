@@ -16,7 +16,12 @@ const DesctopBlock = ({ slice }) => {
                   <PrismicNextImage field={image} loading="lazy" alt={nick} />
                 </div>
                 <div className={style.imageInHover}>
-                  <PrismicNextImage field={image_hover} loading="lazy" alt={nick} />
+                  <PrismicNextImage
+                    field={image_hover}
+                    loading="eager"
+                    alt={nick}
+                    property="true"
+                  />
                 </div>
               </div>
               <div className={cn(style.nick, 'h3')}>{nick}</div>

@@ -90,13 +90,15 @@ const PlaterMain = ({ slice }) => {
             </div>
           </Col>
         </Row>
-        <div className={cn(style.stats, 'd-flex align-items-center')}>
+        <div className={cn(style.stats, 'd-flex align-items-center flex-lg-nowrap flex-wrap')}>
           {stats.map(({ label, value }, index) => (
             <Fragment key={label}>
-              {index !== 0 && <div className={cn(style.statsDerived, 'flex-shrink-0')} />}
+              {index !== 0 && (
+                <div className={cn(style.statsDerived, 'd-lg-inline-flex d-none flex-shrink-0')} />
+              )}
               <div className={style.statsItem}>
                 <div className={style.statsItemHead}>{label}</div>
-                <h3>{value}</h3>
+                <h3 className="d-inline-flex">{value}</h3>
               </div>
             </Fragment>
           ))}

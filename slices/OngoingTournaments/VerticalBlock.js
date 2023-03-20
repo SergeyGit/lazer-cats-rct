@@ -31,7 +31,7 @@ const VerticalBlock = ({ slice }) => (
             'd-flex align-items-center flex-column flex-md-row'
           )}
         >
-          <div className={cn(style.image, 'flex-shrink-0')}>
+          <div className={cn(style.image, style.vertical, 'flex-shrink-0')}>
             <PrismicNextImage field={image} fill loading="lazy" alt="caption" />
           </div>
           <div>

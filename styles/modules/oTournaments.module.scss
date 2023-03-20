@@ -116,7 +116,9 @@
   position: relative;
   background-color: $primary-purple;
   transition: .4s;
-  //overflow: hidden;
+  &.vertical {
+    overflow: hidden;
+  }
   img {
     object-fit: cover;
     transition: .4s;
