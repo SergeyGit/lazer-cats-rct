@@ -7,6 +7,9 @@ import { LANGS } from '../constants/constant';
 import Image from 'next/image';
 import { useMediaListener } from '@/hooks/MediaListener';
 import cn from 'classnames';
+import dynamic from 'next/dynamic';
+
+const OnlineStreams = dynamic(() => import('./Header/OnlineStreams'));
 
 const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
   const [dark, setDark] = useState(false);
@@ -22,9 +25,7 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
         setDark(false);
       }
     }
-
     window.addEventListener('scroll', logit);
-
     return () => {
       window.removeEventListener('scroll', logit);
     };
@@ -34,7 +35,7 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
     <header className={`header ${dark || toggle ? 'dark' : ''}`}>
       <div className="header_top header_line d-flex">
         <Container className="d-flex align-items-center">
-          <div>twich online</div>
+          <OnlineStreams />
           <div className="d-flex align-items-center header_top_right">
             <div className="header_tag f-w-b">{data.tag}</div>
             <div className="header_social_list d-flex justify-content-center">

@@ -1,7 +1,6 @@
 import cn from 'classnames';
 import { PrismicNextImage } from '@prismicio/next';
 import style from '@/styles/modules/oTournaments.module.scss';
-import { Col, Row } from 'react-bootstrap';
 import { BADGES_COLORS } from '../../constants/constant';
 import Image from 'next/image';
 import Calendar from '../../assets/images/icons/utilities/Calendar.svg';
