@@ -1307,6 +1307,16 @@ interface PartnerFormSliceDefaultPrimary {
      *
      */
     background: prismicT.ImageField<never>;
+    /**
+     * receiveEmail field in *PartnerForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner_form.primary.receiveemail
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    receiveemail: prismicT.KeyTextField;
 }
 /**
  * Item in PartnerForm → Items

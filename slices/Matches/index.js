@@ -4,14 +4,35 @@ import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
 import cn from 'classnames';
 import moment from 'moment';
+// import { useEffect, useState } from 'react';
 
 /**
  * @typedef {import("@prismicio/client").Content.MatchesSlice} MatchesSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<MatchesSlice>} MatchesProps
  * @param { MatchesProps }
  */
+
+// async function fetchStreamData() {
+//   const response = await fetch(`https://api.twitch.tv/helix/schedule?broadcaster_id=874081470`, {
+//     headers: {
+//       'Client-ID': 'fwovkl5f9bdpzpanjhlvpqrt12v0yh',
+//       Authorization: 'Bearer 1jb0abo2h7twvb7f6u1xucmdq8xuju',
+//     },
+//   });
+//   return await response.json();
+// }
+
 const Matches = ({ slice }) => {
   const now = moment().utc();
+
+  // const [streamData, setStreamData] = useState();
+  //
+  // useEffect(() => {
+  //   if (!streamData) {
+  //     fetchStreamData().then(setStreamData);
+  //   }
+  // }, []);
+  // console.log(streamData);
 
   const specialData = slice?.items?.reduce(
     (prev, current) => {

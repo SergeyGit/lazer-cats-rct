@@ -119,6 +119,8 @@ p {
     width: 145px;
     text-align: center;
     position: relative;
+    background: none;
+    border: none;
     &:before {
       content: '';
       position: absolute;

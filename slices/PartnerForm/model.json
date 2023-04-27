@@ -73,6 +73,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "receiveemail": {
+          "type": "Text",
+          "config": {
+            "label": "receiveEmail",
+            "placeholder": ""
+          }
         }
       },
       "items": {

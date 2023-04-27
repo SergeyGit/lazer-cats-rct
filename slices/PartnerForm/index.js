@@ -7,6 +7,7 @@ import { PrismicNextImage } from '@prismicio/next';
 import Image from 'next/image';
 import Light from '../../assets/images/partners/lightin.png';
 import { getField } from '@/components/Form/FormFields';
+import SuccessIcon from '../../assets/images/success.svg';
 
 /**
  * @typedef {import("@prismicio/client").Content.PartnerFormSlice} PartnerFormSlice
@@ -17,15 +18,22 @@ const initData = {
   name: '',
   email: '',
   topic: 'topic1',
+  message: '',
 };
 const PartnerForm = ({ slice }) => {
   const [formData, setFormData] = useState(initData);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
+  };
+
+  const handleBack = () => {
+    setSuccess(false);
   };
 
   const formFields = slice.primary.fields_names.split(', ')?.map((item) => ({
@@ -35,33 +43,29 @@ const PartnerForm = ({ slice }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setStatusError(phone.length < 4);
-    // if (!statusError && phone.length > 4) {
-    //   setLoading(true)
-    //   fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Accept': 'application/json, text/plain, */*',
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //       receiveEmail,
-    //       ...formData,
-    //       phone,
-    //       turnover: category
-    //     })
-    //   }).then((res) => {
-    //     setLoading(false)
-    //     if (res.status === 200) {
-    //       setFormData(initData);
-    //       setPhone('');
-    //       setSuccess(true);
-    //     }
-    //   }).catch(error => {
-    //     setLoading(false);
-    //     console.log(error)
-    //   })
-    // }
+    setLoading(true);
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        receiveEmail: slice.primary.receiveemail,
+      }),
+    })
+      .then((res) => {
+        setLoading(false);
+        if (res.status === 200) {
+          // setFormData(initData);
+          setSuccess(true);
+        }
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
   };
 
   return (
@@ -111,17 +115,34 @@ const PartnerForm = ({ slice }) => {
             </div>
           </Col>
           <Col lg={6} className="djustify-content-end">
-            <form onSubmit={handleSubmit}>
-              {formFields?.map(({ label, id }) => (
-                <div className={style.formItem} key={id}>
-                  <label htmlFor={id}>{label}</label>
-                  {getField({ name: id, value: formData[id] || '', handleChange })}
+            {success ? (
+              <div
+                className={cn(
+                  style.success,
+                  'd-flex flex-column align-items-center justify-content-center'
+                )}
+              >
+                <div className={style.successIcon}>
+                  <Image src={SuccessIcon} alt="success" loading="lazy" />
                 </div>
-              ))}
-              <div className={cn(style.formButton, 'link')}>
-                <button>{slice.primary.submit_text}</button>
+                <PrismicRichText field={slice.primary.thnq_text} />
+                <div className={cn(style.successButton, 'link')}>
+                  <button onClick={handleBack}>{slice.primary.back_text}</button>
+                </div>
               </div>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                {formFields?.map(({ label, id }) => (
+                  <div className={style.formItem} key={id}>
+                    <label htmlFor={id}>{label}</label>
+                    {getField({ name: id, value: formData[id] || '', handleChange })}
+                  </div>
+                ))}
+                <div className={cn(style.formButton, 'link')}>
+                  <button disabled={loading}>{slice.primary.submit_text}</button>
+                </div>
+              </form>
+            )}
           </Col>
         </Row>
       </Container>

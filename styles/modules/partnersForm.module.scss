@@ -121,3 +121,14 @@
     object-position: bottom;
   }
 }
+.success {
+  position: relative;
+  z-index: 4;
+}
+.successIcon {
+  margin-bottom: 30px;
+}
+.successButton {
+  margin-top: 20px;
+  min-width: 232px;
+}
