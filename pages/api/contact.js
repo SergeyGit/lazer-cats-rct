@@ -1,6 +1,5 @@
 export default async (req, res) => {
   let nodemailer = require('nodemailer');
-  console.log(req.body);
   const { receiveEmail, name, email, message, topic } = req.body;
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -8,10 +7,9 @@ export default async (req, res) => {
     secure: true,
     auth: {
       // user: process.env.SMTP_USER,
-      // user: 'sstranzzo@gmail.com',
-      user: 'mendel.viktoria7@gmail.com',
+      user: 'sstranzzo@gmail.com',
       // pass: process.env.SMTP_PASSWORD
-      pass: 'kxeewonntvsqfzxh',
+      pass: 'wwwwww',
     },
   });
   try {
