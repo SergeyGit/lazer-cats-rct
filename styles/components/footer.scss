@@ -74,6 +74,14 @@
   }
   &_insta{
     height: 210px;
+    display: flex;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
   }
   &_pages {
     padding-top: 40px;

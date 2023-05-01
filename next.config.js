@@ -11,6 +11,13 @@ const nextConfig = async () => {
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: 'ua-ua',
     },
+    publicRuntimeConfig: {
+      INST_USER: process.env.INST_USER,
+      INST_ACCESS: process.env.INST_ACCESS,
+    },
+    images: {
+      domains: ['scontent.cdninstagram.com'],
+    },
   };
 };
 

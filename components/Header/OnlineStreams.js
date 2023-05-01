@@ -10,7 +10,7 @@ function formatNumber(num) {
 
 async function fetchStreamData() {
   const response = await fetch(
-    `https://api.twitch.tv/helix/streams?user_login=Burmylov&user_login=Hkta&user_login=m1she4ka&user_login=munch&user_login=Hkta`,
+    `https://api.twitch.tv/helix/streams?user_login=Burmylov&user_login=Hkta&user_login=m1she4ka&user_login=munch&user_login=Hkta&user_login=lzrcats`,
     {
       headers: {
         'Client-ID': 'fwovkl5f9bdpzpanjhlvpqrt12v0yh',

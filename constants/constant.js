@@ -5,6 +5,7 @@ import Hkta from '../assets/images/header/Hkta.png';
 import m1she4ka from '../assets/images/header/m1she4ka.png';
 import munch from '../assets/images/header/munch.png';
 import t0kk from '../assets/images/header/t0kk.png';
+import lazer from '../assets/images/header/lazer.png';
 
 export const BADGES_COLORS = {
   online: '#FF007A',
@@ -37,5 +38,8 @@ export const STREAMS_ICONS = {
   },
   t0kk: {
     icon: t0kk,
+  },
+  lzrcats: {
+    icon: lazer,
   },
 };

@@ -5,6 +5,9 @@ import { useMediaListener } from '@/hooks/MediaListener';
 import { linkResolver } from '../prismicio';
 import Image from 'next/image';
 import { LANGS } from '../constants/constant';
+import dynamic from 'next/dynamic';
+
+const InstagramPosts = dynamic(() => import('./InstagramPosts'));
 
 const Footer = ({ footer: { data }, alternateLanguages }) => {
   const isDesctop = useMediaListener('(min-width: 991px)');
@@ -36,7 +39,7 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
           <PrismicNextImage field={data.background_image} fill loading="lazy" alt="bg social" />
         </div>
       </div>
-      <div className="footer_insta">inst photos</div>
+      <InstagramPosts />
       <Container className="footer_partners d-flex align-items-center justify-content-around flex-wrap">
         {data.partners.map(({ logo }) => (
           <div key={logo.url} className="footer_partners_item">
