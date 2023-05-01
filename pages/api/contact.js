@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 export default async (req, res) => {
   let nodemailer = require('nodemailer');
   const { receiveEmail, name, email, message, topic } = req.body;
@@ -6,10 +9,8 @@ export default async (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      // user: process.env.SMTP_USER,
-      user: 'sstranzzo@gmail.com',
-      // pass: process.env.SMTP_PASSWORD
-      pass: 'wwwwww',
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
   try {
