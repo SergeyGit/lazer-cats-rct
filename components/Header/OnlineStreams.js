@@ -39,7 +39,7 @@ const OnlineStreams = () => {
       {streamData.data.map(({ user_name, viewer_count }) => (
         <a
           href={`https://www.twitch.tv/${user_name}`}
-          className="d-flex header_streams_item flex-shrink-0"
+          className="d-flex header_streams_item flex-shrink-0 "
           key={user_name}
           target="_blank"
           rel="noopener noreferrer"
