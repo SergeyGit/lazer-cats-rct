@@ -16,7 +16,11 @@ const nextConfig = async () => {
       INST_ACCESS: process.env.INST_ACCESS,
     },
     images: {
-      domains: ['scontent.cdninstagram.com'],
+      domains: [
+        'scontent.cdninstagram.com',
+        // 'scontent-otp1-1.cdninstagram.com',
+        '*',
+      ],
     },
   };
 };

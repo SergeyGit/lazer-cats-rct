@@ -27,13 +27,21 @@ const InstagramPosts = () => {
   return (
     <div className="footer_insta">
       {photos?.map(({ media_url, id }) => (
-        <Image
+        // <Image
+        //   src={media_url}
+        //   width={isDesctop ? 210 : 125}
+        //   height={isDesctop ? 210 : 125}
+        //   alt={id}
+        //   key={id}
+        //   loading="lazy"
+        // />
+        <img
           src={media_url}
           width={isDesctop ? 210 : 125}
           height={isDesctop ? 210 : 125}
           alt={id}
           key={id}
-          loading="lazy"
+          // loading="lazy"
         />
       ))}
     </div>
