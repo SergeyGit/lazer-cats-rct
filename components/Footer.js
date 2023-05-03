@@ -11,6 +11,8 @@ const InstagramPosts = dynamic(() => import('./InstagramPosts'));
 
 const Footer = ({ footer: { data }, alternateLanguages }) => {
   const isDesctop = useMediaListener('(min-width: 991px)');
+  const instLink = data.social_links.find(({ link }) => link.url.includes('www.instagram.com'))
+    ?.link?.url;
 
   return (
     <footer className="footer">
@@ -39,7 +41,7 @@ const Footer = ({ footer: { data }, alternateLanguages }) => {
           <PrismicNextImage field={data.background_image} fill loading="lazy" alt="bg social" />
         </div>
       </div>
-      <InstagramPosts />
+      <InstagramPosts link={instLink} />
       <Container className="footer_partners d-flex align-items-center justify-content-around flex-wrap">
         {data.partners.map(({ logo }) => (
           <div key={logo.url} className="footer_partners_item">

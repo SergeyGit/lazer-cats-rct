@@ -16,7 +16,7 @@
           "config": {
             "label": "Title",
             "placeholder": "This is where it all begins...",
-            "allowTargetBlank": true,
+            "allowTargetBlank": false,
             "single": "strong"
           }
         },

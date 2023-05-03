@@ -23,7 +23,8 @@ const initData = {
 const PartnerForm = ({ slice }) => {
   const [formData, setFormData] = useState(initData);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
+  const isMainPage = !!slice.items.length;
 
   const handleChange = (e) => {
     setFormData({
@@ -58,7 +59,7 @@ const PartnerForm = ({ slice }) => {
       .then((res) => {
         setLoading(false);
         if (res.status === 200) {
-          // setFormData(initData);
+          setFormData(initData);
           setSuccess(true);
         }
       })
@@ -69,52 +70,77 @@ const PartnerForm = ({ slice }) => {
   };
 
   return (
-    <section className={style.section}>
-      <div className={cn(style.partnerBG, 'd-flex flex-wrap')}>
-        {[...Array(15)].map((_, index) => (
-          <Fragment key={index}>
-            {slice.items?.map(({ icon_partner, icon_partner_hover }) => (
-              <div
-                key={icon_partner.url}
-                className={cn(
-                  style.partnerBGItem,
-                  'd-flex align-items-center justify-content-center'
-                )}
-              >
-                <PrismicNextImage field={icon_partner} fill={false} loading="lazy" alt="social" />
+    <section
+      className={cn(style.section, {
+        [style.contact]: !isMainPage,
+      })}
+    >
+      {isMainPage && (
+        <div className={cn(style.partnerBG, 'd-flex flex-wrap')}>
+          {[...Array(15)].map((_, index) => (
+            <Fragment key={index}>
+              {slice.items?.map(({ icon_partner, icon_partner_hover }) => (
                 <div
+                  key={icon_partner.url}
                   className={cn(
-                    style.partnerBGItemHover,
+                    style.partnerBGItem,
                     'd-flex align-items-center justify-content-center'
                   )}
                 >
-                  <PrismicNextImage
-                    field={icon_partner_hover}
-                    fill={false}
-                    loading="lazy"
-                    alt="social"
-                  />
+                  <PrismicNextImage field={icon_partner} fill={false} loading="lazy" alt="social" />
+                  <div
+                    className={cn(
+                      style.partnerBGItemHover,
+                      'd-flex align-items-center justify-content-center'
+                    )}
+                  >
+                    <PrismicNextImage
+                      field={icon_partner_hover}
+                      fill={false}
+                      loading="lazy"
+                      alt="social"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Fragment>
-        ))}
-      </div>
-      <div className={style.bg}>
+              ))}
+            </Fragment>
+          ))}
+        </div>
+      )}
+
+      <div
+        className={cn(style.bg, {
+          [style.contact]: !isMainPage,
+        })}
+      >
         <PrismicNextImage field={slice.primary.background} fill loading="lazy" alt="bg" />
       </div>
-      <Container className={style.container}>
+      <Container
+        className={cn(style.container, {
+          [style.contact]: !isMainPage,
+        })}
+      >
         <div className="multicolor-title h1 text-center">
           <PrismicRichText field={slice.primary.title} />
         </div>
-        <Row className={cn('align-items-center', style.content)}>
-          <Col lg={6}>
-            <div className={style.description}>
+        <Row
+          className={cn('align-items-center', style.content, {
+            [style.contact]: !isMainPage,
+          })}
+        >
+          <Col lg={isMainPage ? 6 : 12}>
+            <div
+              className={cn(style.description, {
+                [style.contact]: !isMainPage,
+              })}
+            >
               <PrismicRichText field={slice.primary.description} />
-              <Image src={Light} alt="light" loading="lazy" className={style.light} height={69} />
+              {isMainPage && (
+                <Image src={Light} alt="light" loading="lazy" className={style.light} height={69} />
+              )}
             </div>
           </Col>
-          <Col lg={6} className="djustify-content-end">
+          <Col lg={isMainPage ? 6 : 12} className="djustify-content-end">
             {success ? (
               <div
                 className={cn(

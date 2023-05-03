@@ -12,6 +12,10 @@
     max-width: 648px;
     margin-left: auto;
   }
+  &.contact {
+    padding-top: 270px;
+    padding-bottom: 200px;
+  }
   @media (min-width: $lg) {
     padding-top: 140px;
     padding-bottom: 180px;
@@ -67,10 +71,17 @@
 }
 .content {
   margin-top: 90px;
+  &.contact {
+    margin-top: 20px;
+  }
 }
 
 .description {
   position: relative;
+  &.contact {
+    text-align: center;
+    margin-bottom: 50px;
+  }
   h2 {
     font-weight: 700;
     line-height: 1;
@@ -91,7 +102,7 @@
     margin-bottom: 8px;
   }
 }
-.formButton {
+.formButton, .successButton {
   position: relative;
   z-index: 4;
   button {
@@ -106,6 +117,9 @@
 }
 .container {
   z-index: unset;
+  &.contact {
+    max-width: 690px;
+  }
 }
 .bg {
   position: absolute;
@@ -119,6 +133,11 @@
   img {
     object-fit: cover;
     object-position: bottom;
+  }
+  &.contact {
+    height: 100%;
+    opacity: 1;
+    z-index: 0;
   }
 }
 .success {

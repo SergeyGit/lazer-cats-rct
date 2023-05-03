@@ -9,7 +9,7 @@ const fetchData = async (instaUrl) => {
   return data.data;
 };
 
-const InstagramPosts = () => {
+const InstagramPosts = ({ link }) => {
   const { publicRuntimeConfig } = getConfig();
   const userId = publicRuntimeConfig.INST_USER;
   const accessToken = publicRuntimeConfig.INST_ACCESS;
@@ -25,7 +25,7 @@ const InstagramPosts = () => {
   }, [userId, accessToken]);
 
   return (
-    <div className="footer_insta">
+    <a href={link} className="footer_insta" target="_blank" rel="noopener noreferrer">
       {photos?.map(({ media_url, id }) => (
         // <Image
         //   src={media_url}
@@ -44,7 +44,7 @@ const InstagramPosts = () => {
           // loading="lazy"
         />
       ))}
-    </div>
+    </a>
   );
 };
 export default InstagramPosts;
