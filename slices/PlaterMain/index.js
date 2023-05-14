@@ -40,7 +40,7 @@ const PlaterMain = ({ slice }) => {
             <div className={style.text}>
               <div className="h1 f-w-b">{slice.primary.name}</div>
               <div className={style.role}>{slice.primary.role}</div>
-              <div className="h5">{slice.primary.fio}</div>
+              <div className="h5 helveticaFont">{slice.primary.fio}</div>
               <div className={cn(style.info, 'd-flex align-items-center')}>
                 <PrismicNextImage field={slice.primary.country} loading="lazy" alt="country" />
                 <span className={style.countryName}>{slice.primary.country_name}</span>
@@ -53,7 +53,7 @@ const PlaterMain = ({ slice }) => {
                 <Col lg={6}>
                   <h5 className={cn(style.ingame)}>{slice.primary.ingame_title}</h5>
                   {settings.map(({ label, value }) => (
-                    <div className="d-flex fz-14" key={label}>
+                    <div className="d-flex fz-14 helveticaFont" key={label}>
                       <div className={cn(style.ingameLabel, 'flex-shrink-0')}>{label}</div>
                       <div>{value}</div>
                     </div>

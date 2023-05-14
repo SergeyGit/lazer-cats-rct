@@ -1,0 +1,87 @@
+@import "../variables";
+
+.select {
+    position: relative;
+    background: $purple-800;
+    color: white;
+    border: none;
+    font-size: 16px;
+    line-height: 56px;
+    border-bottom: 2px solid $primary-purple;
+    transition: .4s;
+    min-height: 60px;
+}
+.active {
+    //border-color: red;
+}
+.value {
+    color: white;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-right: 56px;
+}
+.selectHead::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.selectInput:focus {
+    /*width: auto;*/
+    outline: none;
+}
+.selectInput:focus::placeholder {
+    opacity: 0;
+}
+.selectInput.hidePlaceholder::placeholder {
+    opacity: 0;
+}
+.selectDButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-image: url(../../assets/images/icons/arrows/Down.svg);
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+
+}
+.dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 58px;
+    border: 2px solid rgb(237, 181, 36);
+    z-index: 100;
+    background: $purple-800
+}
+.optionsWrap {
+    overflow: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    max-height: 180px;
+}
+.option {
+    display: flex;
+    align-items: center;
+    padding: 5px 16px;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+}
+.placeholder {
+    color: #755F94;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-right: 56px;
+}

@@ -106,6 +106,7 @@
   margin-top: 16px;
   height: 72px;
   overflow: hidden;
+  font-family: 'Helvetica';
   @media (max-width: $md) {
     height: 48px;
   }
@@ -171,6 +172,7 @@
 .info {
   margin-top: 16px;
   color: white;
+  font-family: 'Helvetica';
 }
 
 .icon {

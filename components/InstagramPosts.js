@@ -35,14 +35,15 @@ const InstagramPosts = ({ link }) => {
         //   key={id}
         //   loading="lazy"
         // />
-        <img
-          src={media_url}
-          width={isDesctop ? 210 : 125}
-          height={isDesctop ? 210 : 125}
-          alt={id}
-          key={id}
-          // loading="lazy"
-        />
+        <div className="footer_insta_item" key={id}>
+          <img
+            src={media_url}
+            width={isDesctop ? 210 : 125}
+            height={isDesctop ? 210 : 125}
+            alt={id}
+            // loading="lazy"
+          />
+        </div>
       ))}
     </a>
   );

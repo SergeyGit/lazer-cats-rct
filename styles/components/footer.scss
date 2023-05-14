@@ -82,6 +82,27 @@
       width: 0;
       height: 0;
     }
+    &_item {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(../../assets/images/footer/instHover.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: .4s;
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
   }
   &_pages {
     padding-top: 40px;
@@ -95,6 +116,7 @@
         margin-left: 40px;
         font-size: 12px;
         text-transform: uppercase;
+        font-family: 'Helvetica';
       }
     }
   }
@@ -132,6 +154,7 @@
     padding-bottom: 40px;
     font-size: 14px;
     letter-spacing: 0.02em;
+    font-family: 'Helvetica';
     @media (min-width: $md) {
       &:before {
         content: '';

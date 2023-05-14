@@ -106,7 +106,7 @@ const Matches = ({ slice }) => {
                     team_name_2,
                     team_logo_2,
                   }) => (
-                    <div key={date}>
+                    <div className={style.matchesItem} key={date}>
                       <div
                         className={cn(
                           style.matchesLineHead,
@@ -178,7 +178,7 @@ const Matches = ({ slice }) => {
                     team_logo_2,
                     score,
                   }) => (
-                    <div key={date}>
+                    <div className={style.matchesItem} key={date}>
                       <div
                         className={cn(
                           style.matchesLineHead,

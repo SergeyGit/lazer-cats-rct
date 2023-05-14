@@ -27,7 +27,9 @@ const OurTeam = ({ slice }) => {
           <div className={cn(style.caption, 'multicolor-title h1')}>
             <PrismicRichText field={slice.primary.title} />
           </div>
-          <PrismicRichText field={slice.primary.description} />
+          <div className="helveticaFont">
+            <PrismicRichText field={slice.primary.description} />
+          </div>
         </div>
         {isMobile ? <MobileBlock slice={slice} /> : <DesctopBlock slice={slice} />}
       </Container>

@@ -50,7 +50,7 @@ const VerticalBlock = ({ slice }) => (
                   loading="lazy"
                 />
               </div>
-              <div>{country_name}</div>
+              <div className="helveticaFont">{country_name}</div>
             </div>
             <div className={cn(style.caption, 'h4 f-w-b')}>{caption}</div>
             <div className="d-flex align-items-center  flex-wrap">

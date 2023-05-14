@@ -92,6 +92,7 @@
   }
   p {
     margin-bottom: 0;
+    font-family: 'Helvetica';
   }
 }
 .formItem {
@@ -100,6 +101,10 @@
   margin-bottom: 32px;
   label {
     margin-bottom: 8px;
+    font-family: 'Helvetica';
+  }
+  &.select {
+    z-index: 5;
   }
 }
 .formButton, .successButton {

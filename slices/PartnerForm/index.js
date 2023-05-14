@@ -17,19 +17,24 @@ import SuccessIcon from '../../assets/images/success.svg';
 const initData = {
   name: '',
   email: '',
-  topic: 'topic1',
   message: '',
 };
 const PartnerForm = ({ slice }) => {
   const [formData, setFormData] = useState(initData);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const isMainPage = !!slice.items.length;
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
+    });
+  };
+  const onSelect = (value) => {
+    setFormData({
+      ...formData,
+      topic: value,
     });
   };
 
@@ -120,7 +125,7 @@ const PartnerForm = ({ slice }) => {
           [style.contact]: !isMainPage,
         })}
       >
-        <div className="multicolor-title h1 text-center">
+        <div className="multicolor-title h1 text-center ">
           <PrismicRichText field={slice.primary.title} />
         </div>
         <Row
@@ -159,9 +164,20 @@ const PartnerForm = ({ slice }) => {
             ) : (
               <form onSubmit={handleSubmit}>
                 {formFields?.map(({ label, id }) => (
-                  <div className={style.formItem} key={id}>
+                  <div
+                    className={cn(style.formItem, {
+                      [style.select]: id === 'topic',
+                    })}
+                    key={id}
+                  >
                     <label htmlFor={id}>{label}</label>
-                    {getField({ name: id, value: formData[id] || '', handleChange })}
+                    {getField({
+                      name: id,
+                      value: formData[id] || '',
+                      selectOptions: slice.primary.topics?.split(', '),
+                      handleChange,
+                      onSelect,
+                    })}
                   </div>
                 ))}
                 <div className={cn(style.formButton, 'link')}>

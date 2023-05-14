@@ -14,11 +14,11 @@ const PartnersList = ({ slice }) => (
   <section className={style.section}>
     <Container>
       {slice?.items?.map(({ logo, gradient_main_color, caption, text, link, title_link }) => (
-        <div className={cn(style.card, 'd-flex flex-column flex-md-row')}>
+        <div className={cn(style.card, 'd-flex flex-column flex-md-row')} key={caption}>
           <div
             className={style.cardBg}
             style={{
-              background: `linear-gradient(82.19deg, ${gradient_main_color} 0%, rgba(255, 0, 0, 0) 100%);`,
+              background: `linear-gradient(82.19deg, ${gradient_main_color} 0%, rgba(255, 0, 0, 0) 100%)`,
             }}
           />
           <div className={cn(style.image, 'flex-shrink-0')}>
@@ -30,7 +30,7 @@ const PartnersList = ({ slice }) => (
               'd-flex flex-column align-items-center align-items-md-start'
             )}
           >
-            <div className="h5">{caption}</div>
+            <div className="h5 helveticaFont">{caption}</div>
             <div className={style.text}>
               <PrismicRichText field={text} />
             </div>

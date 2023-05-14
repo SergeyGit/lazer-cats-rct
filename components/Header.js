@@ -17,6 +17,10 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
 
   const isDesctop = useMediaListener('(min-width: 768px)');
 
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
   useEffect(() => {
     function logit() {
       if (window.pageYOffset > 80) {
@@ -76,16 +80,16 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
               className={cn('header_burger', {
                 active: toggle,
               })}
-              onClick={() => setToggle(!toggle)}
+              onClick={handleToggle}
             />
           )}
           {(toggle || isDesctop) && (
             <div className="d-flex flex-column flex-md-row align-items-center header_burger_menu">
               <div className="header_pages_list page-links">
                 {data.pages.map(({ title_link, link }) => (
-                  <PrismicLink field={link} key={title_link}>
-                    {title_link}
-                  </PrismicLink>
+                  <div onClick={!isDesctop ? handleToggle : undefined} key={title_link}>
+                    <PrismicLink field={link}>{title_link}</PrismicLink>
+                  </div>
                 ))}
               </div>
               {!isDesctop &&

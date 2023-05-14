@@ -25,7 +25,7 @@ const DesctopBlock = ({ slice }) => {
                 </div>
               </div>
               <div className={cn(style.nick, 'h3')}>{nick}</div>
-              <div className="h6">{name}</div>
+              <div className="h6 helveticaFont">{name}</div>
               <div className={style.position}>{position}</div>
             </div>
           </PrismicLink>
