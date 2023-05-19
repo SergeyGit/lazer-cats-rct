@@ -103,7 +103,7 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
                 ))}
               <div
                 className={cn('link', {
-                  dark: !isDesctop,
+                  dark: !isDesctop || !dark,
                 })}
               >
                 <PrismicLink href={settings.data.shop_link.url}>
