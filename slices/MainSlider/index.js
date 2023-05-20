@@ -54,7 +54,11 @@ const MainSlider = ({ slice }) => {
             </div>
           </div>
           <div className={cn(style.navigationStatus, 'd-flex align-items-center')}>
-            <div onClick={handleButtonClick} data-value="decrement">
+            <div
+              onClick={handleButtonClick}
+              data-value="decrement"
+              className="cursorPointer helveticaFont"
+            >
               {slice.primary.prev_text}
             </div>
             <div className={style.navigationStatusRow}>
@@ -66,7 +70,11 @@ const MainSlider = ({ slice }) => {
                 }}
               />
             </div>
-            <div onClick={handleButtonClick} data-value="increment">
+            <div
+              onClick={handleButtonClick}
+              data-value="increment"
+              className="cursorPointer helveticaFont"
+            >
               {slice.primary.next_text}
             </div>
           </div>

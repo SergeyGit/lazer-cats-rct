@@ -14,7 +14,7 @@
 
   &_line {
     position: relative;
-    height: 72px;
+    height: 55px;
     transition: .4s;
     &:after {
       content: '';
@@ -24,6 +24,9 @@
       right: 0;
       height: 1px;
       background: linear-gradient(270deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.4) 50.04%, rgba(255, 255, 255, 0.08) 100%);
+    }
+    @media (min-width: $md) {
+      height: 72px;
     }
   }
 

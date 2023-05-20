@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, startTransition } from 'react';
 import { PrismicLink } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 import { linkResolver } from '../prismicio';
@@ -23,11 +23,13 @@ const Header = ({ alternateLanguages = [], settings, footer: { data } }) => {
 
   useEffect(() => {
     function logit() {
-      if (window.pageYOffset > 80) {
-        setDark(true);
-      } else {
-        setDark(false);
-      }
+      startTransition(() => {
+        if (window.pageYOffset > 80) {
+          setDark(true);
+        } else {
+          setDark(false);
+        }
+      });
     }
     window.addEventListener('scroll', logit);
     return () => {

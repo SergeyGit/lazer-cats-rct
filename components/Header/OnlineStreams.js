@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, startTransition } from 'react';
 import { STREAMS_ICONS } from '../../constants/constant';
 import Image from 'next/image';
 
@@ -26,7 +26,9 @@ const OnlineStreams = () => {
 
   useEffect(() => {
     if (!streamData) {
-      fetchStreamData().then(setStreamData);
+      startTransition(() => {
+        fetchStreamData().then(setStreamData);
+      });
     }
   }, []);
 
