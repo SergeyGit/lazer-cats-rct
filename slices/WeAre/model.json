@@ -36,6 +36,30 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "smoke": {
+          "type": "Image",
+          "config": {
+            "label": "smoke",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "smoke2": {
+          "type": "Image",
+          "config": {
+            "label": "smoke2",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {},

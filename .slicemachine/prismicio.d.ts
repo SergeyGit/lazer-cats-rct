@@ -1960,6 +1960,36 @@ interface WeAreSliceDefaultPrimary {
      *
      */
     background_image: prismicT.ImageField<never>;
+    /**
+     * logo field in *WeAre → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: we_are.primary.logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
+    /**
+     * smoke field in *WeAre → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: we_are.primary.smoke
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    smoke: prismicT.ImageField<never>;
+    /**
+     * smoke2 field in *WeAre → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: we_are.primary.smoke2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    smoke2: prismicT.ImageField<never>;
 }
 /**
  * Default variation for WeAre Slice

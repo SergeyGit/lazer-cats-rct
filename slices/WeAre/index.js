@@ -11,7 +11,7 @@ import cn from 'classnames';
  */
 const WeAre = ({ slice }) => (
   <section className={style.section}>
-    <Container>
+    <Container style={{ zIndex: 2 }}>
       <div className={style.content}>
         <div className={cn(style.caption, 'multicolor-title fz-160')}>
           <PrismicRichText field={slice.primary.title} />
@@ -28,6 +28,20 @@ const WeAre = ({ slice }) => (
         loading="lazy"
         alt="bg"
       />
+    </div>
+    <div className={style.video}>
+      <video autoPlay muted loop>
+        <source src="https://lzrcats.com/img/SMOKE.webm" />
+      </video>
+    </div>
+    <div className={style.logo}>
+      <PrismicNextImage field={slice.primary.logo} loading="lazy" alt="logo" />
+    </div>
+    <div className={cn(style.smoke2, 'd-flex align-items-center')}>
+      <PrismicNextImage field={slice.primary.smoke2} fill={true} loading="lazy" alt="bg" />
+    </div>
+    <div className={cn(style.smoke, 'd-flex align-items-center')}>
+      <PrismicNextImage field={slice.primary.smoke} fill={true} loading="lazy" alt="bg" />
     </div>
   </section>
 );
