@@ -157,6 +157,33 @@ p {
       }
     }
   }
+  &.red {
+    &:before, &:after {
+      background-color: #FF007A;
+    }
+    a, button {
+      &:before, {
+        background-color: #FF007A;
+      }
+      &:after {
+        border-top-color: #FF007A;
+      }
+    }
+    &:hover {
+      &:before, &:after {
+        background:  #FF007A;
+      }
+      a, button {
+        color: white;
+        &:before {
+          background: #FF007A;
+        }
+        &:after {
+          border-top-color: #FF007A;
+        }
+      }
+    }
+  }
   &:hover {
     &:before, &:after {
       background:  #EDB524;

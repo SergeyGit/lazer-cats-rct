@@ -1,3 +1,4 @@
+import React, { Fragment, startTransition, useEffect, useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import cn from 'classnames';
 import style from '../../styles/modules/playerMain.module.scss';
@@ -6,15 +7,43 @@ import { PrismicNextImage } from '@prismicio/next';
 import { useMediaListener } from '@/hooks/MediaListener';
 import Triangles from '../../assets/images/player/Triangles.svg';
 import Image from 'next/image';
-import React, { Fragment } from 'react';
+import Twich from '../../assets/images/icons/twichlive.svg';
 
 /**
  * @typedef {import("@prismicio/client").Content.PlaterMainSlice} PlaterMainSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<PlaterMainSlice>} PlaterMainProps
  * @param { PlaterMainProps }
  */
+
+async function fetchStreamData(name) {
+  const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${name}`, {
+    headers: {
+      'Client-ID': 'fwovkl5f9bdpzpanjhlvpqrt12v0yh',
+      Authorization: 'Bearer 1jb0abo2h7twvb7f6u1xucmdq8xuju',
+    },
+  });
+  return await response.json();
+}
+
+function formatNumber(num) {
+  const roundedNum = Math.ceil(num / 1000) * 1000;
+  const suffix = 'k';
+  return (roundedNum / 1000).toFixed(0) + suffix;
+}
+
 const PlaterMain = ({ slice }) => {
   const isMobile = useMediaListener('(max-width: 767px)');
+  const [streamData, setStreamData] = useState();
+
+  useEffect(() => {
+    if (!streamData) {
+      startTransition(() => {
+        // fetchStreamData(slice.primary.name.toLowerCase()).then(setStreamData);
+        fetchStreamData('l4hmadju').then(setStreamData);
+      });
+    }
+  }, [slice.primary.name]);
+
   const settings = slice.primary.ingame_settings.split(', ')?.map((item) => ({
     value: item.replace(/^.*\[/g, '').replace(/].*/g, ''),
     label: item.split(' [')[0] || '',
@@ -38,7 +67,24 @@ const PlaterMain = ({ slice }) => {
           </Col>
           <Col lg={6}>
             <div className={style.text}>
-              <div className="h1 f-w-b">{slice.primary.name}</div>
+              <div className="d-flex align-items-center flex-column flex-md-row">
+                <div className="h1 f-w-b">{slice.primary.name}</div>
+                {!!streamData?.data?.length && (
+                  <div className={cn(style.liveLink, 'link red flex-shrink-0')}>
+                    <a
+                      href={`https://www.twitch.tv/${slice.primary.name.toLowerCase()}`}
+                      className="d-flex justify-content-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className={cn(style.liveIcon, 'flex-shrink-0')}>
+                        <Image src={Twich} alt="stream" />
+                      </div>
+                      Live <span>{formatNumber(streamData?.data[0].viewer_count)} viewers</span>
+                    </a>
+                  </div>
+                )}
+              </div>
               <div className={style.role}>{slice.primary.role}</div>
               <div className="h5 helveticaFont">{slice.primary.fio}</div>
               <div className={cn(style.info, 'd-flex align-items-center')}>

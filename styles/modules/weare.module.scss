@@ -5,15 +5,30 @@
   width: 100%;
   color: white;
   overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(16, 0, 36, 0) 0%, #100024 100%);
+    z-index: 5;
+    height: 160px;
+  }
 }
 
 .caption {
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 1;
-  @media (max-width: $xl) {
-    text-align: left;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  max-width: 420px;
+  @media (min-width: $md) {
+    max-width: 100%;
+  }
+  @media (min-width: $xl) {
+    text-align: center;
+    margin-bottom: 0;
   }
 }
 .h6 {
@@ -31,7 +46,7 @@
 .content {
   width: 100%;
   max-width: 1170px;
-  padding: 300px 0 140px;
+  padding: 300px 0 160px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -57,28 +72,8 @@
   overflow: hidden;
   opacity: 0.2;
   z-index: 2;
-
-
   img {
     object-fit: cover;
-  }
-
-  @media (max-width: $lg) {
-    width: 140%;
-    transform: translateX(-10%);
-    right: auto;
-    img {
-      object-fit: unset;
-      height: auto !important;
-    }
-  }
-  @media (max-width: $sm) {
-    width: 180%;
-    transform: translateX(-20%);
-  }
-  @media (max-width: 455px) {
-    width: 950px;
-    transform: translateX(-30%);
   }
 }
 
@@ -104,16 +99,16 @@
   bottom: 0;
   overflow: hidden;
   z-index: 1;
-  opacity: 0.1;
-
-
   img {
     object-fit: cover;
+  }
+  @media (min-width: $xl) {
+    opacity: 0.1;
   }
 }
 
 .logo {
-  height: 400px;
+  height: 250px;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -125,18 +120,18 @@
   z-index: 1;
   text-align: center;
   img {
-    width: 800px;
-    height: 744px;
+    width: 400px;
+    height: 366px;
   }
-  //&:after {
-  //  content: '';
-  //  position: absolute;
-  //  top: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //  right: 0;
-  //  background: linear-gradient(180deg, rgba(16, 0, 36, 0) 0%, #100024 50.92%);
-  //}
+  @media (min-width: $xl) {
+    height: 400px;
+    opacity: 0.6;
+    top: 20px;
+    img {
+      width: 800px;
+      height: 744px;
+    }
+  }
 }
 .video {
   top: 0;

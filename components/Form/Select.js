@@ -45,7 +45,7 @@ const Select = ({ options, selected, onSelect, name, placeholder }) => {
           [styles.active]: open,
         })}
         onClick={handleClick}
-      ></button>
+      />
       {open && (
         <div className={styles.dialog}>
           <div className={styles.optionsWrap}>
