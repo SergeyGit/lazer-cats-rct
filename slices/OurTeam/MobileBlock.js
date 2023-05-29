@@ -31,7 +31,7 @@ const MobileBlock = ({ slice }) => {
                   <PrismicNextImage field={image} loading="lazy" height={480} alt={nick} />
                 </div>
                 <div className={cn(style.nick, 'h3')}>{nick}</div>
-                <div className="h6">{name}</div>
+                <div className={cn(style.h6, 'h6')}>{name}</div>
                 <div className={style.position}>{position}</div>
               </div>
             </PrismicLink>

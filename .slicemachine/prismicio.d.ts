@@ -671,6 +671,16 @@ export interface MainSliderSliceDefaultItem {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * mobile_image field in *MainSlider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.items[].mobile_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    mobile_image: prismicT.ImageField<never>;
 }
 /**
  * Default variation for MainSlider Slice

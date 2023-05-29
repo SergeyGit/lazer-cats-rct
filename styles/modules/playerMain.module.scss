@@ -62,7 +62,7 @@
 }
 .liveLink {
   margin-left: 40px;
-  //margin-top: 30px;
+  margin-top: 20px;
   a {
     font-family: 'Helvetica';
     width: 186px !important;
@@ -81,6 +81,33 @@
       line-height: 46px !important;
     }
   }
+}
+
+.liveLinkOffline {
+  a {
+    width: 206px !important;
+  }
+  img {
+    opacity: .5;
+  }
+  &:hover {
+    &:before, &:after {
+      background:  $base-dark;
+    }
+    a {
+      color: white;
+      &:before {
+        background: $base-dark;
+      }
+      &:after {
+        border-top-color: $base-dark;
+      }
+    }
+  }
+}
+.liveIconOp {
+  opacity: .5;
+  letter-spacing: 0.02em;
 }
 
 .text {

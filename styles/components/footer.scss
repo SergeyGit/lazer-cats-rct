@@ -72,8 +72,8 @@
       }
     }
   }
-  &_insta{
-    height: 210px;
+  &_insta {
+    height: 125px;
     display: flex;
     overflow: auto;
     -ms-overflow-style: none;
@@ -102,6 +102,9 @@
           opacity: 1;
         }
       }
+    }
+    @media (min-width: $lg) {
+      height: 210px;
     }
   }
   &_pages {
@@ -145,6 +148,10 @@
       }
       @media (max-width: $md) {
         width: 50%;
+        height: 100px;
+        img {
+          height: 100%;
+        }
       }
     }
   }

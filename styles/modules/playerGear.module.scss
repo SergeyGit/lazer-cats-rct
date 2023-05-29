@@ -3,10 +3,10 @@
 .section {
   position: relative;
   padding-top: 70px;
-  padding-bottom: 70px;
+  //padding-bottom: 70px;
   @media (min-width: $lg) {
     padding-top: 140px;
-    padding-bottom: 110px;
+    //padding-bottom: 110px;
   }
 }
 

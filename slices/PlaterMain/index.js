@@ -38,8 +38,7 @@ const PlaterMain = ({ slice }) => {
   useEffect(() => {
     if (!streamData) {
       startTransition(() => {
-        // fetchStreamData(slice.primary.name.toLowerCase()).then(setStreamData);
-        fetchStreamData('l4hmadju').then(setStreamData);
+        fetchStreamData(slice.primary.name.toLowerCase()).then(setStreamData);
       });
     }
   }, [slice.primary.name]);
@@ -69,7 +68,7 @@ const PlaterMain = ({ slice }) => {
             <div className={style.text}>
               <div className="d-flex align-items-center flex-column flex-md-row">
                 <div className="h1 f-w-b">{slice.primary.name}</div>
-                {!!streamData?.data?.length && (
+                {streamData?.data?.length ? (
                   <div className={cn(style.liveLink, 'link red flex-shrink-0')}>
                     <a
                       href={`https://www.twitch.tv/${slice.primary.name.toLowerCase()}`}
@@ -81,6 +80,22 @@ const PlaterMain = ({ slice }) => {
                         <Image src={Twich} alt="stream" />
                       </div>
                       Live <span>{formatNumber(streamData?.data[0].viewer_count)} viewers</span>
+                    </a>
+                  </div>
+                ) : (
+                  <div
+                    className={cn(style.liveLink, style.liveLinkOffline, 'link dark flex-shrink-0')}
+                  >
+                    <a
+                      href={`https://www.twitch.tv/${slice.primary.name.toLowerCase()}`}
+                      className="d-flex justify-content-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className={cn(style.liveIcon, 'flex-shrink-0')}>
+                        <Image src={Twich} alt="stream" />
+                      </div>
+                      <div className={style.liveIconOp}>Currently offline</div>
                     </a>
                   </div>
                 )}

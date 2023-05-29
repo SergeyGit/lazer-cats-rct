@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
+import { useMediaListener } from '@/hooks/MediaListener';
 
 /**
  * @typedef {import("@prismicio/client").Content.MainSliderSlice} MainSliderSlice
@@ -22,6 +23,8 @@ const MainSlider = ({ slice }) => {
     },
   });
 
+  const isMobile = useMediaListener('(max-width: 600px)');
+
   const handleButtonClick = (props) => {
     if (props.currentTarget.getAttribute('data-value') === 'increment') {
       instanceRef.current?.next();
@@ -35,9 +38,14 @@ const MainSlider = ({ slice }) => {
   return (
     <section className={style.section}>
       <div className={cn('keen-slider', style.list)} ref={sliderRef}>
-        {slice?.items?.map(({ image }) => (
+        {slice?.items?.map(({ image, mobile_image }) => (
           <div className={cn(style.sliderItem, 'keen-slider__slide')} key={image.url}>
-            <PrismicNextImage field={image} fill loading="lazy" alt="slide" />
+            <PrismicNextImage
+              field={isMobile ? mobile_image : image}
+              fill
+              loading="lazy"
+              alt="slide"
+            />
           </div>
         ))}
       </div>
