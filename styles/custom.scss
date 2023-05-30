@@ -371,6 +371,10 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin: 0;
 }
 
+h1, .h1 {
+  font-size: 64px;
+}
+
 @media (min-width: $xxl) {
   h1, .h1 {
     font-size: 128px;

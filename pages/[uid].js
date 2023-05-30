@@ -5,6 +5,7 @@ import * as prismicH from '@prismicio/helpers';
 import { createClient } from '../prismicio';
 import { components } from '../slices';
 import { Layout } from '@/components/Layout';
+import Favico from '../assets/images/favicon.ico';
 
 const Page = ({ page, settings, footer }) => {
   return (
@@ -18,6 +19,7 @@ const Page = ({ page, settings, footer }) => {
         <title>
           {prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}
         </title>
+        <link rel="icon" href={Favico.src} sizes="any" />
       </Head>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>

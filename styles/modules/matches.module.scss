@@ -122,6 +122,9 @@
   overflow: hidden;
   right: 0;
   opacity: .4;
+  img {
+    min-width: 940px;
+  }
   @media (min-width: $md) {
     width: 100%;
     min-width: 1100px;
