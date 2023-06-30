@@ -117,7 +117,9 @@ p {
     line-height: 48px;
     letter-spacing: 0.12em;
     display: block;
-    width: 145px;
+    min-width: 145px;
+    padding-left: 16px;
+    padding-right: 16px;
     text-align: center;
     position: relative;
     background: none;
