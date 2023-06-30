@@ -18,8 +18,8 @@ import Twich from '../../assets/images/icons/twichlive.svg';
 async function fetchStreamData(name) {
   const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${name}`, {
     headers: {
-      'Client-ID': 'fwovkl5f9bdpzpanjhlvpqrt12v0yh',
-      Authorization: 'Bearer 1jb0abo2h7twvb7f6u1xucmdq8xuju',
+      'Client-ID': 'jbmzacqpwuqbypn6klo68ec9zbq2lg',
+      Authorization: 'Bearer u9hyyjx6e0jygcdesf3yd5jygsbvcb',
     },
   });
   return await response.json();

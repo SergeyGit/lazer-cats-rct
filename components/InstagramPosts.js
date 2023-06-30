@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import getConfig from 'next/config';
 import { useMediaListener } from '@/hooks/MediaListener';
 

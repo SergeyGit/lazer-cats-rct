@@ -13,8 +13,8 @@ async function fetchStreamData() {
     `https://api.twitch.tv/helix/streams?user_login=Burmylov&user_login=Hkta&user_login=m1she4ka&user_login=munch&user_login=Hkta&user_login=lzrcats`,
     {
       headers: {
-        'Client-ID': 'fwovkl5f9bdpzpanjhlvpqrt12v0yh',
-        Authorization: 'Bearer 1jb0abo2h7twvb7f6u1xucmdq8xuju',
+        'Client-ID': 'jbmzacqpwuqbypn6klo68ec9zbq2lg',
+        Authorization: 'Bearer u9hyyjx6e0jygcdesf3yd5jygsbvcb',
       },
     }
   );
