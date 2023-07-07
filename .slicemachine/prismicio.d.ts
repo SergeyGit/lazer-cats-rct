@@ -681,6 +681,36 @@ export interface MainSliderSliceDefaultItem {
      *
      */
     mobile_image: prismicT.ImageField<never>;
+    /**
+     * Slide caption field in *MainSlider → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.items[].slide_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    slide_caption: prismicT.RichTextField;
+    /**
+     * slide link text field in *MainSlider → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.items[].slide_link_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    slide_link_text: prismicT.KeyTextField;
+    /**
+     * slide link field in *MainSlider → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: main_slider.items[].slide_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    slide_link: prismicT.LinkField;
 }
 /**
  * Default variation for MainSlider Slice

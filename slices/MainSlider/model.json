@@ -42,6 +42,30 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "slide_caption": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Slide caption",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading2,heading3,heading4,heading5,heading6"
+          }
+        },
+        "slide_link_text": {
+          "type": "Text",
+          "config": {
+            "label": "slide link text",
+            "placeholder": ""
+          }
+        },
+        "slide_link": {
+          "type": "Link",
+          "config": {
+            "label": "slide link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"

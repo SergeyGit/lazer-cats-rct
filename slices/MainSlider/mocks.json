@@ -47,7 +47,6 @@
           [
             "mobile_image",
             {
-              "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
                 "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
@@ -65,7 +64,42 @@
                 },
                 "background": "transparent"
               },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
               "thumbnails": {}
+            }
+          ],
+          [
+            "slide_caption",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Mollit ea irure dolor enim ea aliqua laboris nostrud exercitation pariatur nulla sunt reprehenderit."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "slide_link_text",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "poet",
+              "type": "Text"
+            }
+          ],
+          [
+            "slide_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
             }
           ]
         ]

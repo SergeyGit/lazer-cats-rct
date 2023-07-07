@@ -6,6 +6,8 @@ import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useMediaListener } from '@/hooks/MediaListener';
+import { isFilled } from '@prismicio/helpers';
+import { PrismicLink, PrismicRichText } from '@prismicio/react';
 
 /**
  * @typedef {import("@prismicio/client").Content.MainSliderSlice} MainSliderSlice
@@ -38,16 +40,28 @@ const MainSlider = ({ slice }) => {
   return (
     <section className={style.section}>
       <div className={cn('keen-slider', style.list)} ref={sliderRef}>
-        {slice?.items?.map(({ image, mobile_image }) => (
-          <div className={cn(style.sliderItem, 'keen-slider__slide')} key={image.url}>
-            <PrismicNextImage
-              field={isMobile ? mobile_image : image}
-              fill
-              loading="lazy"
-              alt="slide"
-            />
-          </div>
-        ))}
+        {slice?.items?.map(
+          ({ image, mobile_image, slide_caption, slide_link_text, slide_link }) => (
+            <div className={cn(style.sliderItem, 'keen-slider__slide')} key={image.url}>
+              <PrismicNextImage
+                field={isMobile ? mobile_image : image}
+                fill
+                loading="lazy"
+                alt="slide"
+              />
+              {(isFilled.link(slide_link) || isFilled.richText(slide_caption)) && (
+                <div className={style.sliderMore}>
+                  {isFilled.richText(slide_caption) && <PrismicRichText field={slide_caption} />}
+                  {isFilled.link(slide_link) && (
+                    <div className={cn(style.seeAll, 'link')}>
+                      <PrismicLink field={slide_link}>{slide_link_text}</PrismicLink>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )
+        )}
       </div>
       <div className={style.navigation}>
         <Container>

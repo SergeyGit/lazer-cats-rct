@@ -244,7 +244,15 @@
     },
     "MainSlider": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {
+          "slide_caption": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "PlaterMain": {

@@ -29,6 +29,26 @@
     padding-bottom: 140px;
   }
 }
+.sliderMore {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  h2, h3, h4, h5 {
+    font-weight: bold;
+  }
+}
+.seeAll {
+  margin-top: 20px;
+  width: auto;
+  display: inline-block;
+  @media (min-width: $lg) {
+    margin-top: 40px;
+  }
+}
 
 .navigation {
   position: absolute;
