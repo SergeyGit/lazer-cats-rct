@@ -82,11 +82,14 @@
 
 .text {
   line-height: 1.5;
-  max-width: 800px;
+  max-width: 920px;
   margin-top: 20px;
   padding-bottom: 20px;
   overflow: auto;
   font-family: 'Helvetica';
+  @media (max-width: $xxl) {
+    max-width: 670px;
+  }
   br {
     display: none;
   }
