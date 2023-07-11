@@ -4,10 +4,11 @@ import style from '@/styles/modules/mainSlider.module.scss';
 import cn from 'classnames';
 import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaListener } from '@/hooks/MediaListener';
 import { isFilled } from '@prismicio/helpers';
 import { PrismicLink, PrismicRichText } from '@prismicio/react';
+import { useRouter } from 'next/router';
 
 /**
  * @typedef {import("@prismicio/client").Content.MainSliderSlice} MainSliderSlice
@@ -25,6 +26,12 @@ const MainSlider = ({ slice }) => {
     },
   });
 
+  const { locale } = useRouter();
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [locale]);
+
   const isMobile = useMediaListener('(max-width: 600px)');
 
   const handleButtonClick = (props) => {
@@ -38,7 +45,7 @@ const MainSlider = ({ slice }) => {
   const length = slice?.items?.length;
 
   return (
-    <section className={style.section}>
+    <section className={style.section} key={locale}>
       <div className={cn('keen-slider', style.list)} ref={sliderRef}>
         {slice?.items?.map(
           ({ image, mobile_image, slide_caption, slide_link_text, slide_link }) => (

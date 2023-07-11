@@ -107,10 +107,31 @@
   color: $base-dark;
   font-size: 50px;
   word-spacing: 10px;
+  position: relative;
   @media (max-width: $lg) {
     width: 68px;
     font-size: 16px;
     word-spacing: 5px;
+  }
+  &.win {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #FFF0A4 0%, #DFBB5F 41.15%, #EDB524 67.71%, #D29E18 100%);
+      @media (max-width: $lg) {
+        width: 2px;
+      }
+    }
+  }
+  &.right {
+    &:after {
+      left: auto;
+      right: 0;
+    }
   }
 }
 

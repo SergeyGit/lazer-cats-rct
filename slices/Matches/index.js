@@ -22,6 +22,24 @@ import moment from 'moment';
 //   return await response.json();
 // }
 
+const getWinner = (score) => {
+  // Удаление пробелов из строки
+  const cleanedScore = score.replace(/\s/g, '');
+  // Разделение строки на числа
+  const [leftScore, rightScore] = cleanedScore.split(':');
+  // Преобразование чисел из строкового формата в числовой формат
+  const leftScoreNumber = parseInt(leftScore, 10) || 0;
+  const rightScoreNumber = parseInt(rightScore, 10) || 0;
+
+  if (leftScoreNumber > rightScoreNumber) {
+    return 'Left';
+  }
+  if (leftScoreNumber < rightScoreNumber) {
+    return 'Right';
+  }
+  return '';
+};
+
 const Matches = ({ slice }) => {
   const now = moment().utc();
 
@@ -177,48 +195,59 @@ const Matches = ({ slice }) => {
                     team_name_2,
                     team_logo_2,
                     score,
-                  }) => (
-                    <div className={style.matchesItem} key={date}>
-                      <div
-                        className={cn(
-                          style.matchesLineHead,
-                          'd-flex align-items-center justify-content-center'
-                        )}
-                      >
-                        <div className={style.matchesLineHeadPoint}>{date}</div>
-                        <div className={cn(style.matchesImg, 'image-content flex-shrink-0')}>
-                          <PrismicNextImage field={tournamet_logo} loading="lazy" alt="tournamet" />
-                        </div>
-                        <div className={style.matchesLineHeadPoint}>{name_tournament}</div>
-                      </div>
-                      <div className={cn(style.matchesLineBody, 'd-flex align-items-center')}>
-                        <div className={style.matchesLineHeadPoint}>
-                          <div className="d-inline-flex align-items-center">
-                            <div className={cn(style.teamName, ' f-w-b')}>{team_name}</div>
-                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
-                              <PrismicNextImage field={team_logo} loading="lazy" alt="team" />
-                            </div>
-                          </div>
-                        </div>
+                  }) => {
+                    const winner = getWinner(score);
+                    return (
+                      <div className={style.matchesItem} key={date}>
                         <div
                           className={cn(
-                            style.score,
-                            'f-w-b align-self-stretch d-flex align-items-center justify-content-center flex-shrink-0 text-center'
+                            style.matchesLineHead,
+                            'd-flex align-items-center justify-content-center'
                           )}
                         >
-                          {score?.length ? score : 'VS'}
+                          <div className={style.matchesLineHeadPoint}>{date}</div>
+                          <div className={cn(style.matchesImg, 'image-content flex-shrink-0')}>
+                            <PrismicNextImage
+                              field={tournamet_logo}
+                              loading="lazy"
+                              alt="tournamet"
+                            />
+                          </div>
+                          <div className={style.matchesLineHeadPoint}>{name_tournament}</div>
                         </div>
-                        <div className={style.matchesLineHeadPoint}>
-                          <div className="d-inline-flex align-items-center">
-                            <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
-                              <PrismicNextImage field={team_logo_2} loading="lazy" alt="team 2" />
+                        <div className={cn(style.matchesLineBody, 'd-flex align-items-center')}>
+                          <div className={style.matchesLineHeadPoint}>
+                            <div className="d-inline-flex align-items-center">
+                              <div className={cn(style.teamName, ' f-w-b')}>{team_name}</div>
+                              <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                                <PrismicNextImage field={team_logo} loading="lazy" alt="team" />
+                              </div>
                             </div>
-                            <div className={cn(style.teamName, ' f-w-b')}>{team_name_2}</div>
+                          </div>
+                          <div
+                            className={cn(
+                              style.score,
+                              {
+                                [style.win]: winner,
+                                [style.right]: winner === 'Right',
+                              },
+                              'f-w-b align-self-stretch d-flex align-items-center justify-content-center flex-shrink-0 text-center'
+                            )}
+                          >
+                            {score?.length ? score : 'VS'}
+                          </div>
+                          <div className={style.matchesLineHeadPoint}>
+                            <div className="d-inline-flex align-items-center">
+                              <div className={cn(style.teamImg, 'image-content flex-shrink-0')}>
+                                <PrismicNextImage field={team_logo_2} loading="lazy" alt="team 2" />
+                              </div>
+                              <div className={cn(style.teamName, ' f-w-b')}>{team_name_2}</div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )
+                    );
+                  }
                 )}
             </div>
           </>
