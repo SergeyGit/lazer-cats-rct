@@ -26,7 +26,7 @@ const getWinner = (score) => {
   // Удаление пробелов из строки
   const cleanedScore = score?.replace(/\s/g, '');
   // Разделение строки на числа
-  const [leftScore, rightScore] = cleanedScore.split(':');
+  const [leftScore, rightScore] = cleanedScore?.split(':');
   // Преобразование чисел из строкового формата в числовой формат
   const leftScoreNumber = parseInt(leftScore, 10) || 0;
   const rightScoreNumber = parseInt(rightScore, 10) || 0;
