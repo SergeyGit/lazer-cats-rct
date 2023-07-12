@@ -24,6 +24,8 @@ import moment from 'moment';
 
 const getWinner = (score) => {
   // Удаление пробелов из строки
+  if (!score) return '';
+
   const cleanedScore = score?.replace(/\s/g, '');
   // Разделение строки на числа
   const [leftScore, rightScore] = cleanedScore?.split(':');
