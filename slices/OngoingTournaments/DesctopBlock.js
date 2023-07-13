@@ -10,42 +10,44 @@ import { getDate } from './index';
 
 const DesctopBlock = ({ slice }) => (
   <Row className={style.list}>
-    {slice?.items?.map(({ bage, image, caption, from_date, to_date, prise, link, text_link }) => (
-      <Col md={6} lg={3} className={style.item} key={caption}>
-        <div className={style.card}>
-          <div className={style.image}>
-            <PrismicNextImage field={image} fill loading="lazy" alt="caption" />
-          </div>
-          <div
-            className={cn(style.badge, 'badge')}
-            style={{ backgroundColor: BADGES_COLORS[bage.toLowerCase()] || '#FF007A' }}
-          >
-            {bage}
-          </div>
-          <div className={cn(style.caption, 'h4 f-w-b')}>{caption}</div>
-          <div className={cn(style.info, 'd-flex align-items-center')}>
-            <div className={cn(style.icon, 'image-content flex-shrink-0')}>
-              <Image src={Calendar} alt="calendar" loading="lazy" />
+    {slice?.items?.map(
+      ({ bage, image, caption, from_date, to_date, prise, link, text_link }, index) => (
+        <Col md={6} lg={3} className={style.item} key={caption}>
+          <div className={style.card}>
+            <div className={cn(style.image, `image-${(index % 4) + 1}`)}>
+              <PrismicNextImage field={image} loading="lazy" alt="caption" />
             </div>
-            <div>{getDate(from_date, to_date)}</div>
-          </div>
-          <div className={cn(style.info, 'd-flex align-items-center')}>
-            <div className={cn(style.icon, 'image-content flex-shrink-0')}>
-              <Image src={Star} alt="star" loading="lazy" />
+            <div
+              className={cn(style.badge, 'badge')}
+              style={{ backgroundColor: BADGES_COLORS[bage.toLowerCase()] || '#FF007A' }}
+            >
+              {bage}
             </div>
-            <div>{prise}</div>
+            <div className={cn(style.caption, 'h4 f-w-b')}>{caption}</div>
+            <div className={cn(style.info, 'd-flex align-items-center')}>
+              <div className={cn(style.icon, 'image-content flex-shrink-0')}>
+                <Image src={Calendar} alt="calendar" loading="lazy" />
+              </div>
+              <div>{getDate(from_date, to_date)}</div>
+            </div>
+            <div className={cn(style.info, 'd-flex align-items-center')}>
+              <div className={cn(style.icon, 'image-content flex-shrink-0')}>
+                <Image src={Star} alt="star" loading="lazy" />
+              </div>
+              <div>{prise}</div>
+            </div>
+            <a
+              href={link?.url}
+              className={cn(style.link, 'prime')}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {text_link}
+            </a>
           </div>
-          <a
-            href={link?.url}
-            className={cn(style.link, 'prime')}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {text_link}
-          </a>
-        </div>
-      </Col>
-    ))}
+        </Col>
+      )
+    )}
   </Row>
 );
 

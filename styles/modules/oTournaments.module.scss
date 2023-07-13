@@ -115,14 +115,46 @@
 .image {
   height: 350px;
   position: relative;
-  background-color: $primary-purple;
-  transition: .4s;
+  background: linear-gradient($primary-purple 100%, $primary-purple);
+  transition: .2s;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url(../../assets/images/icons/turnaments/1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &.image-2 {
+    &:after {
+      background-image: url(../../assets/images/icons/turnaments/2.png);
+    }
+  }
+  &.image-3 {
+    &:after {
+      background-image: url(../../assets/images/icons/turnaments/3.png);
+    }
+  }
+  &.image-4 {
+    &:after {
+      background-image: url(../../assets/images/icons/turnaments/4.png);
+    }
+  }
+
   &.vertical {
     overflow: hidden;
   }
   img {
-    object-fit: cover;
-    transition: .4s;
+    object-fit: contain;
+    //transition: .4s;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    z-index: 1;
   }
   @media (min-width: $xxl) {
     height: 420px;
@@ -164,7 +196,7 @@
   height: 64px;
   overflow: hidden;
   transition: .4s;
-  @media (min-width: $xxl) {
+  @media (min-width: 1420px) {
     height: 80px;
   }
 }

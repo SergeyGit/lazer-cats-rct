@@ -378,6 +378,18 @@ h1, .h1 {
   font-size: 64px;
 }
 
+@media (min-width: $xl) {
+  h1, .h1 {
+    font-size: 5.5rem;
+  }
+}
+
+@media (max-width: $lg) {
+  h6, .h6 {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 1420px) {
   h1, .h1 {
     font-size: 128px;
@@ -396,18 +408,6 @@ h1, .h1 {
   }
   h6, .h6 {
     font-size: 24px;
-  }
-}
-
-@media (min-width: $xl) {
-  h1, .h1 {
-    font-size: 5.5rem;
-  }
-}
-
-@media (max-width: $lg) {
-  h6, .h6 {
-    font-size: 1rem;
   }
 }
 
