@@ -18,18 +18,25 @@ export const getField = ({ name, value, handleChange, onSelect, selectOptions })
         />
       );
     default:
-      return <InputField name={name} value={value} handleChange={handleChange} />;
+      return (
+        <InputField
+          name={name}
+          value={value}
+          handleChange={handleChange}
+          required={name === 'email'}
+        />
+      );
   }
 };
 
-export const InputField = ({ name, value, handleChange }) => (
+export const InputField = ({ name, value, handleChange, required }) => (
   <div className="form_input">
     <input
       id={name}
       type={name === 'email' ? name : 'text'}
       value={value}
       onChange={handleChange}
-      required
+      required={required}
     />
   </div>
 );
