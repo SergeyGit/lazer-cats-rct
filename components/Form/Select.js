@@ -44,13 +44,20 @@ const Select = ({ options, selected, onSelect, name, placeholder }) => {
         className={cn(styles.selectDButton, {
           [styles.active]: open,
         })}
+        type="button"
         onClick={handleClick}
       />
       {open && (
         <div className={styles.dialog}>
           <div className={styles.optionsWrap}>
             {options?.map((option) => (
-              <div key={option} onClick={handleSelectOption(option)} className={styles.option}>
+              <div
+                key={option}
+                onClick={handleSelectOption(option)}
+                className={cn(styles.option, {
+                  [styles.selected]: option === selected,
+                })}
+              >
                 <div>{option}</div>
               </div>
             ))}

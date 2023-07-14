@@ -14,7 +14,7 @@ export const getField = ({ name, value, handleChange, onSelect, selectOptions })
           options={selectOptions}
           onSelect={onSelect}
           placeholder="Business and partnership"
-          selected={value}
+          selected={value || selectOptions[0]}
         />
       );
     default:
@@ -36,6 +36,6 @@ export const InputField = ({ name, value, handleChange }) => (
 
 export const MessageField = ({ name, value, handleChange }) => (
   <div className="form_input">
-    <textarea id={name} value={value} onChange={handleChange} required />
+    <textarea id={name} value={value} onChange={handleChange} />
   </div>
 );
