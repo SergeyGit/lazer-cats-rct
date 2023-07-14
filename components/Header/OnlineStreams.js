@@ -51,7 +51,7 @@ const OnlineStreams = () => {
           </div>
           <div>
             <div className="header_streams_name">{user_name}</div>
-            <div className="header_streams_view">{formatNumber(viewer_count)}</div>
+            <div className="header_streams_view">{formatNumber(viewer_count)} viewers</div>
           </div>
         </a>
       ))}

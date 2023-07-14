@@ -125,7 +125,7 @@ const PartnerForm = ({ slice }) => {
           [style.contact]: !isMainPage,
         })}
       >
-        <div className="multicolor-title h1 text-center ">
+        <div className={cn('multicolor-title h1 text-center', style.caption)}>
           <PrismicRichText field={slice.primary.title} />
         </div>
         <Row
