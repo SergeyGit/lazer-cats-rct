@@ -91,6 +91,7 @@ p {
   position: relative;
   padding-bottom: 2px;
   overflow: hidden;
+  min-width: 146px;
   &:after {
     content: '';
     position: absolute;

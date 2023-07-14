@@ -14,7 +14,7 @@ const DesctopBlock = ({ slice }) => (
       ({ bage, image, caption, from_date, to_date, prise, link, text_link }, index) => (
         <Col md={6} lg={3} className={style.item} key={caption}>
           <div className={style.card}>
-            <div className={cn(style.image, `image-${(index % 4) + 1}`)}>
+            <div className={cn(style.image, style[`image-${(index % 4) + 1}`])}>
               <PrismicNextImage field={image} loading="lazy" alt="caption" />
             </div>
             <div

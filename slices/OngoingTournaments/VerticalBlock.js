@@ -10,19 +10,22 @@ import { getDate } from './index';
 const VerticalBlock = ({ slice }) => (
   <>
     {slice?.items?.map(
-      ({
-        bage,
-        image,
-        caption,
-        from_date,
-        to_date,
-        prise,
-        link,
-        text_link,
-        info,
-        country_name,
-        country_logo,
-      }) => (
+      (
+        {
+          bage,
+          image,
+          caption,
+          from_date,
+          to_date,
+          prise,
+          link,
+          text_link,
+          info,
+          country_name,
+          country_logo,
+        },
+        index
+      ) => (
         <div
           className={cn(
             style.card,
@@ -30,7 +33,14 @@ const VerticalBlock = ({ slice }) => (
             'd-flex align-items-center flex-column flex-md-row'
           )}
         >
-          <div className={cn(style.image, style.vertical, 'flex-shrink-0')}>
+          <div
+            className={cn(
+              style.image,
+              style.vertical,
+              style[`image-${(index % 4) + 1}`],
+              'flex-shrink-0'
+            )}
+          >
             <PrismicNextImage field={image} fill loading="lazy" alt="caption" />
           </div>
           <div>

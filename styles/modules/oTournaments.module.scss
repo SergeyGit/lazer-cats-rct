@@ -36,7 +36,10 @@
       background: linear-gradient(179.91deg, #FFF0A4 0.08%, #DFBB5F 43.39%, #EDB524 71.36%, #D29E18 105.35%);
       box-shadow: 0 0 100px rgba(255, 233, 118, 0.24);
       img {
-        transform: scale(1.05);
+        transform: translateY(-20px);
+      }
+      &:after {
+        transform: translateY(-10px);
       }
     }
     .caption {
@@ -121,13 +124,14 @@
   &:after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
     background-image: url(../../assets/images/icons/turnaments/1.png);
     background-repeat: no-repeat;
     background-size: cover;
+    transition: .4s;
   }
   &.image-2 {
     &:after {
@@ -150,7 +154,7 @@
   }
   img {
     object-fit: contain;
-    //transition: .4s;
+    transition: .4s;
     max-width: 100%;
     max-height: 100%;
     position: relative;

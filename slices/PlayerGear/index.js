@@ -23,7 +23,7 @@ const PlayerGear = ({ slice }) => (
         <PrismicRichText field={slice.primary.title} />
       </div>
       <Row className={style.list}>
-        {slice?.items?.map(({ photo, text_link, link, category }) => (
+        {slice?.items?.map(({ photo, text_link, link, category }, index) => (
           <Col md={6} lg={3} className={style.item} key={text_link}>
             <a
               href={link}
@@ -31,7 +31,7 @@ const PlayerGear = ({ slice }) => (
               rel="noopener noreferrer"
               className={cn(style.card, 'd-flex flex-column')}
             >
-              <div className={style.image}>
+              <div className={cn(style.image, style[`image-${(index % 4) + 1}`])}>
                 <PrismicNextImage field={photo} fill loading="lazy" alt="product" />
               </div>
               <div className={style.category}>{category}</div>
