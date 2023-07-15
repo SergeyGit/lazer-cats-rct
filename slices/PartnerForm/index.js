@@ -81,8 +81,8 @@ const PartnerForm = ({ slice }) => {
       })}
     >
       {isMainPage && (
-        <div className={cn(style.partnerBG, 'd-flex flex-wrap')}>
-          {[...Array(15)].map((_, index) => (
+        <div className={cn(style.partnerBG, 'd-flex align-content-start flex-wrap')}>
+          {[...Array(18)].map((_, index) => (
             <Fragment key={index}>
               {slice.items?.map(({ icon_partner, icon_partner_hover }) => (
                 <div
@@ -145,7 +145,7 @@ const PartnerForm = ({ slice }) => {
               )}
             </div>
           </Col>
-          <Col lg={isMainPage ? 6 : 12} className="djustify-content-end">
+          <Col lg={isMainPage ? 6 : 12} className="justify-content-end">
             {success ? (
               <div
                 className={cn(

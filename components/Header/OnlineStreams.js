@@ -47,7 +47,7 @@ const OnlineStreams = () => {
           rel="noopener noreferrer"
         >
           <div className="header_streams_icon flex-shrink-0">
-            <Image src={STREAMS_ICONS[user_name]?.icon} alt="stream" loading="lazy" />
+            <Image src={STREAMS_ICONS[user_name.toLowerCase()]?.icon} alt="stream" loading="lazy" />
           </div>
           <div>
             <div className="header_streams_name">{user_name}</div>
