@@ -23,7 +23,7 @@
   width: 100%;
   max-width: 440px;
   position: relative;
-
+  height: 480px;
   img {
     max-width: 100%;
     position: relative;
@@ -33,12 +33,50 @@
     object-fit: cover;
     object-position: top;
   }
+  &:hover {
+    .imageIn {
+      opacity: 0;
+    }
+
+    .imageInHover {
+      opacity: 1;
+    }
+  }
+}
+.imageIn {
+  position: absolute;
+  left: -50px;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  transition: .3s;
+}
+
+.imageInHover, .imageIn {
+  z-index: 1;
+  img {
+    height: 480px;
+    width: 600px;
+    max-width: unset;
+    object-fit: contain;
+  }
+}
+
+.imageInHover {
+  opacity: 0;
+  position: absolute;
+  left: -50px;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  transition: .3s;
+
 }
 
 .photoBG {
   position: absolute;
-  left: -20px;
-  right: -20px;
+  left: 0;
+  right:0;
   top: -20px;
   z-index: 0;
 }

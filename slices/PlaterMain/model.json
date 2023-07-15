@@ -35,6 +35,14 @@
             "thumbnails": []
           }
         },
+        "hover_photo": {
+          "type": "Image",
+          "config": {
+            "label": "hover photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "name": {
           "type": "Text",
           "config": {

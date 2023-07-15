@@ -8,6 +8,7 @@ import { useMediaListener } from '@/hooks/MediaListener';
 import Triangles from '../../assets/images/player/Triangles.svg';
 import Image from 'next/image';
 import Twich from '../../assets/images/icons/twichlive.svg';
+import { isFilled } from '@prismicio/helpers';
 
 /**
  * @typedef {import("@prismicio/client").Content.PlaterMainSlice} PlaterMainSlice
@@ -58,7 +59,22 @@ const PlaterMain = ({ slice }) => {
         <Row>
           <Col lg={6} className="justify-content-center d-flex">
             <div className={style.photo}>
-              <PrismicNextImage field={slice.primary.photo} loading="lazy" alt="photo" />
+              {!isMobile && isFilled.image(slice.primary.hover_photo) ? (
+                <>
+                  <div className={style.imageIn}>
+                    <PrismicNextImage field={slice.primary.photo} loading="lazy" alt="photo" />
+                  </div>
+                  <div className={style.imageInHover}>
+                    <PrismicNextImage
+                      field={slice.primary.hover_photo}
+                      loading="eager"
+                      property="true"
+                    />
+                  </div>
+                </>
+              ) : (
+                <PrismicNextImage field={slice.primary.photo} loading="lazy" alt="photo" />
+              )}
               <div className={style.photoBG}>
                 <Image src={Triangles} alt="calendar" loading="lazy" />
               </div>

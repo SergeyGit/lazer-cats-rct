@@ -1587,6 +1587,16 @@ interface PlaterMainSliceDefaultPrimary {
      */
     photo: prismicT.ImageField<never>;
     /**
+     * hover photo field in *PlaterMain → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: plater_main.primary.hover_photo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    hover_photo: prismicT.ImageField<never>;
+    /**
      * name field in *PlaterMain → Primary*
      *
      * - **Field Type**: Text
