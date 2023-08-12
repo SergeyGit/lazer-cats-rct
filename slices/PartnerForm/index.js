@@ -20,7 +20,10 @@ const initData = {
   message: '',
 };
 const PartnerForm = ({ slice }) => {
-  const [formData, setFormData] = useState(initData);
+  const [formData, setFormData] = useState({
+    ...initData,
+    topic: slice.primary.topics?.split(', ')[0] || '',
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const isMainPage = !!slice.items.length;
