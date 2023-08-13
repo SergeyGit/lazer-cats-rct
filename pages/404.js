@@ -1,21 +1,13 @@
-import Head from 'next/head';
 import { SliceZone } from '@prismicio/react';
 
 import { createClient } from '../prismicio';
 import { components } from '../slices';
 import { Layout } from '@/components/Layout';
-import Favico from '../assets/images/favicon.ico';
 
 const Page404 = ({ page, settings, footer }) => {
   return (
     <Layout alternateLanguages={page.alternate_languages} settings={settings} footer={footer}>
-      <div>
-        <Head>
-          <title>{page.data.title}</title>
-          <link rel="icon" href={Favico.src} sizes="any" />
-        </Head>
-        <SliceZone slices={page.data.slices} components={components} />
-      </div>
+      <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
 };
