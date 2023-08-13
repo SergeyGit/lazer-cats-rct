@@ -7,6 +7,7 @@ import MainSlider from './MainSlider';
 import Matches from './Matches';
 import OngoingTournaments from './OngoingTournaments';
 import OurTeam from './OurTeam';
+import Page404 from './Page404';
 import PartnerForm from './PartnerForm';
 import Partners from './Partners';
 import PartnersList from './PartnersList';
@@ -24,6 +25,7 @@ export {
 	Matches,
 	OngoingTournaments,
 	OurTeam,
+	Page404,
 	PartnerForm,
 	Partners,
 	PartnersList,
@@ -42,6 +44,7 @@ export const components = {
 	matches: Matches,
 	ongoing_tournaments: OngoingTournaments,
 	our_team: OurTeam,
+	page404: Page404,
 	partner_form: PartnerForm,
 	partners: Partners,
 	partners_list: PartnersList,

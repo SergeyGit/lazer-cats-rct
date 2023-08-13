@@ -1,0 +1,106 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laborum culpa ea nisi veniam."
+            }
+          }
+        ]
+      },
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      "title_link": {
+        "__TYPE__": "FieldContent",
+        "value": "excitement",
+        "type": "Text"
+      },
+      "logo": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+          "width": 3024,
+          "height": 3778
+        },
+        "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+        "width": 3024,
+        "height": 3778,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "smoke": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+          "width": 8640,
+          "height": 8640
+        },
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "background_image": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+          "width": 3810,
+          "height": 5715
+        },
+        "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+        "width": 3810,
+        "height": 5715,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

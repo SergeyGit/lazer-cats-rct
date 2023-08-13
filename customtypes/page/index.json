@@ -58,6 +58,9 @@
             },
             "player_gear": {
               "type": "SharedSlice"
+            },
+            "page404": {
+              "type": "SharedSlice"
             }
           }
         }

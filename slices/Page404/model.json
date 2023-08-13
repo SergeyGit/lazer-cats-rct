@@ -1,0 +1,67 @@
+{
+  "id": "page404",
+  "type": "SharedSlice",
+  "name": "Page404",
+  "description": "Page404",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Page404",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "title_link": {
+          "type": "Text",
+          "config": {
+            "label": "title link",
+            "placeholder": ""
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "smoke": {
+          "type": "Image",
+          "config": {
+            "label": "smoke",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

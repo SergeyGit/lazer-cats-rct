@@ -3,10 +3,6 @@ import { Container } from 'react-bootstrap';
 import style from '@/styles/modules/weare.module.scss';
 import { PrismicNextImage } from '@prismicio/next';
 import cn from 'classnames';
-import { useMediaListener } from '@/hooks/MediaListener';
-import dynamic from 'next/dynamic';
-
-const Video = dynamic(() => import('./Video'));
 
 /**
  * @typedef {import("@prismicio/client").Content.WeAreSlice} WeAreSlice
@@ -14,8 +10,6 @@ const Video = dynamic(() => import('./Video'));
  * @param { WeAreProps }
  */
 const WeAre = ({ slice }) => {
-  const isVideo = useMediaListener('(min-width: 1200px)');
-
   return (
     <section className={style.section}>
       <Container style={{ zIndex: 2 }}>
@@ -36,11 +30,6 @@ const WeAre = ({ slice }) => {
           alt="bg"
         />
       </div>
-      {isVideo && (
-        <div className={style.video}>
-          <Video />
-        </div>
-      )}
       <div className={style.logo}>
         <PrismicNextImage field={slice.primary.logo} loading="lazy" alt="logo" />
       </div>

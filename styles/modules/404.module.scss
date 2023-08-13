@@ -1,0 +1,80 @@
+@import "../variables";
+
+.section {
+  position: relative;
+  width: 100%;
+  color: white;
+  z-index: 1;
+}
+
+.caption {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+.h6 {
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  max-width: 1050px;
+  font-family: 'Helvetica';
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  width: 100%;
+  padding: 300px 0 160px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  @media (max-width: $xl) {
+    padding-top: 170px;
+    padding-bottom: 120px;
+    .h6 {
+      line-height: 1.4;
+    }
+  }
+  @media (max-width: $md) {
+    padding-top: 120px;
+  }
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  //z-index: 2;
+  img {
+    object-fit: cover;
+  }
+}
+
+.smoke {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+  img {
+    object-fit: cover;
+  }
+}
+
+.logo {
+  margin-bottom: 50px;
+  img {
+    height: 304px;
+  }
+}
+
+.link {
+  display: inline-block;
+}
