@@ -20,7 +20,7 @@ async function fetchStreamData(name) {
   const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${name}`, {
     headers: {
       'Client-ID': 'jbmzacqpwuqbypn6klo68ec9zbq2lg',
-      Authorization: 'Bearer u9hyyjx6e0jygcdesf3yd5jygsbvcb',
+      Authorization: 'Bearer f1bi0mu1syvv2a85ha8lyn45k55zsf',
     },
   });
   return await response.json();

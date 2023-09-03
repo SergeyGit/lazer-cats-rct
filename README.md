@@ -63,3 +63,22 @@ limitations under the License.
 [nextjs]: https://nextjs.org/
 [starter-docs]: ./docs/README.md
 [live-demo]: https://nextjs-starter-prismic-multi-language.vercel.app/
+
+
+twich access token 
+```js
+
+const clientId = '';
+const clientSecret = '';
+const grantType = 'client_credentials';
+
+const apiUrl = 'https://id.twitch.tv/oauth2/token';
+fetch(apiUrl, {
+method: 'POST',
+headers: {
+'Content-Type': 'application/x-www-form-urlencoded',
+},
+body: `client_id=${clientId}&client_secret=${clientSecret}&grant_type=${grantType}`,
+})
+
+```
