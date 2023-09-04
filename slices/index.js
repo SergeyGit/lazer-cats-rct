@@ -13,6 +13,7 @@ import Partners from './Partners';
 import PartnersList from './PartnersList';
 import PlaterMain from './PlaterMain';
 import PlayerGear from './PlayerGear';
+import ShowMatchesBlock from './ShowMatchesBlock';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
 import WeAre from './WeAre';
@@ -31,6 +32,7 @@ export {
 	PartnersList,
 	PlaterMain,
 	PlayerGear,
+	ShowMatchesBlock,
 	TextWithFeatures,
 	TextWithImage,
 	WeAre,
@@ -50,6 +52,7 @@ export const components = {
 	partners_list: PartnersList,
 	plater_main: PlaterMain,
 	player_gear: PlayerGear,
+	show_matches_block: ShowMatchesBlock,
 	text_with_features: TextWithFeatures,
 	text_with_image: TextWithImage,
 	we_are: WeAre,

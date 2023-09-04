@@ -4,7 +4,7 @@ import { PrismicNextImage } from '@prismicio/next';
 import { Container } from 'react-bootstrap';
 import cn from 'classnames';
 import moment from 'moment';
-// import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 /**
  * @typedef {import("@prismicio/client").Content.MatchesSlice} MatchesSlice
@@ -44,15 +44,7 @@ const getWinner = (score) => {
 
 const Matches = ({ slice }) => {
   const now = moment().utc();
-
-  // const [streamData, setStreamData] = useState();
-  //
-  // useEffect(() => {
-  //   if (!streamData) {
-  //     fetchStreamData().then(setStreamData);
-  //   }
-  // }, []);
-  // console.log(streamData);
+  const { asPath } = useRouter();
 
   const specialData = slice?.items?.reduce(
     (prev, current) => {
@@ -66,6 +58,7 @@ const Matches = ({ slice }) => {
               date: moment(current.date, 'YYYY-MM-DDhh:mm:ssZ, hh:mm').format(
                 'DD MMMM YYYY, hh:mm'
               ),
+              sortDate: current.date,
             },
           ],
         };
@@ -77,6 +70,7 @@ const Matches = ({ slice }) => {
           {
             ...current,
             date: moment(current.date, 'YYYY-MM-DDhh:mm:ssZ, hh:mm').format('DD MMMM YYYY, hh:mm'),
+            sortDate: current.date,
           },
         ],
       };
@@ -88,10 +82,10 @@ const Matches = ({ slice }) => {
   );
 
   function compareDate(d1, d2) {
-    if (d1.date < d2.date) {
+    if (d1.sortDate > d2.sortDate) {
       return -1;
     }
-    if (d1.date > d2.date) {
+    if (d1.sortDate < d2.sortDate) {
       return 1;
     }
     return 0;
@@ -116,6 +110,7 @@ const Matches = ({ slice }) => {
               <div className="d-flex align-items-center justify-content-center" />
               {specialData.upcoming
                 .sort(compareDate)
+                .slice(0, asPath !== '/matches' ? 5 : 15)
                 .map(
                   ({
                     date,
@@ -187,6 +182,7 @@ const Matches = ({ slice }) => {
               <div className="d-flex align-items-center justify-content-center" />
               {specialData.past
                 .sort(compareDate)
+                .slice(0, asPath !== '/matches' ? 5 : 15)
                 .map(
                   ({
                     date,

@@ -329,7 +329,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | MatchesSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice | MainSliderSlice | PartnersSlice | PlaterMainSlice | PlayerGearSlice | Page404Slice;
+type PageDocumentDataSlicesSlice = HeadTournamentsSlice | OurTeamSlice | OngoingTournamentsSlice | WeAreSlice | PartnersListSlice | PartnerFormSlice | MainSliderSlice | PartnersSlice | PlaterMainSlice | PlayerGearSlice | Page404Slice | ShowMatchesBlockSlice;
 /**
  * Page document from Prismic
  *
@@ -1980,6 +1980,46 @@ type PlayerGearSliceVariation = PlayerGearSliceDefault;
  */
 export type PlayerGearSlice = prismicT.SharedSlice<"player_gear", PlayerGearSliceVariation>;
 /**
+ * Primary content in ShowMatchesBlock → Primary
+ *
+ */
+interface ShowMatchesBlockSliceDefaultPrimary {
+    /**
+     * matches field in *ShowMatchesBlock → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: true
+     * - **API ID Path**: show_matches_block.primary.matches
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    matches: prismicT.BooleanField;
+}
+/**
+ * Default variation for ShowMatchesBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ShowMatchesBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ShowMatchesBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ShowMatchesBlockSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ShowMatchesBlock*
+ *
+ */
+type ShowMatchesBlockSliceVariation = ShowMatchesBlockSliceDefault;
+/**
+ * ShowMatchesBlock Shared Slice
+ *
+ * - **API ID**: `show_matches_block`
+ * - **Description**: `ShowMatchesBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ShowMatchesBlockSlice = prismicT.SharedSlice<"show_matches_block", ShowMatchesBlockSliceVariation>;
+/**
  * Primary content in TextWithFeatures → Primary
  *
  */
@@ -2187,6 +2227,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, MatchesDocumentData, MatchesDocumentDataSlicesSlice, MatchesDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MainSliderSliceDefaultPrimary, MainSliderSliceDefaultItem, MainSliderSliceDefault, MainSliderSliceVariation, MainSliderSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, Page404SliceDefaultPrimary, Page404SliceDefault, Page404SliceVariation, Page404Slice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, PlaterMainSliceDefaultPrimary, PlaterMainSliceDefaultItem, PlaterMainSliceDefault, PlaterMainSliceVariation, PlaterMainSlice, PlayerGearSliceDefaultPrimary, PlayerGearSliceDefaultItem, PlayerGearSliceDefault, PlayerGearSliceVariation, PlayerGearSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
+        export type { FooterDocumentData, FooterDocumentDataSocialLinksItem, FooterDocumentDataTermsLinksItem, FooterDocumentDataPagesItem, FooterDocumentDataPartnersItem, FooterDocument, MatchesDocumentData, MatchesDocumentDataSlicesSlice, MatchesDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeadTournamentsSliceDefaultPrimary, HeadTournamentsSliceDefault, HeadTournamentsSliceVariation, HeadTournamentsSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceWithButtonPrimary, HeroSliceWithButton, HeroSliceVariation, HeroSlice, ImageSliceWhitePrimary, ImageSliceWhite, ImageSliceLightSlatePrimary, ImageSliceLightSlate, ImageSliceVariation, ImageSlice, MainSliderSliceDefaultPrimary, MainSliderSliceDefaultItem, MainSliderSliceDefault, MainSliderSliceVariation, MainSliderSlice, MatchesSliceDefaultPrimary, MatchesSliceDefaultItem, MatchesSliceDefault, MatchesSliceVariation, MatchesSlice, OngoingTournamentsSliceDefaultPrimary, OngoingTournamentsSliceDefaultItem, OngoingTournamentsSliceDefault, OngoingTournamentsSliceVariation, OngoingTournamentsSlice, OurTeamSliceDefaultPrimary, OurTeamSliceDefaultItem, OurTeamSliceDefault, OurTeamSliceVariation, OurTeamSlice, Page404SliceDefaultPrimary, Page404SliceDefault, Page404SliceVariation, Page404Slice, PartnerFormSliceDefaultPrimary, PartnerFormSliceDefaultItem, PartnerFormSliceDefault, PartnerFormSliceVariation, PartnerFormSlice, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, PartnersListSliceDefaultPrimary, PartnersListSliceDefaultItem, PartnersListSliceDefault, PartnersListSliceVariation, PartnersListSlice, PlaterMainSliceDefaultPrimary, PlaterMainSliceDefaultItem, PlaterMainSliceDefault, PlaterMainSliceVariation, PlaterMainSlice, PlayerGearSliceDefaultPrimary, PlayerGearSliceDefaultItem, PlayerGearSliceDefault, PlayerGearSliceVariation, PlayerGearSlice, ShowMatchesBlockSliceDefaultPrimary, ShowMatchesBlockSliceDefault, ShowMatchesBlockSliceVariation, ShowMatchesBlockSlice, TextWithFeaturesSliceDefaultPrimary, TextWithFeaturesSliceDefaultItem, TextWithFeaturesSliceDefault, TextWithFeaturesSliceVariation, TextWithFeaturesSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice, WeAreSliceDefaultPrimary, WeAreSliceDefault, WeAreSliceVariation, WeAreSlice };
     }
 }

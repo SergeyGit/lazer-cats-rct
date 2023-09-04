@@ -35,9 +35,6 @@
             "ongoing_tournaments": {
               "type": "SharedSlice"
             },
-            "matches": {
-              "type": "SharedSlice"
-            },
             "we_are": {
               "type": "SharedSlice"
             },
@@ -60,6 +57,9 @@
               "type": "SharedSlice"
             },
             "page404": {
+              "type": "SharedSlice"
+            },
+            "show_matches_block": {
               "type": "SharedSlice"
             }
           }
