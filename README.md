@@ -82,3 +82,8 @@ body: `client_id=${clientId}&client_secret=${clientSecret}&grant_type=${grantTyp
 })
 
 ```
+```curl
+curl -i -X GET "https://graph.instagram.com/refresh_access_token
+  ?grant_type=ig_refresh_token
+  &access_token={long-lived-access-token}"
+```

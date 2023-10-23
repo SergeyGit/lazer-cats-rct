@@ -24,10 +24,10 @@ export const LANGS = {
 };
 
 export const STREAMS_ICONS = {
-  Burmylov: {
+  burmylov: {
     icon: Burmylov,
   },
-  Hkta: {
+  hkta: {
     icon: Hkta,
   },
   m1she4ka: {
